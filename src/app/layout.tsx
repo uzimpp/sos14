@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Outfit, Pixelify_Sans } from "next/font/google";
+import NavBar from "@/components/global/NavBar";
+import Footer from "@/components/global/Footer";
 import "./globals.css";
-
 
 const pixel = Pixelify_Sans({
   variable: "--font-pixel",
@@ -12,7 +13,6 @@ const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
 });
-
 
 export const metadata: Metadata = {
   title: "SOS14",
@@ -27,10 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${pixel.variable} ${outfit.variable} antialiased`}
-      >
-        {children}
+      <body className={`${pixel.variable} ${outfit.variable} antialiased`}>
+        <NavBar />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
