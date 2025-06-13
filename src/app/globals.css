@@ -85,12 +85,6 @@
 }
 
 @layer base {
-
-  main {
-    margin-top: var(--navbar-height);
-    min-height: calc(100dvh - var(--navbar-height));
-  }
-
   body {
     font-size: var(--text-0);
     font-family: var(--font-pixel);
@@ -101,6 +95,8 @@
   }
 
   main {
+    margin-top: var(--navbar-height);
+    min-height: calc(100dvh - var(--navbar-height));
     background-color: var(--color-dark-purple);
   }
 
@@ -110,6 +106,10 @@
   }
 
   button {
+    cursor: pointer;
+  }
+
+  a {
     cursor: pointer;
   }
 }
