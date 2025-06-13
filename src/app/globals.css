@@ -1,26 +1,72 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    /* === Font Sizes === */
+    /* @link https://utopia.fyi/type/calculator?c=375,16,1.333,1728,20,1.333,6,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+    --fs--1: clamp(0.7502rem, 0.6982rem + 0.2218vw, 0.9377rem);
+    --fs-0: clamp(1rem, 0.9307rem + 0.2956vw, 1.25rem);
+    --fs-1: clamp(1.333rem, 1.2406rem + 0.3941vw, 1.6663rem);
+    --fs-2: clamp(1.7769rem, 1.6538rem + 0.5253vw, 2.2211rem);
+    --fs-3: clamp(2.3686rem, 2.2045rem + 0.7002vw, 2.9607rem);
+    --fs-4: clamp(3.1573rem, 2.9386rem + 0.9334vw, 3.9467rem);
+    --fs-5: clamp(4.2087rem, 3.9171rem + 1.2443vw, 5.2609rem);
+    --fs-6: clamp(5.6102rem, 5.2215rem + 1.6586vw, 7.0128rem);
+
+    /* === Spacing === */
+    /* @link https://utopia.fyi/space/calculator?c=375,16,1.333,1728,20,1.333,6,1,&s=0.75|0.5|0.25|0.125,1.5|2|3|4|6|8,s-l&g=s,l,xl,12 */
+
+    --space-4xs: clamp(0.125rem, 0.1077rem + 0.0739vw, 0.1875rem);
+    --space-3xs: clamp(0.25rem, 0.2327rem + 0.0739vw, 0.3125rem);
+    --space-2xs: clamp(0.5rem, 0.4654rem + 0.1478vw, 0.625rem);
+    --space-xs: clamp(0.75rem, 0.698rem + 0.2217vw, 0.9375rem);
+    --space-s: clamp(1rem, 0.9307rem + 0.2956vw, 1.25rem);
+    --space-m: clamp(1.5rem, 1.3961rem + 0.4435vw, 1.875rem);
+    --space-l: clamp(2rem, 1.8614rem + 0.5913vw, 2.5rem);
+    --space-xl: clamp(3rem, 2.7921rem + 0.8869vw, 3.75rem);
+    --space-2xl: clamp(4rem, 3.7228rem + 1.1826vw, 5rem);
+    --space-3xl: clamp(6rem, 5.5843rem + 1.7738vw, 7.5rem);
+    --space-4xl: clamp(8rem, 7.4457rem + 2.3651vw, 10rem);
+
+    /* One-up pairs */
+    --space-4xs-3xs: clamp(0.125rem, 0.073rem + 0.2217vw, 0.3125rem);
+    --space-3xs-2xs: clamp(0.25rem, 0.1461rem + 0.4435vw, 0.625rem);
+    --space-2xs-xs: clamp(0.5rem, 0.3787rem + 0.5174vw, 0.9375rem);
+    --space-xs-s: clamp(0.75rem, 0.6114rem + 0.5913vw, 1.25rem);
+    --space-s-m: clamp(1rem, 0.7575rem + 1.0347vw, 1.875rem);
+    --space-m-l: clamp(1.5rem, 1.2228rem + 1.1826vw, 2.5rem);
+    --space-l-xl: clamp(2rem, 1.515rem + 2.0695vw, 3.75rem);
+    --space-xl-2xl: clamp(3rem, 2.4457rem + 2.3651vw, 5rem);
+    --space-2xl-3xl: clamp(4rem, 3.0299rem + 4.139vw, 7.5rem);
+    --space-3xl-4xl: clamp(6rem, 4.8914rem + 4.7302vw, 10rem);
+
+    /* Custom pairs */
+    --space-s-l: clamp(1rem, 0.5843rem + 1.7738vw, 2.5rem);
+
+    /* === Colors === */
+    --color-background: #0a0a0a;
+    --color-foreground: #ededed;
+
+    /* === Border Radius === */
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-pixel: var(--font-pixel);
+  --font-outfit: var(--font-outfit);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* No dark mode */
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-pixel);
 }
