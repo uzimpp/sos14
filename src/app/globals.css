@@ -67,10 +67,11 @@
   --border-radius-md: 0.5rem;
 
   /* === Animations === */
-  --ease-smooth: cubic-bezier(0.5, 0.5, 0, 1);
+  --ease-smooth: cubic-bezier(0.4, 0.15, 0.6, 0.85);
+  --elastic: cubic-bezier(0.52, 1.27, 0.72, 1);
 
   /* === Pre-calculations === */
-  --navbar-height: calc((2 * var(--space-xs-s)) + var(--space-l));
+  --navbar-height: calc(0rem);
   --min-page-height: calc(100dvh - var(--navbar-height));
 
   /* === Shadows === */
