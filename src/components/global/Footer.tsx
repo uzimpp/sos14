@@ -2,30 +2,33 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="p-6 flex flex-col gap-4">
+    <footer className="flex flex-col gap-(--space-m) p-(--space-s) mx-(--space-xs)">
       {/* section 2 */}
-      <div className="flex flex-row items-center justify-between">
+      <div className="flex flex-col items-center justify-center md:justify-between md:flex-row gap-y-(--space-m) gap-x-(--space-m)">
         {/* title part */}
-        <Link href="/" className="large-title bold text-green">
+        <Link href="/" className="large-title font-bold text-green">
           SOS14
         </Link>
         {/* link part */}
-        <div className="flex flex-row gap-6">
-          <div className="flex flex-col gap-2">
-            <Link href="/" className="text--1 bold">
+        <div className="flex flex-row w-full justify-center gap-x-(--space-m) gap-y-(--space-m) md:justify-end">
+          <div className="flex flex-col gap-(--space-3xs)">
+            <Link href="/" className="text--1 font-bold">
               Home
             </Link>
+            <div className="flex flex-col gap-(--space-4xs)">
+              <Link href="/#agenda" className="text--1">
+                Agenda
+              </Link>
+              <Link href="/#location" className="text--1">
+                Location
+              </Link>
+            </div>
           </div>
-          <div className="flex flex-col gap-2">
-            <Link href="/#agenda" className="text--1 bold">
-              Agenda
-            </Link>
-          </div>
-          <div className="flex flex-col gap-2">
-            <Link href="/problems" className="text--1 bold">
+          <div className="flex flex-col gap-(--space-3xs)">
+            <Link href="/problems" className="text--1 font-bold">
               Problems
             </Link>
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-(--space-4xs)">
               <Link href="/problems/day1" className="text--1">
                 Day 1
               </Link>
@@ -37,11 +40,11 @@ export default function Footer() {
               </Link>
             </div>
           </div>
-          <div className="flex flex-col gap-2">
-            <Link href="/faqs" className="text--1 bold">
+          <div className="flex flex-col gap-(--space-3xs)">
+            <Link href="/faqs" className="text--1 font-bold">
               FAQ's
             </Link>
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-(--space-4xs)">
               <Link href="/faqs/about-ske" className="text--1">
                 About SKE
               </Link>
@@ -53,9 +56,9 @@ export default function Footer() {
               </Link>
             </div>
           </div>
-          <div className="flex flex-col gap-2">
-            <p className="text--1 bold">Contact</p>
-            <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-(--space-3xs)">
+            <p className="text--1 font-bold">Contact</p>
+            <div className="flex flex-col gap-(--space-4xs)">
               <Link
                 href="https://www.instagram.com/sos14.camp/"
                 className="text--1"
@@ -70,9 +73,9 @@ export default function Footer() {
         </div>
       </div>
       {/* section 3 */}
-      <div className="flex flex-row items-center justify-between">
+      <div className="flex flex-col items-center justify-center md:justify-between md:flex-row">
         {/* Credit part */}
-        <p className="text--1">
+        <p className="text--1 text-center md:text-left">
           Made with <span className="text-pink">Heart</span> by the SOS14 Camp
           team
           <br />© 2025 All rights reserved.
@@ -80,25 +83,25 @@ export default function Footer() {
         {/* morse code part */}
         <div className="flex flex-row items-center gap-4 opacity-14">
           <div className="flex flex-row items-center gap-4">
-            <div className="flex flex-row items-center gap-2">
+            <div className="flex flex-row items-center gap-(--space-xs)">
               <div className="w-5 h-5 bg-white rounded-full"></div>
               <div className="w-5 h-5 bg-white rounded-full"></div>
               <div className="w-5 h-5 bg-white rounded-full"></div>
             </div>
-            <div className="flex flex-row items-center gap-2">
+            <div className="flex flex-row items-center gap-(--space-xs)">
               <div className="w-8 h-5 bg-white rounded-full"></div>
               <div className="w-8 h-5 bg-white rounded-full"></div>
               <div className="w-8 h-5 bg-white rounded-full"></div>
             </div>
-            <div className="flex flex-row items-center gap-2">
+            <div className="flex flex-row items-center gap-(--space-xs)">
               <div className="w-5 h-5 bg-white rounded-full"></div>
               <div className="w-5 h-5 bg-white rounded-full"></div>
               <div className="w-5 h-5 bg-white rounded-full"></div>
             </div>
           </div>
-          <p className="text-3 bold">14</p>
+          <p className="text-3 font-bold">14</p>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
