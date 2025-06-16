@@ -149,6 +149,10 @@
 }
 
 @layer components {
+  .landing-title {
+    font-size: var(--text-11) !important;
+  }
+
   .no_line_height {
     line-height: 1 !important;
   }

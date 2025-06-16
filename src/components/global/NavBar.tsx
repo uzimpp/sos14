@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function NavBar() {
   return (
-    <nav className="flex flex-row items-center justify-between p-(--space-s) mx-(--space-xs)">
+    <nav className="max-w-[1728px] w-full justify-self-center flex flex-row items-center justify-between p-(--space-s) mx-(--space-xs)">
       {/* logo part */}
       <div className="flex flex-row items-center gap-4">
         <button>
@@ -12,7 +12,7 @@ export default function NavBar() {
         </button>
       </div>
       {/* link part */}
-      <div className="flex flex-row items-center gap-(--space-xl)">
+      <div className="flex flex-col gap-x-(--space-xl) gap-y-(--space-s) md:items-center md:flex-row md:">
         <button>
           <Link href="/" className="text-0">
             Home

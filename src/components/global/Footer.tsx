@@ -1,13 +1,14 @@
 import Link from "next/link";
+import ScrambleText from "@/components/effects/ScrambleText";
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col gap-(--space-m) p-(--space-s) mx-(--space-xs)">
+    <footer className="max-w-[1728px] w-full justify-self-center flex flex-col gap-(--space-m) p-(--space-s) mx-(--space-xs)">
       {/* section 2 */}
       <div className="flex flex-col items-center justify-center md:justify-between md:flex-row gap-y-(--space-m) gap-x-(--space-m)">
         {/* title part */}
         <Link href="/" className="large-title font-bold text-green">
-          SOS14
+          <ScrambleText>SOS14</ScrambleText>
         </Link>
         {/* link part */}
         <div className="flex flex-row w-full justify-center gap-x-(--space-m) gap-y-(--space-m) md:justify-end">
