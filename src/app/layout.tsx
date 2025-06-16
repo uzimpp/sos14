@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Outfit, Pixelify_Sans } from "next/font/google";
+import NavBar from "@/components/global/NavBar";
+import Footer from "@/components/global/Footer";
 import "./globals.css";
-
 
 const pixel = Pixelify_Sans({
   variable: "--font-pixel",
@@ -13,11 +14,10 @@ const outfit = Outfit({
   subsets: ["latin"],
 });
 
-
 export const metadata: Metadata = {
   title: "SOS14",
   description:
-    "Welcome to the 14th SOS camp, a preparation camp for SKE23 students. We prepare  will take you through Python programming fundamentalsp",
+    "Welcome to the 14th SOS camp, a preparation camp for SKE23 students. We will take you through Python programming fundamentalsp",
 };
 
 export default function RootLayout({
@@ -27,10 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${pixel.variable} ${outfit.variable} antialiased`}
-      >
-        {children}
+      <body className={`${pixel.variable} ${outfit.variable} antialiased`}>
+        <NavBar />
+        <main className="h-screen">{children}</main>
+        <Footer />
       </body>
     </html>
   );
