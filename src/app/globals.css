@@ -133,6 +133,8 @@
     font-weight: 400;
     background-color: var(--color-black);
     color: var(--color-white);
+    word-spacing: 0.1125rem;
+    letter-spacing: 0.4px;
   }
 
   main {
@@ -193,14 +195,11 @@
   }
 
   .medium {
-
   }
 
   .semibold {
-
   }
 
   .bold {
-    
   }
 }
