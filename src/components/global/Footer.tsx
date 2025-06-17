@@ -3,7 +3,7 @@ import ScrambleText from "@/components/effects/ScrambleText";
 
 export default function Footer() {
   return (
-    <footer className="max-w-[1728px] w-full justify-self-center flex flex-col gap-(--space-m) p-(--space-s) mx-(--space-xs)">
+    <footer className="max-w-[1728px] w-full justify-self-center flex flex-col gap-(--space-m) px-(--space-m) py-(--space-s)">
       {/* section 2 */}
       <div className="flex flex-col items-center justify-center md:justify-between md:flex-row gap-y-(--space-m) gap-x-(--space-m)">
         {/* title part */}
@@ -43,16 +43,16 @@ export default function Footer() {
           </div>
           <div className="flex flex-col gap-(--space-3xs)">
             <Link href="/faqs" className="text--1 font-bold">
-              FAQ's
+              FAQ&apos;s
             </Link>
             <div className="flex flex-col gap-(--space-4xs)">
-              <Link href="/faqs/about-ske" className="text--1">
+              <Link href="/faqs#AboutSKE" className="text--1">
                 About SKE
               </Link>
-              <Link href="/faqs/about-sos-camp" className="text--1">
-                About SOS Camp
+              <Link href="/faqs#AboutSOScamp" className="text--1">
+                SOS Camp
               </Link>
-              <Link href="/faqs/programming" className="text--1">
+              <Link href="/faqs#Programming" className="text--1">
                 Programming
               </Link>
             </div>

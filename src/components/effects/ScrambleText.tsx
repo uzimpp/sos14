@@ -105,7 +105,7 @@ export default function ScrambleText({
               specialChars[Math.floor(Math.random() * specialChars.length)];
           }
 
-          if (frameRef.current % 20 === 0 && frameRef.current !== 0) {
+          if (frameRef.current % 14 === 0 && frameRef.current !== 0) {
             span.textContent = scrambledSpan.originalChar;
             idxRef.current++;
           }

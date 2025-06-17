@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${pixel.variable} ${outfit.variable} antialiased`}>
         <NavBar />
-        <main className="h-screen">{children}</main>
+        <main className="min-h-screen bg-dark-purple">{children}</main>
         <Footer />
       </body>
     </html>

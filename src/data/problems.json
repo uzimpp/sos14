@@ -1,0 +1,64 @@
+{
+    "days": {
+        "1": {
+            "problems": [
+                {
+                    "number": "1",
+                    "name": "Intro",
+                    "description": "Introduction to Python programming",
+                    "image": "/problems/1.png",
+                    "url": "https://smth.com",
+                    "completed": "no"
+                },
+                {
+                    "number": "2",
+                    "name": "Intro2",
+                    "description": "Introduction to Python programming",
+                    "image": "/problems/2.png",
+                    "url": "https://smth.com",
+                    "completed": "no"
+                }
+            ]
+        },
+        "2": {
+            "problems": [
+                {
+                    "number": "1",
+                    "name": "Variables",
+                    "description": "Learn about Python variables and data types",
+                    "image": "/problems/1.png",
+                    "url": "https://smth.com",
+                    "completed": "no"
+                },
+                {
+                    "number": "2",
+                    "name": "Loops",
+                    "description": "Understanding loops in Python",
+                    "image": "/problems/2.png",
+                    "url": "https://smth.com",
+                    "completed": "no"
+                }
+            ]
+        },
+        "3": {
+            "problems": [
+                {
+                    "number": "1",
+                    "name": "Conditionals",
+                    "description": "Understanding if-else statements in Python",
+                    "image": "/problems/1.png",
+                    "url": "https://smth.com",
+                    "completed": "no"
+                },
+                {
+                    "number": "2",
+                    "name": "Functions",
+                    "description": "Defining and calling functions in Python",
+                    "image": "/problems/2.png",
+                    "url": "https://smth.com",
+                    "completed": "no"
+                }
+            ]
+        }
+    }
+}
