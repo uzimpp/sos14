@@ -65,6 +65,13 @@
   --color-green: #b7e862;
   --color-blue: #547eff;
   --color-white: #f2ecf4;
+  --color-grey: #3e3b3b;
+
+  /* === Round === */
+  --round-s: 0.25rem;
+  --round-m: 0.5rem;
+  --round-l: 1rem;
+  --round-xl: 1.5rem;
 
   /* === Border Radius === */
   --border-radius-sm: 0.25rem;
