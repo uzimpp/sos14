@@ -7,12 +7,12 @@ export default function Home() {
     <div className="!pb-(--space-4xl) px-(--space-m) py-(--space-s) max-w-[1728px] w-full flex justify-self-center flex-col justify-center items-center">
       <div className="flex flex-col md:flex-row gap-(--space-l) justify-between mt-(--space-m)">
         <div className="inline-block md:justify-start mx-auto text-center">
-          <ScrambleText className="xl:text-[300px] md:text-[20vw] text-[30vw] bold text-green no_line_height w-fit">
+          <ScrambleText className="xl:text-[300px] md:text-[20vw] text-[30vw] bold text-green no_line_height w-fit ">
             SOS14
           </ScrambleText>
         </div>
         <div className="flex items-center">
-          <p className="text-2 md:text-left text-center text-white/60">
+          <p className="text-1 md:text-left text-center text-white/60">
             Welcome to the 14th SOS camp, a preparation camp for SKE23 students.
             We will take you through Python programming fundamentals
           </p>
@@ -24,22 +24,45 @@ export default function Home() {
         <div></div>
       </section>
 
-      <section id="benefits">
-        <h3>What will SKE23 recieve?</h3>
-        <div>
-          <Image src={"star.svg"} alt="fun" width={200} height={200} />
-          <h6>Fun</h6>
-          <p></p>
-        </div>
-        <div>
-          <Image src={"friend.svg"} alt="friends" width={200} height={200} />
-          <h6>Friends</h6>
-          <p></p>
-        </div>
-        <div>
-          <Image src={"coding.svg"} alt="codings" width={200} height={200} />
-          <h6>Basic</h6>
-          <p></p>
+      <section
+        id="benefits"
+        className="flex flex-col w-full items-center px-(--space-l)"
+      >
+        <h3 className="text-center">What will SKE23 recieve?</h3>
+        <div className="flex flex-col sm:flex-row max-w-[calc(5.5*var(--space-4xl))] w-full justify-between gap-y-(--space-m)">
+          <div className="flex flex-col gap-(--space-4xs) items-center">
+            <Image
+              src={"star.svg"}
+              alt="fun"
+              width={144}
+              height={144}
+              className="drop-shadow-[0_0_40px_var(--color-yellow)]"
+            />
+            <h4 className="text-center mt-(--space-m) text-3">Fun</h4>
+            <p className="text-center">Test</p>
+          </div>
+          <div className="flex flex-col gap-(--space-4xs) items-center">
+            <Image
+              src={"friend.svg"}
+              alt="friends"
+              width={144}
+              height={144}
+              className="drop-shadow-[0_0_40px_var(--color-pink)]"
+            />
+            <h4 className="text-center mt-(--space-m) text-3">Friends</h4>
+            <p className="text-center"></p>
+          </div>
+          <div className="flex flex-col gap-(--space-4xs) items-center">
+            <Image
+              src={"coding.svg"}
+              alt="codings"
+              width={144}
+              height={144}
+              className="drop-shadow-[0_0_40px_var(--color-blue)]"
+            />
+            <h4 className="text-center mt-(--space-m) text-3">Basics</h4>
+            <p className="text-center"></p>
+          </div>
         </div>
       </section>
 
@@ -49,9 +72,11 @@ export default function Home() {
 
       <section id="location" className="flex flex-col items-center">
         <div className="relative max-w-[calc(5.5*var(--space-4xl))] w-full mx-auto">
-          <ScrambleText className="text-5 font-bold no_line_height">
-            Location
-          </ScrambleText>
+          <h2>
+            <ScrambleText className="text-5 font-medium no_line_height">
+              Location
+            </ScrambleText>
+          </h2>
           <div className="bg-light-purple rounded-(--round-m) overflow-hidden">
             <div className="relative w-full aspect-[16/9]">
               <iframe

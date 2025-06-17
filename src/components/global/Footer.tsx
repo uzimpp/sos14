@@ -63,10 +63,15 @@ export default function Footer() {
               <Link
                 href="https://www.instagram.com/sos14.camp/"
                 className="text--1"
+                target="_blank"
               >
                 Instagram
               </Link>
-              <Link href="https://discord.gg/sos14" className="text--1">
+              <Link
+                href="https://discord.gg/CGmp5ahe"
+                className="text--1"
+                target="_blank"
+              >
                 Discord
               </Link>
             </div>
