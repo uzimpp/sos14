@@ -43,7 +43,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-col gap-(--space-3xs)">
             <Link href="/faqs" className="text--1 font-bold">
-              FAQ's
+              FAQ&apos;s
             </Link>
             <div className="flex flex-col gap-(--space-4xs)">
               <Link href="/faqs#AboutSKE" className="text--1">
