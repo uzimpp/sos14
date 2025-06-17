@@ -29,7 +29,7 @@ export default function NavBar() {
           </Link>
         </button>
         <button>
-          <Link href="/faq" className="text-0">
+          <Link href="/faqs" className="text-0">
             FAQ's
           </Link>
         </button>

@@ -79,7 +79,7 @@
 
   /* === Animations === */
   --ease-smooth: cubic-bezier(0.4, 0.15, 0.6, 0.85);
-  --aelastic: cubic-bezier(0.52, 1.27, 0.72, 1);
+  --elastic: cubic-bezier(0.52, 1.27, 0.72, 1);
 
   /* === Pre-calculations === */
   --navbar-height: calc(0rem);
@@ -138,12 +138,6 @@
   main {
     margin-top: var(--navbar-height);
     min-height: calc(100dvh - var(--navbar-height));
-    background-color: var(--color-dark-purple);
-  }
-
-  section {
-    padding-top: var(--space-2xl);
-    margin-bottom: var(--space-2xl);
   }
 
   button {
@@ -156,6 +150,16 @@
 }
 
 @layer components {
+  .elastic {
+    --tw-ease: var(--elastic);
+    transition-timing-function: var(--elastic);
+  }
+
+  @property --tw-ease {
+    syntax: "*";
+    inherits: false;
+  }
+
   .landing-title {
     font-size: var(--text-11) !important;
   }
@@ -183,5 +187,20 @@
 
   .myshadow {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .regular {
+  }
+
+  .medium {
+
+  }
+
+  .semibold {
+
+  }
+
+  .bold {
+    
   }
 }

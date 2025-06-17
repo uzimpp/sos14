@@ -3,7 +3,7 @@ import ScrambleText from "@/components/effects/ScrambleText";
 
 export default function Home() {
   return (
-    <div className="max-w-[1728px] w-full flex px-(--space-m) py-(--space-s) justify-self-center flex-col justify-center items-center">
+    <div className="!pb-(--space-4xl) px-(--space-m) py-(--space-s) max-w-[1728px] w-full flex justify-self-center flex-col justify-center items-center">
       <div className="flex flex-col md:flex-row gap-4 justify-between">
         <div className="inline-block md:justify-start mx-auto text-center">
           <ScrambleText className="xl:text-[300px] md:text-[20vw] text-[30vw] bold text-green no_line_height w-fit">

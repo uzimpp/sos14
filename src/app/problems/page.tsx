@@ -6,7 +6,7 @@ export default function Problems() {
   return (
     <div className="w-full">
       <ProgressBar />
-      <div className="max-w-[1728px] w-full flex px-(--space-m) py-(--space-s) justify-self-center justify-center">
+      <div className="!pb-(--space-4xl) px-(--space-m) py-(--space-s) max-w-[1728px] w-full flex justify-self-center justify-center">
         <div className="flex flex-col mt-(--space-l) mb-(--space-l)">
           <ScrambleText className="text-6 text-white no_line_height font-bold text-center flex mx-auto mb-(--space-s)">
             PROBLEMS

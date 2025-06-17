@@ -46,13 +46,13 @@ export default function Footer() {
               FAQ's
             </Link>
             <div className="flex flex-col gap-(--space-4xs)">
-              <Link href="/faqs/about-ske" className="text--1">
+              <Link href="/faqs#AboutSKE" className="text--1">
                 About SKE
               </Link>
-              <Link href="/faqs/about-sos-camp" className="text--1">
-                About SOS Camp
+              <Link href="/faqs#AboutSOScamp" className="text--1">
+                SOS Camp
               </Link>
-              <Link href="/faqs/programming" className="text--1">
+              <Link href="/faqs#Programming" className="text--1">
                 Programming
               </Link>
             </div>
