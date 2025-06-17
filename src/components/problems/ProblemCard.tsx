@@ -1,5 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+interface Problem {
+  number: number;
+  image: string;
+  name: string;
+  description: string;
+  url: string;
+  completed: string;
+}
 
 export default function ProblemCard({
   number = 0,
@@ -9,8 +17,8 @@ export default function ProblemCard({
   url = "none",
   completed = "false",
 }: Problem) {
-  const isCompleted = completed === "true";
-  
+  //   const isCompleted = completed === "true";
+
   return (
     <div>
       <Image src={image} alt={name} />
