@@ -17,7 +17,7 @@ export default function ProblemCard({
   url = "none",
   completed = "false",
 }: Problem) {
-  //   const isCompleted = completed === "true";
+  const isCompleted = completed === "true";
 
   return (
     <div>
@@ -34,7 +34,11 @@ export default function ProblemCard({
         >
           View
         </Link>
-        <input type="checkbox w-(--space-s) h-(--space-s)"></input>
+        <input
+          type="checkbox"
+          checked={isCompleted}
+          className="w-(--space-s) h-(--space-s)"
+        />
       </div>
     </div>
   );
