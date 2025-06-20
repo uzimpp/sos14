@@ -9,7 +9,10 @@ export default function Footer() {
       {/* section 2 */}
       <div className="flex flex-col items-center justify-center md:justify-between md:flex-row gap-y-(--space-m) gap-x-(--space-m)">
         {/* title part */}
-        <Link href="/" className="large-title font-bold text-green">
+        <Link
+          href="/"
+          className="large-title font-bold text-green drop-shadow-[0_0_10px_var(--color-green)]"
+        >
           <ScrambleText>SOS14</ScrambleText>
         </Link>
         {/* link part */}
