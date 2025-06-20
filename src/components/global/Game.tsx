@@ -4,7 +4,7 @@ import MagneticBtn from "@/components/effects/MagneticBtn";
 export function Skill() {
   return (
     <div className="flex flex-row items-center">
-      <button className="relative w-[var(--space-2xl)] h-[var(--space-2xl)]">
+      <button className="relative w-[var(--space-2xl)] aspect-[96/107] justify-end">
         <Image
           src="/game/skill/skill.svg"
           alt="skill"
@@ -13,7 +13,7 @@ export function Skill() {
         />
       </button>
       <div className="flex flex-col gap-y-(--space-m)">
-        <button className="relative w-[var(--space-2xl)] h-[var(--space-2xl)]">
+        <button className="relative w-[var(--space-2xl)] aspect-[96/107] justify-end">
           <Image
             src="/game/skill/skill.svg"
             alt="skill"
@@ -21,7 +21,7 @@ export function Skill() {
             className="object-contain"
           />
         </button>
-        <button className="relative w-[var(--space-2xl)] h-[var(--space-2xl)]">
+        <button className="relative w-[var(--space-2xl)] aspect-[96/107] justify-end">
           <Image
             src="/game/skill/skill.svg"
             alt="skill"
@@ -30,7 +30,7 @@ export function Skill() {
           />
         </button>
       </div>
-      <button className="relative w-[var(--space-2xl)] h-[var(--space-2xl)]">
+      <button className="relative w-[var(--space-2xl)] aspect-[96/107] justify-end">
         <Image
           src="/game/skill/skill.svg"
           alt="skill"
@@ -123,16 +123,11 @@ export default function Game() {
       <div className="flex flex-row gap-x-(--space-m)">
         {/* A B btn */}
         <div className="flex flex-col gap-y-(--space-m)">
-          <button className="relative w-[var(--space-2xl)] h-[var(--space-2xl)]">
-            <Image src="/game/AB/A.svg" alt="A" fill className="object-cover" />
+          <button className="relative w-[var(--space-2xl)] aspect-[96/107] justify-end">
+            <Image src="/game/AB/A.svg" alt="A" fill className="object-contain" />
           </button>
-          <button className="relative w-[var(--space-2xl)] h-[var(--space-2xl)]">
-            <Image
-              src="/game/AB/B.svg"
-              alt="B"
-              fill
-              className="object-contain"
-            />
+          <button className="relative w-[var(--space-2xl)] aspect-[96/107] justify-end">
+            <Image src="/game/AB/B.svg" alt="B" fill className="object-contain" />
           </button>
         </div>
         {/* JoyStick */}
