@@ -37,10 +37,9 @@ export default function Framer({
       animate={position}
       transition={{
         type: "spring",
-        bounce: 0.1,
-        stiffness: 50,
-        damping: 40,
-        mass: 0.4,
+        bounce: 0.2,
+        damping: 30,
+        mass: 0.7,
       }}
       style={{ position: "relative" }}
     >

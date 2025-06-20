@@ -1,4 +1,5 @@
 import Image from "next/image";
+import MagneticBtn from "@/components/effects/MagneticBtn";
 
 export default function Game() {
   return (
@@ -9,7 +10,7 @@ export default function Game() {
         <div className="flex flex-col gap-y-(--space-m)">
           <button className="relative w-[var(--space-2xl)] h-[var(--space-2xl)]">
             <Image
-              src="/footer/btn-A.svg"
+              src="/footer/A.svg"
               alt="A"
               fill
               className="object-cover"
@@ -17,8 +18,8 @@ export default function Game() {
           </button>
           <button className="relative w-[var(--space-2xl)] h-[var(--space-2xl)]">
             <Image
-              src="/footer/btn-b.svg"
-              alt="b"
+              src="/footer/B.svg"
+              alt="B"
               fill
               className="object-contain"
             />
@@ -26,14 +27,14 @@ export default function Game() {
         </div>
         {/* JoyStick */}
         <div className="flex h-full items-center">
-          <button className="relative w-[var(--space-2xl)] h-[var(--space-2xl)]">
+          <MagneticBtn className="relative w-[var(--space-2xl)] h-[var(--space-2xl)]">
             <Image
-              src="/footer/stick.svg"
+              src="/footer/joystick.svg"
               alt="joystick"
               fill
               className="object-contain"
             />
-          </button>
+          </MagneticBtn>
         </div>
       </div>
       {/* Right */}
