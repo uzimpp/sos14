@@ -150,6 +150,22 @@
   a {
     cursor: pointer;
   }
+
+  svg {
+    display: block;
+  }
+
+  span {
+    padding: 0;
+    margin: 0;
+    gap: 0;
+  }
+
+  img {
+    padding: 0;
+    margin: 0;
+    gap: 0;
+  }
 }
 
 @layer components {

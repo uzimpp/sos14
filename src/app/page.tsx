@@ -32,7 +32,7 @@ export default function Home() {
         <div className="flex flex-col sm:flex-row max-w-[calc(5.5*var(--space-4xl))] w-full justify-between gap-y-(--space-m)">
           <div className="flex flex-col gap-(--space-4xs) items-center">
             <Image
-              src={"star.svg"}
+              src={"landing/star.svg"}
               alt="fun"
               width={144}
               height={144}
@@ -43,7 +43,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-(--space-4xs) items-center">
             <Image
-              src={"friend.svg"}
+              src={"landing/friend.svg"}
               alt="friends"
               width={144}
               height={144}
@@ -54,7 +54,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-(--space-4xs) items-center">
             <Image
-              src={"coding.svg"}
+              src={"landing/coding.svg"}
               alt="codings"
               width={144}
               height={144}

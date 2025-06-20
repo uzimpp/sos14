@@ -1,9 +1,11 @@
 import Link from "next/link";
 import ScrambleText from "@/components/effects/ScrambleText";
+import Game from "./Game";
 
 export default function Footer() {
   return (
     <footer className="max-w-[1728px] w-full justify-self-center flex flex-col gap-(--space-m) px-(--space-m) py-(--space-s)">
+      <Game />
       {/* section 2 */}
       <div className="flex flex-col items-center justify-center md:justify-between md:flex-row gap-y-(--space-m) gap-x-(--space-m)">
         {/* title part */}
@@ -30,13 +32,13 @@ export default function Footer() {
               Problems
             </Link>
             <div className="flex flex-col gap-(--space-4xs)">
-              <Link href="/problems/day1" className="text--1">
+              <Link href="/problems#day1" className="text--1">
                 Day 1
               </Link>
-              <Link href="/problems/day2" className="text--1">
+              <Link href="/problems#day2" className="text--1">
                 Day 2
               </Link>
-              <Link href="/problems/day3" className="text--1">
+              <Link href="/problems#day3" className="text--1">
                 Day 3
               </Link>
             </div>
