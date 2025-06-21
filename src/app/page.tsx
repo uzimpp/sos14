@@ -94,10 +94,12 @@ export default function Home() {
       </section>
 
       <section>
-        <h2 className="font-medium">
-          We are looking forward to seeing{" "}
-          <span className="text-pink font-semibold">SKE23</span> at{" "}
-          <span className="font-semibold text-green">SOS14</span>
+        <h2 className="font-medium text-center">
+          We are looking forward to
+          <br /> seeing <span className="text-pink font-semibold">
+            SKE23
+          </span>{" "}
+          at <span className="font-semibold text-green">SOS14</span>
         </h2>
       </section>
     </div>
