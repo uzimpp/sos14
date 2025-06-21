@@ -118,11 +118,32 @@ export function Joystick() {
 }
 
 export function Inserter() {
-  const [isInserting, setisInserting] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [coinZIndex, setCoinZIndex] = useState(50);
 
   function handleClick() {
-    setisInserting(true);
+    setIsAnimating(true);
+    setCoinZIndex(50); // Start above everything
   }
+
+  useEffect(() => {
+    if (isAnimating) {
+      // After 1.2s, move coin behind the mask
+      const zIndexTimer = setTimeout(() => {
+        setCoinZIndex(1);
+      }, 1200);
+
+      // After 2s, stop animation
+      const animationTimer = setTimeout(() => {
+        setIsAnimating(false);
+      }, 2000);
+
+      return () => {
+        clearTimeout(zIndexTimer);
+        clearTimeout(animationTimer);
+      };
+    }
+  }, [isAnimating]);
 
   return (
     <div className="flex h-full items-center">
@@ -135,9 +156,8 @@ export function Inserter() {
             className="object-contain"
           />
         </div>
-
         <button
-          className="w-[calc(var(--space-2xl)*74/96)] h-[calc(var(--space-2xl)*192/96)] z-10"
+          className="absolute w-[calc(var(--space-2xl)*74/96)] h-[calc(var(--space-2xl)*192/96)] z-10"
           onClick={handleClick}
         >
           <Image
@@ -147,8 +167,11 @@ export function Inserter() {
             className="object-contain"
           />
         </button>
-        {isInserting ? (
-          <div className="absolute inset-0 flex items-center justify-center z-20">
+        {isAnimating && (
+          <div
+            className="absolute inset-0 flex items-center justify-center animate-coin-insert"
+            style={{ zIndex: coinZIndex }}
+          >
             <div className="relative w-[calc(var(--space-2xl)*30/96)] h-[calc(var(--space-2xl)*104/96)]">
               <Image
                 src="/game/coin.svg"
@@ -158,7 +181,7 @@ export function Inserter() {
               />
             </div>
           </div>
-        ) : null}
+        )}
       </div>
     </div>
   );
