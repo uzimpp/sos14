@@ -14,7 +14,7 @@ export default function Footer() {
         {/* title part */}
         <Link href="/" className="large-title font-bold text-green">
           <ScrambleText>
-            <span className="glow">SOS14</span>
+            <span className="glow glow-green">SOS14</span>
           </ScrambleText>
         </Link>
         {/* link part */}

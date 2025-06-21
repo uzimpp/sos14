@@ -6,7 +6,7 @@ export default function FAQs() {
   return (
     <div className="!pb-(--space-4xl) px-(--space-m) py-(--space-s) max-w-[1728px] w-full flex flex-col justify-self-center justify-center">
       <div className="flex flex-col my-(--space-xl) gap-(--space-s)">
-        <ScrambleText className="text-6 text-white no_line_height font-bold text-center flex mx-auto">
+        <ScrambleText className="text-6 text-white no_line_height font-bold text-center flex mx-auto glow glow-pink">
           FAQ&apos;s
         </ScrambleText>
         <div className="max-w-[calc(5.5*var(--space-4xl))] flex mx-auto">

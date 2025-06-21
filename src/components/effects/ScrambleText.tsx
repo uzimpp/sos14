@@ -19,7 +19,7 @@ export default function ScrambleText({
   children,
   className = "",
   defaultText = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
-  totalFrames = 11,
+  totalFrames = 10,
 }: ScrambleTextProps) {
   const elementRef = useRef<HTMLHeadingElement>(null);
   const [isIntersecting, setIsIntersecting] = useState(false);

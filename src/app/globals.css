@@ -198,22 +198,6 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3) !important;
   }
 
-  .glow {
-    border: none;
-    position: relative;
-  }
-
-  .glow::before {
-    content: "";
-    position: absolute;
-    inset: 20px;
-    background: var(--color-green);
-    opacity: 0.3;
-    filter: blur(30px);
-    border-radius: 9999px;
-    pointer-events: none;
-  }
-
   .title {
     font-size: var(--text-2);
     font-weight: bold;
@@ -283,5 +267,74 @@
 
   .coin-behind {
     z-index: 1 !important;
+  }
+}
+
+@layer utilities {
+  .glow {
+    position: relative;
+    display: inline-block;
+    z-index: 0;
+    line-height: 1;
+  }
+
+  .glow-green::after {
+    content: "";
+    position: absolute;
+    inset: var(--space-3xs);
+    background: var(--color-green);
+    opacity: 0.2;
+    filter: blur(var(--space-s));
+    border-radius: 9999px;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+    .glow-green-lg::after {
+    content: "";
+    position: absolute;
+    inset: var(--space-xs);
+    background: var(--color-green);
+    opacity: 0.15;
+    filter: blur(var(--space-xl));
+    border-radius: 9999px;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .glow-blue::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--color-blue);
+    opacity: 0.4;
+    filter: blur(var(--space-m));
+    border-radius: 9999px;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .glow-pink::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--color-pink);
+    opacity: 0.6;
+    filter: blur(var(--space-l));
+    border-radius: 9999px;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .glow-pink-md::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--color-pink);
+    opacity: 0.33;
+    filter: blur(var(--space-l));
+    border-radius: 9999px;
+    pointer-events: none;
+    z-index: -1;
   }
 }
