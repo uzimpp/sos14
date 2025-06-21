@@ -66,6 +66,7 @@
   --color-blue: #547eff;
   --color-white: #f2ecf4;
   --color-grey: #3e3b3b;
+  --color-yellow: #e8d462;
 
   /* === Round === */
   --round-s: 0.25rem;
@@ -133,6 +134,8 @@
     font-weight: 400;
     background-color: var(--color-black);
     color: var(--color-white);
+    word-spacing: 0.1125rem;
+    letter-spacing: 0.4px;
   }
 
   main {
@@ -146,6 +149,22 @@
 
   a {
     cursor: pointer;
+  }
+
+  svg {
+    display: block;
+  }
+
+  span {
+    padding: 0;
+    margin: 0;
+    gap: 0;
+  }
+
+  img {
+    padding: 0;
+    margin: 0;
+    gap: 0;
   }
 }
 
@@ -193,14 +212,61 @@
   }
 
   .medium {
-
   }
 
   .semibold {
-
   }
 
   .bold {
-    
+  }
+
+  /* Coin insertion animation */
+  @keyframes coin-insert-above {
+    0% {
+      opacity: 0;
+      transform: translateY(75%) scale(1.5);
+    }
+    55% {
+      opacity: 1;
+      transform: translateY(2%) scale(1.21);
+    }
+    70% {
+      opacity: 1;
+      transform: translateY(-2%) scale(1.2);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes coin-insert-behind {
+    0% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    20% {
+      opacity: 0.8;
+      transform: translateY(2%) scale(0.9);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(20%) scale(0.8);
+    }
+  }
+
+  .animate-coin-insert {
+    animation: coin-insert-above 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+        forwards,
+      coin-insert-behind 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1.2s
+        forwards;
+  }
+
+  .coin-above {
+    z-index: 50 !important;
+  }
+
+  .coin-behind {
+    z-index: 1 !important;
   }
 }

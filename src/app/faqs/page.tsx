@@ -15,7 +15,7 @@ export default function FAQs() {
           </p>
         </div>
       </div>
-      <div className="flex flex-col justify-center max-w-[calc(5.5*var(--space-4xl))] w-full mx-auto gap-(--space-2xl) ">
+      <div className="flex flex-col justify-center max-w-[calc(5.5*var(--space-4xl))] w-full mx-auto gap-(--space-l)">
         {Object.entries(faqSections).map(([section, faqs]) => (
           <section key={section} id={section.replace(" ", "")} className="">
             <small className="opacity-20 font-bold border-b-[1.618px] border-white pb-(--space-2xs) block">

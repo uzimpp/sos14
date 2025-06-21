@@ -1,13 +1,18 @@
 import Link from "next/link";
 import ScrambleText from "@/components/effects/ScrambleText";
+import Game from "./Game";
 
 export default function Footer() {
   return (
     <footer className="max-w-[1728px] w-full justify-self-center flex flex-col gap-(--space-m) px-(--space-m) py-(--space-s)">
+      <Game />
       {/* section 2 */}
       <div className="flex flex-col items-center justify-center md:justify-between md:flex-row gap-y-(--space-m) gap-x-(--space-m)">
         {/* title part */}
-        <Link href="/" className="large-title font-bold text-green">
+        <Link
+          href="/"
+          className="large-title font-bold text-green drop-shadow-[0_0_10px_var(--color-green)]"
+        >
           <ScrambleText>SOS14</ScrambleText>
         </Link>
         {/* link part */}
@@ -30,13 +35,13 @@ export default function Footer() {
               Problems
             </Link>
             <div className="flex flex-col gap-(--space-4xs)">
-              <Link href="/problems/day1" className="text--1">
+              <Link href="/problems#day1" className="text--1">
                 Day 1
               </Link>
-              <Link href="/problems/day2" className="text--1">
+              <Link href="/problems#day2" className="text--1">
                 Day 2
               </Link>
-              <Link href="/problems/day3" className="text--1">
+              <Link href="/problems#day3" className="text--1">
                 Day 3
               </Link>
             </div>
@@ -63,10 +68,15 @@ export default function Footer() {
               <Link
                 href="https://www.instagram.com/sos14.camp/"
                 className="text--1"
+                target="_blank"
               >
                 Instagram
               </Link>
-              <Link href="https://discord.gg/sos14" className="text--1">
+              <Link
+                href="https://discord.gg/CGmp5ahe"
+                className="text--1"
+                target="_blank"
+              >
                 Discord
               </Link>
             </div>

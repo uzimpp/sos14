@@ -5,6 +5,8 @@ import React, { useEffect, useRef, useState } from "react";
 interface ScrambleTextProps {
   children: React.ReactNode;
   className?: string;
+  defaultText?: string;
+  totalFrames?: number;
 }
 
 interface ScrambledSpan {
@@ -12,11 +14,11 @@ interface ScrambledSpan {
   originalChar: string;
 }
 
-const specialChars = '!@£$%&}{":;?><][+=-_qwertyuiopasdfghjklzxcvbnm'.split("");
-
 export default function ScrambleText({
   children,
   className = "",
+  defaultText = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
+  totalFrames = 11,
 }: ScrambleTextProps) {
   const elementRef = useRef<HTMLHeadingElement>(null);
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -24,6 +26,7 @@ export default function ScrambleText({
   const frameRef = useRef(0);
   const animationRef = useRef<number>(0);
   const spansRef = useRef<ScrambledSpan[]>([]);
+  const splitted = defaultText.split("");
 
   useEffect(() => {
     if (!elementRef.current) return;
@@ -102,10 +105,10 @@ export default function ScrambleText({
 
           if (frameRef.current % 3 === 0 && span.textContent !== " ") {
             span.textContent =
-              specialChars[Math.floor(Math.random() * specialChars.length)];
+              splitted[Math.floor(Math.random() * splitted.length)];
           }
 
-          if (frameRef.current % 14 === 0 && frameRef.current !== 0) {
+          if (frameRef.current % totalFrames === 0 && frameRef.current !== 0) {
             span.textContent = scrambledSpan.originalChar;
             idxRef.current++;
           }
@@ -140,7 +143,15 @@ export default function ScrambleText({
   }, [isIntersecting]);
 
   return (
-    <div ref={elementRef} className={className} style={{ display: "flex" }}>
+    <div
+      ref={elementRef}
+      className={className}
+      style={{
+        display: "flex",
+        minWidth: "fit-content",
+        position: "relative",
+      }}
+    >
       {children}
     </div>
   );

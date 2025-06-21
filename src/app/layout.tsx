@@ -25,6 +25,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  console.log("/Password.png");
   return (
     <html lang="en">
       <body className={`${pixel.variable} ${outfit.variable} antialiased`}>
