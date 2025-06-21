@@ -4,7 +4,7 @@ import faqSections from "@/constant/faq";
 
 export default function FAQs() {
   return (
-    <div className="!pb-(--space-4xl) px-(--space-m) py-(--space-s) max-w-[1728px] w-full flex flex-col justify-self-center justify-center mx-auto">
+    <div className="!pb-(--space-4xl) px-(--space-m) py-(--space-s) max-w-[1728px] w-full flex flex-col justify-self-center justify-center">
       <div className="flex flex-col my-(--space-xl) gap-(--space-s)">
         <ScrambleText className="text-6 text-white no_line_height font-bold text-center flex mx-auto">
           FAQ&apos;s

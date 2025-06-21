@@ -7,7 +7,7 @@ export default function Home() {
     <div className="!pb-(--space-4xl) px-(--space-m) py-(--space-s) max-w-[1728px] w-full flex justify-self-center flex-col justify-center items-center">
       <div className="flex flex-col md:flex-row gap-(--space-l) justify-between mt-(--space-m)">
         <div className="inline-block md:justify-start mx-auto text-center">
-          <ScrambleText className="xl:text-[300px] md:text-[20vw] text-[30vw] bold text-green no_line_height w-fit ">
+          <ScrambleText className="xl:text-[300px] md:text-[20vw] text-[30vw] font-bold text-green no_line_height w-fit ">
             SOS14
           </ScrambleText>
         </div>
