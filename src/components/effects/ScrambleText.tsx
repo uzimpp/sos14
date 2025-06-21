@@ -12,6 +12,7 @@ interface ScrambleTextProps {
 interface ScrambledSpan {
   element: HTMLSpanElement;
   originalChar: string;
+  className?: string;
 }
 
 export default function ScrambleText({
@@ -34,7 +35,10 @@ export default function ScrambleText({
     const tempSpans: ScrambledSpan[] = [];
     elementRef.current.innerHTML = "";
 
-    const processChild = (child: React.ReactNode) => {
+    const processChild = (
+      child: React.ReactNode,
+      inheritedClassName?: string
+    ) => {
       if (!elementRef.current) return;
 
       if (typeof child === "string") {
@@ -50,8 +54,15 @@ export default function ScrambleText({
             span.style.opacity = "0";
             span.style.transform = "translateX(-10px)";
             span.style.display = "inline-block";
+            if (inheritedClassName) {
+              span.className = inheritedClassName;
+            }
             elementRef.current?.appendChild(span);
-            tempSpans.push({ element: span, originalChar: char });
+            tempSpans.push({
+              element: span,
+              originalChar: char,
+              className: inheritedClassName,
+            });
           }
         });
       } else if (React.isValidElement(child)) {
@@ -62,10 +73,21 @@ export default function ScrambleText({
           child.props !== null &&
           "children" in child.props
         ) {
-          processChild((child.props as { children: React.ReactNode }).children);
+          // Extract className from span elements
+          let newClassName = inheritedClassName;
+          if (child.type === "span" && (child.props as any).className) {
+            newClassName = inheritedClassName
+              ? `${inheritedClassName} ${(child.props as any).className}`
+              : (child.props as any).className;
+          }
+
+          processChild(
+            (child.props as { children: React.ReactNode }).children,
+            newClassName
+          );
         }
       } else if (Array.isArray(child)) {
-        child.forEach(processChild);
+        child.forEach((item) => processChild(item, inheritedClassName));
       }
     };
 

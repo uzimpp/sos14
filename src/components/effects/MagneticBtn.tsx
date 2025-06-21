@@ -38,8 +38,8 @@ export default function Framer({
       transition={{
         type: "spring",
         bounce: 0.2,
-        damping: 30,
-        mass: 0.7,
+        damping: 40,
+        mass: 0.5,
       }}
       style={{ position: "relative" }}
     >

@@ -191,7 +191,7 @@ export default function Game() {
   return (
     <div className="flex flex-row justify-between">
       {/* Left */}
-      <div className="flex flex-row gap-x-(--space-m)">
+      <div className="flex flex-row gap-x-(--space-l)">
         <AB />
         <Joystick />
       </div>

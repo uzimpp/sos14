@@ -5,15 +5,17 @@ import Game from "./Game";
 export default function Footer() {
   return (
     <footer className="max-w-[1728px] w-full justify-self-center flex flex-col gap-(--space-m) px-(--space-m) py-(--space-s)">
-      <Game />
+      {/* section 1 */}
+      <div className="mt-(--space-s)">
+        <Game />
+      </div>
       {/* section 2 */}
       <div className="flex flex-col items-center justify-center md:justify-between md:flex-row gap-y-(--space-m) gap-x-(--space-m)">
         {/* title part */}
-        <Link
-          href="/"
-          className="large-title font-bold text-green drop-shadow-[0_0_10px_var(--color-green)]"
-        >
-          <ScrambleText>SOS14</ScrambleText>
+        <Link href="/" className="large-title font-bold text-green">
+          <ScrambleText>
+            <span className="glow">SOS14</span>
+          </ScrambleText>
         </Link>
         {/* link part */}
         <div className="flex flex-row w-full justify-center gap-x-(--space-m) gap-y-(--space-m) md:justify-end">
