@@ -5,11 +5,11 @@ import faqSections from "@/constant/faq";
 export default function FAQs() {
   return (
     <div className="!pb-(--space-4xl) px-(--space-m) py-(--space-s) max-w-[1728px] w-full flex flex-col justify-self-center justify-center">
-      <div className="flex flex-col my-(--space-xl) gap-(--space-s)">
+      <div className="flex flex-col my-(--space-l) gap-(--space-s) items-center">
         <ScrambleText className="text-4 text-white no_line_height font-bold text-center flex mx-auto glow glow-pink">
           FAQs
         </ScrambleText>
-        <div className="max-w-[calc(5.5*var(--space-4xl))] flex mx-auto">
+        <div className="max-w-[calc(5.5*var(--space-4xl))] flex justify-center">
           <p className="text-0 text-center text-white/60">
             Frequently asked questions about SKE, SOS, and Programming
           </p>

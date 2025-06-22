@@ -26,7 +26,6 @@ const faqSections = {
         "Graduates can pursue careers as Software Engineers, Full-stack Developers, Data Scientists, AI Engineers, System Architects, and more. The program prepares students for both technical and leadership roles in the software industry.",
     },
   ],
-
   "About SOS camp": [
     {
       question: "What is SOS Camp?",
@@ -48,7 +47,6 @@ const faqSections = {
         "No, you do not need any prior programming experience to attend the camp. The camp will start from the very basics of programming.",
     },
   ],
-
   Programming: [
     {
       question: "How can I improve my programming skills?",

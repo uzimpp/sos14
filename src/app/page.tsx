@@ -15,7 +15,7 @@ export function Benefits() {
             alt="fun"
             width={144}
             height={144}
-            className="drop-shadow-[0_0_40px_var(--color-yellow)]"
+            className="w-auto h-auto drop-shadow-[0_0_40px_var(--color-yellow)]"
           />
           <h4 className="text-center mt-(--space-m) text-3">Fun</h4>
           <p className="text-center">Test</p>
@@ -26,7 +26,7 @@ export function Benefits() {
             alt="friends"
             width={144}
             height={144}
-            className="drop-shadow-[0_0_40px_var(--color-pink)]"
+            className="w-auto h-auto drop-shadow-[0_0_40px_var(--color-pink)]"
           />
           <h4 className="text-center mt-(--space-m) text-3">Friends</h4>
           <p className="text-center"></p>
@@ -37,7 +37,7 @@ export function Benefits() {
             alt="codings"
             width={144}
             height={144}
-            className="drop-shadow-[0_0_40px_var(--color-blue)]"
+            className="w-auto h-auto drop-shadow-[0_0_40px_var(--color-blue)]"
           />
           <h4 className="text-center mt-(--space-m) text-3">Basics</h4>
           <p className="text-center"></p>
