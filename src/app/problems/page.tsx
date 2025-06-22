@@ -8,7 +8,7 @@ export default function Problems() {
       <ProgressBar />
       <div className="!pb-(--space-4xl) px-(--space-m) py-(--space-s) max-w-[1728px] w-full flex justify-self-center justify-center">
         <div className="flex flex-col mt-(--space-l) mb-(--space-l)">
-          <ScrambleText className="text-6 text-white no_line_height font-bold text-center flex mx-auto mb-(--space-s) glow glow-pink">
+          <ScrambleText className="text-4 text-white no_line_height font-bold text-center flex mx-auto mb-(--space-s) glow glow-pink">
             PROBLEMS
           </ScrambleText>
           <div className="max-w-[calc(5.5*var(--space-4xl))] flex">

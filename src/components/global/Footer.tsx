@@ -50,7 +50,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-col gap-(--space-3xs)">
             <Link href="/faqs" className="text--1 font-bold">
-              FAQ&apos;s
+              FAQs
             </Link>
             <div className="flex flex-col gap-(--space-4xs)">
               <Link href="/faqs#AboutSKE" className="text--1">
@@ -80,6 +80,13 @@ export default function Footer() {
                 target="_blank"
               >
                 Discord
+              </Link>
+              <Link
+                href="https://discord.gg/CGmp5ahe"
+                className="text--1"
+                target="_blank"
+              >
+                Github
               </Link>
             </div>
           </div>
