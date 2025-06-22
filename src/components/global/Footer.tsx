@@ -30,6 +30,9 @@ export default function Footer() {
               <Link href="/#location" className="text--1">
                 Location
               </Link>
+              <Link href="/ske888" className="text--1">
+                SKE888
+              </Link>
             </div>
           </div>
           <div className="flex flex-col gap-(--space-3xs)">
