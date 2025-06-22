@@ -5,15 +5,17 @@ import Game from "./Game";
 export default function Footer() {
   return (
     <footer className="max-w-[1728px] w-full justify-self-center flex flex-col gap-(--space-m) px-(--space-m) py-(--space-s)">
-      <Game />
+      {/* section 1 */}
+      <div className="mt-(--space-s)">
+        <Game />
+      </div>
       {/* section 2 */}
       <div className="flex flex-col items-center justify-center md:justify-between md:flex-row gap-y-(--space-m) gap-x-(--space-m)">
         {/* title part */}
-        <Link
-          href="/"
-          className="large-title font-bold text-green drop-shadow-[0_0_10px_var(--color-green)]"
-        >
-          <ScrambleText>SOS14</ScrambleText>
+        <Link href="/" className="large-title font-bold text-green">
+          <ScrambleText>
+            <span className="glow glow-green">SOS14</span>
+          </ScrambleText>
         </Link>
         {/* link part */}
         <div className="flex flex-row w-full justify-center gap-x-(--space-m) gap-y-(--space-m) md:justify-end">
@@ -27,6 +29,9 @@ export default function Footer() {
               </Link>
               <Link href="/#location" className="text--1">
                 Location
+              </Link>
+              <Link href="/ske888" className="text--1">
+                SKE888
               </Link>
             </div>
           </div>
@@ -48,7 +53,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-col gap-(--space-3xs)">
             <Link href="/faqs" className="text--1 font-bold">
-              FAQ&apos;s
+              FAQs
             </Link>
             <div className="flex flex-col gap-(--space-4xs)">
               <Link href="/faqs#AboutSKE" className="text--1">
@@ -78,6 +83,13 @@ export default function Footer() {
                 target="_blank"
               >
                 Discord
+              </Link>
+              <Link
+                href="https://discord.gg/CGmp5ahe"
+                className="text--1"
+                target="_blank"
+              >
+                Github
               </Link>
             </div>
           </div>

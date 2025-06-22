@@ -12,13 +12,19 @@ interface ScrambleTextProps {
 interface ScrambledSpan {
   element: HTMLSpanElement;
   originalChar: string;
+  className?: string;
+}
+
+interface ScrambleElementProps {
+  className?: string;
+  children?: React.ReactNode;
 }
 
 export default function ScrambleText({
   children,
   className = "",
   defaultText = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
-  totalFrames = 11,
+  totalFrames = 10,
 }: ScrambleTextProps) {
   const elementRef = useRef<HTMLHeadingElement>(null);
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -34,7 +40,10 @@ export default function ScrambleText({
     const tempSpans: ScrambledSpan[] = [];
     elementRef.current.innerHTML = "";
 
-    const processChild = (child: React.ReactNode) => {
+    const processChild = (
+      child: React.ReactNode,
+      inheritedClassName?: string
+    ) => {
       if (!elementRef.current) return;
 
       if (typeof child === "string") {
@@ -50,22 +59,46 @@ export default function ScrambleText({
             span.style.opacity = "0";
             span.style.transform = "translateX(-10px)";
             span.style.display = "inline-block";
+            if (inheritedClassName) {
+              span.className = inheritedClassName;
+            }
             elementRef.current?.appendChild(span);
-            tempSpans.push({ element: span, originalChar: char });
+            tempSpans.push({
+              element: span,
+              originalChar: char,
+              className: inheritedClassName,
+            });
           }
         });
-      } else if (React.isValidElement(child)) {
-        if (child.type === "br") {
+      } else if (
+        typeof child === "object" &&
+        child !== null &&
+        "type" in child &&
+        "props" in child
+      ) {
+        const element = child as React.ReactElement<ScrambleElementProps>;
+
+        if (element.type === "br") {
           elementRef.current?.appendChild(document.createElement("br"));
         } else if (
-          typeof child.props === "object" &&
-          child.props !== null &&
-          "children" in child.props
+          typeof element.props === "object" &&
+          element.props !== null &&
+          "children" in element.props
         ) {
-          processChild((child.props as { children: React.ReactNode }).children);
+          let newClassName = inheritedClassName;
+          if (element.type === "span" && element.props.className) {
+            newClassName = inheritedClassName
+              ? `${inheritedClassName} ${element.props.className}`
+              : element.props.className;
+          }
+
+          processChild(
+            (element.props as { children: React.ReactNode }).children,
+            newClassName
+          );
         }
       } else if (Array.isArray(child)) {
-        child.forEach(processChild);
+        child.forEach((item) => processChild(item, inheritedClassName));
       }
     };
 
@@ -140,7 +173,7 @@ export default function ScrambleText({
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [isIntersecting]);
+  }, [isIntersecting, splitted, totalFrames]);
 
   return (
     <div

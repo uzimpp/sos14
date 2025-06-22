@@ -6,7 +6,7 @@ export default function NavBar() {
       {/* logo part */}
       <div className="flex flex-row items-center gap-4">
         <button>
-          <Link href="/" className="text-1 bold">
+          <Link href="/" className="text-1 font-bold">
             <div>SOS14</div>
           </Link>
         </button>
@@ -30,7 +30,7 @@ export default function NavBar() {
         </button>
         <button>
           <Link href="/faqs" className="text-0">
-            FAQ&apos;s
+            FAQs
           </Link>
         </button>
       </div>

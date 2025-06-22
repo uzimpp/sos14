@@ -6,12 +6,12 @@ export default function Problems() {
   return (
     <div className="w-full">
       <ProgressBar />
-      <div className="!pb-(--space-4xl) px-(--space-m) py-(--space-s) max-w-[1728px] w-full flex justify-self-center justify-center">
-        <div className="flex flex-col mt-(--space-l) mb-(--space-l)">
-          <ScrambleText className="text-6 text-white no_line_height font-bold text-center flex mx-auto mb-(--space-s)">
+      <div className="!pb-(--space-4xl) px-(--space-m) py-(--space-s) max-w-[1728px] w-full flex flex-col justify-self-center justify-center">
+        <div className="flex flex-col my-(--space-l) gap-(--space-s) items-center">
+          <ScrambleText className="text-4 text-white no_line_height font-bold text-center flex mx-auto glow glow-pink">
             PROBLEMS
           </ScrambleText>
-          <div className="max-w-[calc(5.5*var(--space-4xl))] flex">
+          <div className="max-w-[calc(5.5*var(--space-4xl))] flex justify-center">
             <p className="text-0 text-center opacity-60">
               A fundamental Python exercise often focuses on introducing and
               reinforcing core programming concepts and syntax in the Python
@@ -19,19 +19,8 @@ export default function Problems() {
               problem or completing a task using Python code.
             </p>
           </div>
-          <div className="gap-(--space-2xl) flex flex-row">
-            <button className="font-medium bg-light-purple px-(--space-m) py-(--space-2xs) rounded-(--round-m)">
-              Day 1
-            </button>
-            <button className="font-medium bg-light-purple px-(--space-m) py-(--space-2xs) rounded-(--round-m)">
-              Day 2
-            </button>
-            <button className="font-medium bg-light-purple px-(--space-m) py-(--space-2xs) rounded-(--round-m)">
-              Day 3
-            </button>
-          </div>
-          <ProblemList />
         </div>
+        <ProblemList />
       </div>
     </div>
   );
