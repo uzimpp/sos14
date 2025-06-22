@@ -65,24 +65,30 @@ export default function ScrambleText({
             });
           }
         });
-      } else if (React.isValidElement(child)) {
-        if (child.type === "br") {
+      } else if (
+        typeof child === "object" &&
+        child !== null &&
+        "type" in child &&
+        "props" in child
+      ) {
+        const element = child as React.ReactElement<any, any>;
+
+        if (element.type === "br") {
           elementRef.current?.appendChild(document.createElement("br"));
         } else if (
-          typeof child.props === "object" &&
-          child.props !== null &&
-          "children" in child.props
+          typeof element.props === "object" &&
+          element.props !== null &&
+          "children" in element.props
         ) {
-          // Extract className from span elements
           let newClassName = inheritedClassName;
-          if (child.type === "span" && (child.props as any).className) {
+          if (element.type === "span" && element.props.className) {
             newClassName = inheritedClassName
-              ? `${inheritedClassName} ${(child.props as any).className}`
-              : (child.props as any).className;
+              ? `${inheritedClassName} ${element.props.className}`
+              : element.props.className;
           }
 
           processChild(
-            (child.props as { children: React.ReactNode }).children,
+            (element.props as { children: React.ReactNode }).children,
             newClassName
           );
         }
@@ -162,7 +168,7 @@ export default function ScrambleText({
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [isIntersecting]);
+  }, [isIntersecting, splitted, totalFrames]);
 
   return (
     <div
