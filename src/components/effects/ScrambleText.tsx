@@ -18,7 +18,6 @@ interface ScrambledSpan {
 interface ScrambleElementProps {
   className?: string;
   children?: React.ReactNode;
-  [key: string]: any;
 }
 
 export default function ScrambleText({

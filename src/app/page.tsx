@@ -1,7 +1,7 @@
 import ScrambleText from "@/components/effects/ScrambleText";
 import Image from "next/image";
 
-export function Benefits() {
+function Benefits() {
   return (
     <section
       id="benefits"
@@ -47,7 +47,7 @@ export function Benefits() {
   );
 }
 
-export function Agenda() {
+function Agenda() {
   return (
     <section id="agenda" className="flex flex-col gap-4">
       <ScrambleText className="text-4 font-medium no_line_height glow glow-pink">
@@ -58,7 +58,7 @@ export function Agenda() {
   );
 }
 
-export function Location() {
+function Location() {
   return (
     <section
       id="location"
@@ -86,7 +86,7 @@ export function Location() {
   );
 }
 
-export function Qoute() {
+function Qoute() {
   return (
     <section>
       <h3 className="font-medium text-center glow glow-pink-md">
