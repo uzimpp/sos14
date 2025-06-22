@@ -15,6 +15,12 @@ interface ScrambledSpan {
   className?: string;
 }
 
+interface ScrambleElementProps {
+  className?: string;
+  children?: React.ReactNode;
+  [key: string]: any;
+}
+
 export default function ScrambleText({
   children,
   className = "",
@@ -71,7 +77,7 @@ export default function ScrambleText({
         "type" in child &&
         "props" in child
       ) {
-        const element = child as React.ReactElement<any, any>;
+        const element = child as React.ReactElement<ScrambleElementProps>;
 
         if (element.type === "br") {
           elementRef.current?.appendChild(document.createElement("br"));
