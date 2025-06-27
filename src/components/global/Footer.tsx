@@ -104,22 +104,22 @@ export default function Footer() {
           <br />© 2025 All rights reserved.
         </p>
         {/* morse code part */}
-        <div className="flex flex-row items-center gap-4 opacity-14">
-          <div className="flex flex-row items-center gap-4">
+        <div className="flex flex-row items-center gap-(--space-s) opacity-14">
+          <div className="flex flex-row items-center gap-(--space-s)">
             <div className="flex flex-row items-center gap-(--space-xs)">
-              <div className="w-5 h-5 bg-white rounded-full"></div>
-              <div className="w-5 h-5 bg-white rounded-full"></div>
-              <div className="w-5 h-5 bg-white rounded-full"></div>
+              <div className="w-(--space-s) h-(--space-s) bg-white rounded-full pixel-corners-xs"></div>
+              <div className="w-(--space-s) h-(--space-s) bg-white rounded-full pixel-corners-xs"></div>
+              <div className="w-(--space-s) h-(--space-s) bg-white rounded-full pixel-corners-xs"></div>
             </div>
             <div className="flex flex-row items-center gap-(--space-xs)">
-              <div className="w-8 h-5 bg-white rounded-full"></div>
-              <div className="w-8 h-5 bg-white rounded-full"></div>
-              <div className="w-8 h-5 bg-white rounded-full"></div>
+              <div className="w-10 h-(--space-s) bg-white rounded-full pixel-corners-xs"></div>
+              <div className="w-10 h-(--space-s) bg-white rounded-full pixel-corners-xs"></div>
+              <div className="w-10 h-(--space-s) bg-white rounded-full pixel-corners-xs"></div>
             </div>
             <div className="flex flex-row items-center gap-(--space-xs)">
-              <div className="w-5 h-5 bg-white rounded-full"></div>
-              <div className="w-5 h-5 bg-white rounded-full"></div>
-              <div className="w-5 h-5 bg-white rounded-full"></div>
+              <div className="w-(--space-s) h-(--space-s) bg-white rounded-full pixel-corners-xs"></div>
+              <div className="w-(--space-s) h-(--space-s) bg-white rounded-full pixel-corners-xs"></div>
+              <div className="w-(--space-s) h-(--space-s) bg-white rounded-full pixel-corners-xs"></div>
             </div>
           </div>
           <p className="text-3 font-bold">14</p>

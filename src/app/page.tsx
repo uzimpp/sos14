@@ -124,7 +124,8 @@ export default function Home() {
 
       <Benefits />
       <Agenda />
-      <Location />
+      {/* The location is not decided yet */}
+      {/* <Location /> */}
       <Qoute />
     </div>
   );

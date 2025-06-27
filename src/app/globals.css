@@ -208,6 +208,88 @@
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
   }
 
+  .pixel-corners {
+    clip-path: polygon(
+      0px calc(100% - 18px),
+      9px calc(100% - 18px),
+      9px calc(100% - 9px),
+      18px calc(100% - 9px),
+      18px 100%,
+      calc(100% - 18px) 100%,
+      calc(100% - 18px) calc(100% - 9px),
+      calc(100% - 9px) calc(100% - 9px),
+      calc(100% - 9px) calc(100% - 18px),
+      100% calc(100% - 18px),
+      100% 18px,
+      calc(100% - 9px) 18px,
+      calc(100% - 9px) 9px,
+      calc(100% - 18px) 9px,
+      calc(100% - 18px) 0px,
+      18px 0px,
+      18px 9px,
+      9px 9px,
+      9px 18px,
+      0px 18px
+    );
+  }
+
+  .pixel-corners-xs {
+    clip-path: polygon(
+      0px calc(100% - var(--space-4xs)),
+      var(--space-4xs) calc(100% - calc(2*var(--space-4xs))),
+      var(--space-4xs) calc(100% - var(--space-4xs)),
+      calc(2*var(--space-4xs)) calc(100% - var(--space-4xs)),
+      calc(2*var(--space-4xs)) 100%,
+      calc(100% - calc(2*var(--space-4xs))) 100%,
+      calc(100% - calc(2*var(--space-4xs))) calc(100% - var(--space-4xs)),
+      calc(100% - var(--space-4xs)) calc(100% - var(--space-4xs)),
+      calc(100% - var(--space-4xs)) calc(100% - calc(2*var(--space-4xs))),
+      100% calc(100% - calc(2*var(--space-4xs))),
+      100% calc(2*var(--space-4xs)),
+      calc(100% - var(--space-4xs)) calc(2*var(--space-4xs)),
+      calc(100% - var(--space-4xs)) var(--space-4xs),
+      calc(100% - calc(2*var(--space-4xs))) var(--space-4xs),
+      calc(100% - calc(2*var(--space-4xs))) 0px,
+      calc(2*var(--space-4xs)) 0px,
+      calc(2*var(--space-4xs)) var(--space-4xs),
+      var(--space-4xs) var(--space-4xs),
+      var(--space-4xs) calc(2*var(--space-4xs)),
+      0px calc(2*var(--space-4xs))
+    );
+  }
+  .pixel-corners-s {
+    clip-path: polygon(
+      0px calc(100% - 8px),
+      2px calc(100% - 8px),
+      2px calc(100% - 4px),
+      4px calc(100% - 4px),
+      4px calc(100% - 2px),
+      8px calc(100% - 2px),
+      8px 100%,
+      calc(100% - 8px) 100%,
+      calc(100% - 8px) calc(100% - 2px),
+      calc(100% - 4px) calc(100% - 2px),
+      calc(100% - 4px) calc(100% - 4px),
+      calc(100% - 2px) calc(100% - 4px),
+      calc(100% - 2px) calc(100% - 8px),
+      100% calc(100% - 8px),
+      100% 8px,
+      calc(100% - 2px) 8px,
+      calc(100% - 2px) 4px,
+      calc(100% - 4px) 4px,
+      calc(100% - 4px) 2px,
+      calc(100% - 8px) 2px,
+      calc(100% - 8px) 0px,
+      8px 0px,
+      8px 2px,
+      4px 2px,
+      4px 4px,
+      2px 4px,
+      2px 8px,
+      0px 8px
+    );
+  }
+
   .regular {
   }
 
@@ -290,7 +372,7 @@
     z-index: -1;
   }
 
-    .glow-green-lg::after {
+  .glow-green-lg::after {
     content: "";
     position: absolute;
     inset: var(--space-xs);
@@ -319,7 +401,7 @@
     position: absolute;
     inset: 0;
     background: var(--color-pink);
-    opacity: 0.6;
+    opacity: 0.4;
     filter: blur(var(--space-l));
     border-radius: 9999px;
     pointer-events: none;
@@ -331,7 +413,7 @@
     position: absolute;
     inset: 0;
     background: var(--color-pink);
-    opacity: 0.33;
+    opacity: 0.3;
     filter: blur(var(--space-l));
     border-radius: 9999px;
     pointer-events: none;
