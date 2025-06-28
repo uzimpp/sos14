@@ -22,24 +22,25 @@ export default function Agenda() {
           Agenda
         </ScrambleText>
       </h3>
-      <div className="grid grid-cols-[180px_10px_auto] gap-x-4">
+      <div className="grid grid-cols-[180px_10px_auto] gap-x-(--space-xl)">
         {agenda.map((item: AgendaItemProps, i) => (
           <div className="contents" key={i}>
             {/* Left: Day/Date */}
             <div className="text-right pr-4 flex flex-col items-end">
-              <div className="font-bold text-2xl text-green">Day {i + 1}</div>
-              <div className="text-green opacity-60">{item.date}</div>
+              <h2 className="text-green font-bold no_line_height pb-1">
+                Day {i + 1}
+              </h2>
+              <h6 className="text-green/20 font-medium">{item.date}</h6>
             </div>
             {/* Middle: Dot */}
             <div
-              className={`flex flex-col items-center relative z-10 ${
-                i !== agenda.length - 1 ? "bg-green/60" : "none"
-              }`}
+              className={`flex flex-col items-center relative z-10 bg-green/40 mt-5
+                ${i !== agenda.length - 1 ? "h-full" : "h-fit"}`}
             >
-              <div className="w-6 h-6 bg-green rounded-md" />
+              <div className="w-6 h-6 bg-green pixel-corners-s" />
             </div>
             {/* Right: Events */}
-            <div className="bg-[#18141c] text-white rounded-lg p-6 text-lg shadow-lg min-w-[350px] mb-6">
+            <div className="w-fit bg-[#18141c] text-white pixel-corners-s p-6 text-lg shadow-lg min-w-[350px] mb-(--space-xl)">
               {item.events.map((event: EventProps, i) => (
                 <div key={i}>
                   <span className="font-bold">{event.time}</span> {event.name}
