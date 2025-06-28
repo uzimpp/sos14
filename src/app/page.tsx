@@ -1,104 +1,8 @@
 import ScrambleText from "@/components/effects/ScrambleText";
-import Image from "next/image";
-
-function Benefits() {
-  return (
-    <section
-      id="benefits"
-      className="flex flex-col w-full items-center px-(--space-l)"
-    >
-      <h3 className="text-center">What will SKE23 recieve?</h3>
-      <div className="flex flex-col sm:flex-row max-w-[calc(5.5*var(--space-4xl))] w-full justify-between gap-y-(--space-m)">
-        <div className="flex flex-col gap-(--space-4xs) items-center">
-          <Image
-            src={"landing/star.svg"}
-            alt="fun"
-            width={144}
-            height={144}
-            className="w-auto h-auto drop-shadow-[0_0_40px_var(--color-yellow)]"
-          />
-          <h4 className="text-center mt-(--space-m) text-3">Fun</h4>
-          <p className="text-center">Test</p>
-        </div>
-        <div className="flex flex-col gap-(--space-4xs) items-center">
-          <Image
-            src={"landing/friend.svg"}
-            alt="friends"
-            width={144}
-            height={144}
-            className="w-auto h-auto drop-shadow-[0_0_40px_var(--color-pink)]"
-          />
-          <h4 className="text-center mt-(--space-m) text-3">Friends</h4>
-          <p className="text-center"></p>
-        </div>
-        <div className="flex flex-col gap-(--space-4xs) items-center">
-          <Image
-            src={"landing/coding.svg"}
-            alt="codings"
-            width={144}
-            height={144}
-            className="w-auto h-auto drop-shadow-[0_0_40px_var(--color-blue)]"
-          />
-          <h4 className="text-center mt-(--space-m) text-3">Basics</h4>
-          <p className="text-center"></p>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Agenda() {
-  return (
-    <section id="agenda" className="flex flex-col gap-4">
-      <ScrambleText className="text-4 font-medium no_line_height glow glow-pink">
-        Agenda
-      </ScrambleText>
-      <div></div>
-    </section>
-  );
-}
-
-function Location() {
-  return (
-    <section
-      id="location"
-      className="flex flex-col items-center relative w-full"
-    >
-      <h3>
-        <ScrambleText className="text-4 font-medium no_line_height glow glow-pink">
-          Location
-        </ScrambleText>
-      </h3>
-      <div className="grid grid-cols-2 gap-(--space-m) w-full max-w-[calc(7*var(--space-4xl))]  rounded-(--round-m) overflow-hidden">
-        <div className="flex w-full">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1721.7052242891857!2d100.56830705333505!3d13.845574934968713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29dcc98d06359%3A0xe3d8afdccdaa889b!2z4Lig4Liy4LiE4Lin4Li04LiK4Liy4Lin4Li04Lio4Lin4LiB4Lij4Lij4Lih4LiE4Lit4Lih4Lie4Li04Lin4LmA4LiV4Lit4Lij4LmMIERlcGFydG1lbnQgb2YgQ29tcHV0ZXIgRW5naW5lZXJpbmc!5e0!3m2!1sen!2sth!4v1750162053291!5m2!1sen!2sth"
-            className="border-0 flex w-full"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </div>
-        <div className="flex w-full bg-light-purple">
-          <h6>Department of Computer Engineering</h6>
-          <ul></ul>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Qoute() {
-  return (
-    <section>
-      <h3 className="font-medium text-center glow glow-pink-md">
-        We are looking forward to
-        <br /> seeing <span className="text-pink font-semibold">
-          SKE23
-        </span> at <span className="font-semibold text-green">SOS14</span>
-      </h3>
-    </section>
-  );
-}
+import Agenda from "@/components/landing/Agenda";
+import Benefits from "@/components/landing/Benefits";
+import Location from "@/components/landing/Location";
+import Qoute from "@/components/landing/Qoute";
 
 export default function Home() {
   return (
@@ -125,7 +29,7 @@ export default function Home() {
       <Benefits />
       <Agenda />
       {/* The location is not decided yet */}
-      {/* <Location /> */}
+      <Location />
       <Qoute />
     </div>
   );

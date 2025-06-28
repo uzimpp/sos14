@@ -236,25 +236,25 @@
   .pixel-corners-xs {
     clip-path: polygon(
       0px calc(100% - var(--space-4xs)),
-      var(--space-4xs) calc(100% - calc(2*var(--space-4xs))),
+      var(--space-4xs) calc(100% - calc(2 * var(--space-4xs))),
       var(--space-4xs) calc(100% - var(--space-4xs)),
-      calc(2*var(--space-4xs)) calc(100% - var(--space-4xs)),
-      calc(2*var(--space-4xs)) 100%,
-      calc(100% - calc(2*var(--space-4xs))) 100%,
-      calc(100% - calc(2*var(--space-4xs))) calc(100% - var(--space-4xs)),
+      calc(2 * var(--space-4xs)) calc(100% - var(--space-4xs)),
+      calc(2 * var(--space-4xs)) 100%,
+      calc(100% - calc(2 * var(--space-4xs))) 100%,
+      calc(100% - calc(2 * var(--space-4xs))) calc(100% - var(--space-4xs)),
       calc(100% - var(--space-4xs)) calc(100% - var(--space-4xs)),
-      calc(100% - var(--space-4xs)) calc(100% - calc(2*var(--space-4xs))),
-      100% calc(100% - calc(2*var(--space-4xs))),
-      100% calc(2*var(--space-4xs)),
-      calc(100% - var(--space-4xs)) calc(2*var(--space-4xs)),
+      calc(100% - var(--space-4xs)) calc(100% - calc(2 * var(--space-4xs))),
+      100% calc(100% - calc(2 * var(--space-4xs))),
+      100% calc(2 * var(--space-4xs)),
+      calc(100% - var(--space-4xs)) calc(2 * var(--space-4xs)),
       calc(100% - var(--space-4xs)) var(--space-4xs),
-      calc(100% - calc(2*var(--space-4xs))) var(--space-4xs),
-      calc(100% - calc(2*var(--space-4xs))) 0px,
-      calc(2*var(--space-4xs)) 0px,
-      calc(2*var(--space-4xs)) var(--space-4xs),
+      calc(100% - calc(2 * var(--space-4xs))) var(--space-4xs),
+      calc(100% - calc(2 * var(--space-4xs))) 0px,
+      calc(2 * var(--space-4xs)) 0px,
+      calc(2 * var(--space-4xs)) var(--space-4xs),
       var(--space-4xs) var(--space-4xs),
-      var(--space-4xs) calc(2*var(--space-4xs)),
-      0px calc(2*var(--space-4xs))
+      var(--space-4xs) calc(2 * var(--space-4xs)),
+      0px calc(2 * var(--space-4xs))
     );
   }
   .pixel-corners-s {
@@ -349,6 +349,19 @@
 
   .coin-behind {
     z-index: 1 !important;
+  }
+
+  .agenda {
+    z-index: 2;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 10px auto;
+    grid-auto-columns: 1fr;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: grid;
+    position: relative;
   }
 }
 
