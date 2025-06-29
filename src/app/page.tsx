@@ -1,7 +1,7 @@
 import ScrambleText from "@/components/effects/ScrambleText";
 import Agenda from "@/components/landing/Agenda";
 import Benefits from "@/components/landing/Benefits";
-import Location from "@/components/landing/Location";
+// import Location from "@/components/landing/Location";
 import Qoute from "@/components/landing/Qoute";
 
 export default function Home() {
@@ -29,7 +29,7 @@ export default function Home() {
       <Benefits />
       <Agenda />
       {/* The location is not decided yet */}
-      <Location />
+      {/* <Location /> */}
       <Qoute />
     </div>
   );

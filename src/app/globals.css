@@ -55,7 +55,16 @@
   --space-3xl-4xl: clamp(6rem, 4.8914rem + 4.7302vw, 10rem);
 
   /* Custom pairs */
+  /* Two-up steps */
+  --space-2xl-4xl: clamp(4rem, 2.337rem + 7.0953vw, 10rem);
+  --space-xl-3xl: clamp(3rem, 1.7528rem + 5.3215vw, 7.5rem);
+  --space-l-2xl: clamp(2rem, 1.1685rem + 3.5477vw, 5rem);
+  --space-m-xl: clamp(1.5rem, 0.8764rem + 2.6608vw, 3.75rem);
   --space-s-l: clamp(1rem, 0.5843rem + 1.7738vw, 2.5rem);
+  --space-xs-m: clamp(0.75rem, 0.4382rem + 1.3304vw, 1.875rem);
+  --space-2xs-s: clamp(0.5rem, 0.2921rem + 0.8869vw, 1.25rem);
+  --space-3xs-xs: clamp(0.25rem, 0.0595rem + 0.813vw, 0.9375rem);
+  --space-4xs-2xs: clamp(0.125rem, -0.0136rem + 0.5913vw, 0.625rem);
 
   /* === Colors === */
   --color-black: #1a1a1a;
@@ -350,19 +359,6 @@
   .coin-behind {
     z-index: 1 !important;
   }
-
-  .agenda {
-    z-index: 2;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    grid-template-rows: auto;
-    grid-template-columns: 1fr 10px auto;
-    grid-auto-columns: 1fr;
-    padding-top: 80px;
-    padding-bottom: 80px;
-    display: grid;
-    position: relative;
-  }
 }
 
 @layer utilities {
@@ -431,5 +427,38 @@
     border-radius: 9999px;
     pointer-events: none;
     z-index: -1;
+  }
+
+  @media (min-width: 768px) {
+    .agenda-grid {
+      display: grid;
+      grid-template-columns: 1fr 32px 2fr;
+      grid-template-areas: "left dot right";
+    }
+    .agenda-left {
+      grid-area: left;
+    }
+    .agenda-dot {
+      grid-area: dot;
+    }
+    .agenda-right {
+      grid-area: right;
+    }
+  }
+  @media (max-width: 767px) {
+    .agenda-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-areas: "left right";
+    }
+    .agenda-left {
+      grid-area: left;
+    }
+    .agenda-dot {
+      display: none;
+    }
+    .agenda-right {
+      grid-area: right;
+    }
   }
 }
