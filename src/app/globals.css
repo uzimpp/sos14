@@ -55,7 +55,16 @@
   --space-3xl-4xl: clamp(6rem, 4.8914rem + 4.7302vw, 10rem);
 
   /* Custom pairs */
+  /* Two-up steps */
+  --space-2xl-4xl: clamp(4rem, 2.337rem + 7.0953vw, 10rem);
+  --space-xl-3xl: clamp(3rem, 1.7528rem + 5.3215vw, 7.5rem);
+  --space-l-2xl: clamp(2rem, 1.1685rem + 3.5477vw, 5rem);
+  --space-m-xl: clamp(1.5rem, 0.8764rem + 2.6608vw, 3.75rem);
   --space-s-l: clamp(1rem, 0.5843rem + 1.7738vw, 2.5rem);
+  --space-xs-m: clamp(0.75rem, 0.4382rem + 1.3304vw, 1.875rem);
+  --space-2xs-s: clamp(0.5rem, 0.2921rem + 0.8869vw, 1.25rem);
+  --space-3xs-xs: clamp(0.25rem, 0.0595rem + 0.813vw, 0.9375rem);
+  --space-4xs-2xs: clamp(0.125rem, -0.0136rem + 0.5913vw, 0.625rem);
 
   /* === Colors === */
   --color-black: #1a1a1a;
@@ -208,6 +217,88 @@
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
   }
 
+  .pixel-corners {
+    clip-path: polygon(
+      0px calc(100% - 18px),
+      9px calc(100% - 18px),
+      9px calc(100% - 9px),
+      18px calc(100% - 9px),
+      18px 100%,
+      calc(100% - 18px) 100%,
+      calc(100% - 18px) calc(100% - 9px),
+      calc(100% - 9px) calc(100% - 9px),
+      calc(100% - 9px) calc(100% - 18px),
+      100% calc(100% - 18px),
+      100% 18px,
+      calc(100% - 9px) 18px,
+      calc(100% - 9px) 9px,
+      calc(100% - 18px) 9px,
+      calc(100% - 18px) 0px,
+      18px 0px,
+      18px 9px,
+      9px 9px,
+      9px 18px,
+      0px 18px
+    );
+  }
+
+  .pixel-corners-xs {
+    clip-path: polygon(
+      0px calc(100% - var(--space-4xs)),
+      var(--space-4xs) calc(100% - calc(2 * var(--space-4xs))),
+      var(--space-4xs) calc(100% - var(--space-4xs)),
+      calc(2 * var(--space-4xs)) calc(100% - var(--space-4xs)),
+      calc(2 * var(--space-4xs)) 100%,
+      calc(100% - calc(2 * var(--space-4xs))) 100%,
+      calc(100% - calc(2 * var(--space-4xs))) calc(100% - var(--space-4xs)),
+      calc(100% - var(--space-4xs)) calc(100% - var(--space-4xs)),
+      calc(100% - var(--space-4xs)) calc(100% - calc(2 * var(--space-4xs))),
+      100% calc(100% - calc(2 * var(--space-4xs))),
+      100% calc(2 * var(--space-4xs)),
+      calc(100% - var(--space-4xs)) calc(2 * var(--space-4xs)),
+      calc(100% - var(--space-4xs)) var(--space-4xs),
+      calc(100% - calc(2 * var(--space-4xs))) var(--space-4xs),
+      calc(100% - calc(2 * var(--space-4xs))) 0px,
+      calc(2 * var(--space-4xs)) 0px,
+      calc(2 * var(--space-4xs)) var(--space-4xs),
+      var(--space-4xs) var(--space-4xs),
+      var(--space-4xs) calc(2 * var(--space-4xs)),
+      0px calc(2 * var(--space-4xs))
+    );
+  }
+  .pixel-corners-s {
+    clip-path: polygon(
+      0px calc(100% - 8px),
+      2px calc(100% - 8px),
+      2px calc(100% - 4px),
+      4px calc(100% - 4px),
+      4px calc(100% - 2px),
+      8px calc(100% - 2px),
+      8px 100%,
+      calc(100% - 8px) 100%,
+      calc(100% - 8px) calc(100% - 2px),
+      calc(100% - 4px) calc(100% - 2px),
+      calc(100% - 4px) calc(100% - 4px),
+      calc(100% - 2px) calc(100% - 4px),
+      calc(100% - 2px) calc(100% - 8px),
+      100% calc(100% - 8px),
+      100% 8px,
+      calc(100% - 2px) 8px,
+      calc(100% - 2px) 4px,
+      calc(100% - 4px) 4px,
+      calc(100% - 4px) 2px,
+      calc(100% - 8px) 2px,
+      calc(100% - 8px) 0px,
+      8px 0px,
+      8px 2px,
+      4px 2px,
+      4px 4px,
+      2px 4px,
+      2px 8px,
+      0px 8px
+    );
+  }
+
   .regular {
   }
 
@@ -290,7 +381,7 @@
     z-index: -1;
   }
 
-    .glow-green-lg::after {
+  .glow-green-lg::after {
     content: "";
     position: absolute;
     inset: var(--space-xs);
@@ -319,7 +410,7 @@
     position: absolute;
     inset: 0;
     background: var(--color-pink);
-    opacity: 0.6;
+    opacity: 0.4;
     filter: blur(var(--space-l));
     border-radius: 9999px;
     pointer-events: none;
@@ -331,10 +422,43 @@
     position: absolute;
     inset: 0;
     background: var(--color-pink);
-    opacity: 0.33;
+    opacity: 0.3;
     filter: blur(var(--space-l));
     border-radius: 9999px;
     pointer-events: none;
     z-index: -1;
+  }
+
+  @media (min-width: 768px) {
+    .agenda-grid {
+      display: grid;
+      grid-template-columns: 1fr 32px 2fr;
+      grid-template-areas: "left dot right";
+    }
+    .agenda-left {
+      grid-area: left;
+    }
+    .agenda-dot {
+      grid-area: dot;
+    }
+    .agenda-right {
+      grid-area: right;
+    }
+  }
+  @media (max-width: 767px) {
+    .agenda-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-areas: "left right";
+    }
+    .agenda-left {
+      grid-area: left;
+    }
+    .agenda-dot {
+      display: none;
+    }
+    .agenda-right {
+      grid-area: right;
+    }
   }
 }

@@ -7,15 +7,15 @@ import GameBtn from "@/components/ui/GameBtn";
 
 export function AB() {
   return (
-    <div className="flex flex-col gap-y-(--space-m)">
+    <div className="flex flex-col gap-y-(--space-xs-m)">
       <GameBtn
-        className="relative w-[var(--space-2xl)] aspect-[96/107] justify-end"
+        className="relative w-(--space-l-2xl) aspect-[96/107] justify-end"
         nonclicked="/game/AB/A.svg"
         clicked="/game/AB/clicked-A.svg"
         alt="A"
       />
       <GameBtn
-        className="relative w-[var(--space-2xl)] aspect-[96/107] justify-end"
+        className="relative w-(--space-l-2xl) aspect-[96/107] justify-end"
         nonclicked="/game/AB/B.svg"
         clicked="/game/AB/clicked-B.svg"
         alt="B"
@@ -28,27 +28,27 @@ export function Skill() {
   return (
     <div className="flex flex-row items-center">
       <GameBtn
-        className="relative w-[var(--space-2xl)] aspect-[96/107] justify-end"
+        className="relative w-(--space-l-2xl) aspect-[96/107] justify-end"
         nonclicked="/game/skill/skill.svg"
         clicked="/game/skill/clicked-skill.svg"
         alt="skill"
       />
-      <div className="flex flex-col gap-y-(--space-m)">
+      <div className="flex flex-col gap-y-(--space-xs-m)">
         <GameBtn
-          className="relative w-[var(--space-2xl)] aspect-[96/107] justify-end"
+          className="relative w-(--space-l-2xl) aspect-[96/107] justify-end"
           nonclicked="/game/skill/skill.svg"
           clicked="/game/skill/clicked-skill.svg"
           alt="skill"
         />
         <GameBtn
-          className="relative w-[var(--space-2xl)] aspect-[96/107] justify-end"
+          className="relative w-(--space-l-2xl) aspect-[96/107] justify-end"
           nonclicked="/game/skill/skill.svg"
           clicked="/game/skill/clicked-skill.svg"
           alt="skill"
         />
       </div>
       <GameBtn
-        className="relative w-[var(--space-2xl)] aspect-[96/107] justify-end"
+        className="relative w-(--space-l-2xl) aspect-[96/107] justify-end"
         nonclicked="/game/skill/skill.svg"
         clicked="/game/skill/clicked-skill.svg"
         alt="skill"
@@ -59,8 +59,8 @@ export function Skill() {
 
 export function Joystick() {
   return (
-    <div className="flex flex-row h-full items-center gap-x-(--space-s)">
-      <div className="relative h-(--space-xl) aspect-[1/2]">
+    <div className="flex flex-row h-full items-center gap-x-(--space-2xs-s)">
+      <div className="relative h-(--space-m-xl) aspect-[1/2]">
         <Image
           src="/game/joystick/left.svg"
           alt="left"
@@ -68,8 +68,8 @@ export function Joystick() {
           className="object-contain"
         />
       </div>
-      <div className="flex flex-col items-center gap-y-(--space-s)">
-        <div className="relative w-(--space-xl) aspect-[2/1]">
+      <div className="flex flex-col items-center gap-y-(--space-2xs-s)">
+        <div className="relative w-(--space-m-xl) aspect-[2/1]">
           <Image
             src="/game/joystick/up.svg"
             alt="up"
@@ -78,8 +78,8 @@ export function Joystick() {
           />
         </div>
         {/* stick */}
-        <div className="relative w-[var(--space-2xl)] h-[var(--space-2xl)]">
-          <div className="w-[var(--space-2xl)] h-[var(--space-2xl)] absolute z-0">
+        <div className="relative w-(--space-l-2xl) h-(--space-l-2xl)">
+          <div className="w-(--space-l-2xl) h-(--space-l-2xl) absolute z-0">
             <Image
               src="/game/joystick/base.svg"
               alt="base"
@@ -87,7 +87,7 @@ export function Joystick() {
               className="object-contain"
             />
           </div>
-          <MagneticBtn className="w-[var(--space-2xl)] h-[var(--space-2xl)] z-10">
+          <MagneticBtn className="w-(--space-l-2xl) h-(--space-l-2xl) z-10">
             <Image
               src="/game/joystick/joystick.svg"
               alt="joystick"
@@ -96,7 +96,7 @@ export function Joystick() {
             />
           </MagneticBtn>
         </div>
-        <div className="relative w-(--space-xl) aspect-[2/1]">
+        <div className="relative w-(--space-m-xl) aspect-[2/1]">
           <Image
             src="/game/joystick/down.svg"
             alt="down"
@@ -105,7 +105,7 @@ export function Joystick() {
           />
         </div>
       </div>
-      <div className="relative h-(--space-xl) aspect-[1/2]">
+      <div className="relative h-(--space-m-xl) aspect-[1/2]">
         <Image
           src="/game/joystick/right.svg"
           alt="right"
@@ -147,8 +147,8 @@ export function Inserter() {
 
   return (
     <div className="flex h-full items-center">
-      <div className="relative w-[calc(var(--space-2xl)*74/96)] h-[calc(var(--space-2xl)*192/96)]">
-        <div className="absolute w-[calc(var(--space-2xl)*74/96)] h-[calc(var(--space-2xl)*192/96)] z-0">
+      <div className="relative w-[calc(var(--space-l-2xl)*74/96)] h-[calc(var(--space-l-2xl)*192/96)]">
+        <div className="absolute w-[calc(var(--space-l-2xl)*74/96)] h-[calc(var(--space-l-2xl)*192/96)] z-0">
           <Image
             src="/game/inserter/inserter-base.svg"
             alt="insert"
@@ -157,7 +157,7 @@ export function Inserter() {
           />
         </div>
         <button
-          className="absolute w-[calc(var(--space-2xl)*74/96)] h-[calc(var(--space-2xl)*192/96)] z-10"
+          className="absolute w-[calc(var(--space-l-2xl)*74/96)] h-[calc(var(--space-l-2xl)*192/96)] z-10"
           onClick={handleClick}
         >
           <Image
@@ -172,7 +172,7 @@ export function Inserter() {
             className="absolute inset-0 flex items-center justify-center animate-coin-insert"
             style={{ zIndex: coinZIndex }}
           >
-            <div className="relative w-[calc(var(--space-2xl)*30/96)] h-[calc(var(--space-2xl)*104/96)]">
+            <div className="relative w-[calc(var(--space-l-2xl)*30/96)] h-[calc(var(--space-l-2xl)*104/96)]">
               <Image
                 src="/game/coin.svg"
                 alt="coin"
@@ -189,14 +189,14 @@ export function Inserter() {
 
 export default function Game() {
   return (
-    <div className="flex flex-row justify-between">
+    <div className="flex flex-row md:justify-between justify-center gap-x-(--space-2xl)">
       {/* Left */}
-      <div className="flex flex-row gap-x-(--space-l)">
+      <div className="flex flex-row gap-x-(--space-s-l)">
         <AB />
         <Joystick />
       </div>
       {/* Right */}
-      <div className="flex flex-row gap-x-(--space-m)">
+      <div className="flex flex-row gap-x-(--space-s-m)">
         <Skill />
         <Inserter />
       </div>
