@@ -5,7 +5,7 @@ import Game from "./Game";
 export default function Footer() {
   return (
     <footer className="max-w-[1728px] w-full justify-self-center flex flex-col gap-(--space-m) px-(--space-m) py-(--space-s)">
-      <div className="flex flex-col gap-(--space-m) mt-(--space-s) md:pb-0 pb-(--space-xl-2xl)">
+      <div className="flex md:flex-col flex-col-reverse gap-(--space-m) mt-(--space-s) ">
         {/* section 1 */}
         <div className="">
           <Game />
@@ -20,20 +20,16 @@ export default function Footer() {
           </Link>
           {/* link part */}
           <div className="flex flex-row w-full justify-center gap-x-(--space-m-l) gap-y-(--space-m) md:justify-end">
-            <div className="flex flex-col gap-(--space-xs)">
+            <div className="flex flex-col gap-(--space-2xs)">
               <Link href="/" className="text--1 font-bold">
                 Home
               </Link>
-
               <div className="flex flex-col gap-(--space-4xs)">
                 <Link href="/#agenda" className="text--1">
                   Agenda
                 </Link>
                 <Link href="/ske888" className="text--1">
                   SKE888
-                </Link>
-                <Link href="/problems" className="text--1">
-                  Problems
                 </Link>
               </div>
               {/* <Link href="/#agenda" className="text--1 font-bold">
@@ -43,7 +39,7 @@ export default function Footer() {
                 Problems
               </Link> */}
             </div>
-            <div className="flex flex-col gap-(--space-xs)">
+            <div className="flex flex-col gap-(--space-2xs)">
               <Link href="/problems" className="text--1 font-bold">
                 Problems
               </Link>
@@ -59,7 +55,7 @@ export default function Footer() {
                 </Link>
               </div>
             </div>
-            <div className="flex flex-col gap-(--space-xs)">
+            <div className="flex flex-col gap-(--space-2xs)">
               <Link href="/faqs" className="text--1 font-bold">
                 FAQs
               </Link>
@@ -75,7 +71,7 @@ export default function Footer() {
                 </Link>
               </div>
             </div>
-            <div className="flex flex-col gap-(--space-xs)">
+            <div className="flex flex-col gap-(--space-2xs)">
               <p className="text--1 font-bold">Connect</p>
               <div className="flex flex-col gap-(--space-4xs)">
                 <Link

@@ -22,42 +22,37 @@ export default function Agenda() {
           Agenda
         </ScrambleText>
       </h3>
-      <div className="grid md:grid-cols-[1fr_var(--space-2xs)_auto] md:gap-x-(--space-xl) grid-cols-[var(--space-2xs)_auto] gap-x-(--space-l) grid-area:1/2/2/3">
+
+      <div>
         {agenda.map((item: AgendaItemProps, i) => (
-          <Fragment key={i}>
-            {/* Left: Day/Date */}
+          <div
+            key={i}
+            className="grid grid-cols-[var(--space-2xs)_1fr] grid-rows-[auto_auto] gap-x-(--space-l)
+            md:grid-cols-[1fr_var(--space-2xs)_1fr] md:grid-rows-1 md:gap-x-(--space-xl)"
+          >
+            {/* Dot/Line */}
             <div
-              className={`md:col-start-${i + 1} col-start-${i + 2} row-start-${
-                i + 1
-              }`}
-            >
-              <h4 className="text-green font-bold no_line_height pb-1">
-                Day {i + 1}
-              </h4>
-              <h6 className="text-green/20 font-medium">{item.date}</h6>
-            </div>
-            {/* Middle: Dot */}
-            <div
-              className={`flex flex-col items-center relative z-10 bg-green/40 mt-5 
-                md:col-start-${i + 2} col-start-${i + 1} row-start-${i + 1}
-                ${i !== agenda.length - 1 ? "h-full" : "h-fit"}`}
+              className={`mt-(--space-m) bg-green/20 flex flex-col items-center row-span-2 col-start-1 md:col-start-2 md:row-start-1 md:row-end-2 md:row-span-1 md:items-center
+                ${i === agenda.length - 1 ? "h-fit" : "h-full"}`}
             >
               <div className="w-6 h-6 bg-green pixel-corners-s" />
             </div>
-            {/* Right: Events */}
-            <div
-              className={`w-fit bg-[#18141c] text-white pixel-corners-s p-(--space-m) text-lg shadow-lg min-w-[350px] mb-(--space-3xl)
-                md:col-start-${i + 3} md:row-start-${i + 1} col-start-${
-                i + 2
-              } row-start-${i + 2}`}
-            >
-              {item.events.map((event: EventProps, i) => (
-                <div key={i}>
+            {/* Day/Date */}
+            <div className="mb-(--space-m) flex flex-col items-start col-start-2 row-start-1 md:col-start-1 md:items-end">
+              <h1 className="text-green font-bold no_line_height">
+                Day {i + 1}
+              </h1>
+              <h6 className="text-green/40 font-medium">{item.date}</h6>
+            </div>
+            {/* Events */}
+            <div className="mb-(--space-xl) w-fit bg-[#18141c] text-white/80 pixel-corners-s p-(--space-m) text-lg shadow-lg col-start-2 row-start-2 md:col-start-3 md:row-start-1">
+              {item.events.map((event: EventProps, eventIndex) => (
+                <div key={eventIndex}>
                   <span className="font-bold">{event.time}</span> {event.name}
                 </div>
               ))}
             </div>
-          </Fragment>
+          </div>
         ))}
       </div>
     </section>
