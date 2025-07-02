@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react'
 
 const SYMBOLS = ['🍒', '🍋', '🔔', '⭐', '𝟕']
-const SPIN_COST = 10
+const SPIN_COST = 20
 const INITIAL_MONEY = 100
 const LEVEL_UP_AMOUNT = 100
 const SPIN_ANIMATION_DURATION = 900 // ms
@@ -107,7 +107,7 @@ export default function SKE888() {
                         {slots.map((symbol, i) => (
                             <div
                                 key={i}
-                                className="w-24 h-24 flex items-center justify-center bg-white/20 rounded-2xl text-6xl border-4 border-yellow-400 shadow-lg transition-all"
+                                className="w-36 h-36 flex items-center justify-center bg-white/20 rounded-2xl text-8xl border-4 border-yellow-400 shadow-lg transition-all"
                             >
                                 {symbol}
                             </div>
