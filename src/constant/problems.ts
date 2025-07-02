@@ -3,6 +3,7 @@ const problemsData = [
     days: 1,
     problems: [
       {
+        days: 1,
         number: "1",
         name: "Intro",
         description: "Introduction to Python programming",
@@ -10,6 +11,7 @@ const problemsData = [
         url: "https://smth.com",
       },
       {
+        days: 1,
         number: "2",
         name: "Intro2",
         description: "Introduction to Python programming",

@@ -4,6 +4,8 @@ import { useState } from "react";
 import problemsData from "@/constant/problems";
 import Image from "next/image";
 import Link from "next/link";
+import BgBtn from "@/components/ui/BackgroundBtn";
+
 interface Problem {
   number: string;
   name: string;
@@ -18,21 +20,22 @@ interface DayData {
 }
 
 export default function ProblemList() {
-  const [CurrentDay, setCurrentDay] = useState(1);
+  const [CurrentDay, setCurrentDay] = useState(0);
 
   // push to url (use query params)
   // localStorage (Per browser, Per user) => track progress
   // map matched days
   function mapProblems() {
-    const CurrentDayData = problemsData.find(
-      (item: DayData) => item.days === CurrentDay
-    );
-    if (!CurrentDayData) return null;
-    const currentDayProblems = CurrentDayData?.problems || [];
-
-    return currentDayProblems.map((problem: Problem, i: number) => (
+    let problemsToShow = [];
+    if (CurrentDay === 0) {
+      problemsToShow = problemsData.flatMap((day) => day.problems);
+    } else {
+      const dayData = problemsData.find((day) => day.days === CurrentDay);
+      problemsToShow = dayData?.problems || [];
+    }
+    return problemsToShow.map((problem: Problem, i: number) => (
       <div key={i}>
-        <div className="w-50 h-25 flex relative">
+        <div className="w-(--space-4xl) h-(--space-4xl) flex relative">
           <Image src={problem.image} alt={problem.name} fill />
         </div>
         <h6 className="font-semibold text-1">
@@ -43,15 +46,11 @@ export default function ProblemList() {
           <Link
             target="_blank"
             href={problem.url}
-            className="bg-light-purple px-(--space-s) py-(--space-2xs)"
+            className="bg-light-purple px-(--space-s) py-(--space-2xs) pixel-corners-s"
           >
             View
           </Link>
-          <input
-            type="checkbox"
-            defaultChecked
-            className="w-(--space-s) h-(--space-s)"
-          />
+          <input type="checkbox" className="w-(--space-s) h-(--space-s)" />
         </div>
       </div>
     ));
@@ -61,17 +60,17 @@ export default function ProblemList() {
     <section className="flex flex-col justify-center justify-self-center">
       <div className="flex justify-between w-full container">
         <div className="gap-(--space-m) flex flex-row">
-          <button
-            onClick={() => setCurrentDay(1)}
-            className={`font-medium px-(--space-m) py-(--space-2xs) rounded-(--round-m) pixel-corners-s ${
+          <BgBtn
+            className={`font-medium px-(--space-m) py-(--space-2xs) pixel-corners-s ${
               CurrentDay === 1 ? "bg-green text-black" : "bg-light-purple"
             }`}
+            onClick={() => setCurrentDay(1)}
           >
             Day 1
-          </button>
+          </BgBtn>
           <button
             onClick={() => setCurrentDay(2)}
-            className={`font-medium px-(--space-m) py-(--space-2xs) rounded-(--round-m) pixel-corners-s ${
+            className={`font-medium px-(--space-m) py-(--space-2xs) pixel-corners-s ${
               CurrentDay === 2 ? "bg-green text-black" : "bg-light-purple"
             }`}
           >
@@ -79,16 +78,13 @@ export default function ProblemList() {
           </button>
           <button
             onClick={() => setCurrentDay(3)}
-            className={`font-medium px-(--space-m) py-(--space-2xs) rounded-(--round-m) pixel-corners-s ${
+            className={`font-medium px-(--space-m) py-(--space-2xs) pixel-corners-s ${
               CurrentDay === 3 ? "bg-green text-black" : "bg-light-purple"
             }`}
           >
             Day 3
           </button>
-        </div>
-        <div className="gap-(--space-m) flex flex-row">
           <button>resources</button>
-          <button>hide completed</button>
         </div>
       </div>
       <div className="problems-grid">{mapProblems()}</div>
