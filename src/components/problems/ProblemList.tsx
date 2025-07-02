@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
 import problemsData from "@/constant/problems";
-import Image from "next/image";
 import Link from "next/link";
 import DropdownBtn from "@/components/ui/DropdownBtn";
 import slides from "@/constant/slides";
 import { useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 
 interface Problem {
   number: string;
@@ -14,11 +14,6 @@ interface Problem {
   description: string;
   image: string;
   url: string;
-}
-
-interface DayData {
-  days: number;
-  problems: Problem[];
 }
 
 function ProblemCard({
@@ -50,34 +45,46 @@ function ProblemCard({
   );
 }
 
-export default function ProblemList() {
-  const [CurrentDay, setCurrentDay] = useState(0);
-  const router = useRouter();
+function mapProblems(CurrentDay: number) {
+  let problemsToShow = [];
+  if (CurrentDay === 0) {
+    problemsToShow = problemsData.flatMap((day) => day.problems);
+  } else {
+    const dayData = problemsData.find((day) => day.days === CurrentDay);
+    problemsToShow = dayData?.problems || [];
+  }
+  return (
+    <div className="grid grid-cols-4 gap-x-8 gap-y-12 justify-items-center">
+      {problemsToShow.map((problem, i) => (
+        <ProblemCard key={i} problem={problem} completed={false} />
+      ))}
+    </div>
+  );
+}
 
+export default function ProblemList() {
   // push to url (use query params)
   // localStorage (Per browser, Per user) => track progress
   // map matched days
-  function mapProblems() {
-    let problemsToShow = [];
-    if (CurrentDay === 0) {
-      problemsToShow = problemsData.flatMap((day) => day.problems);
-    } else {
-      const dayData = problemsData.find((day) => day.days === CurrentDay);
-      problemsToShow = dayData?.problems || [];
+  const validDays = [0, 1, 2, 3];
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const dayParam = searchParams.get("day");
+  const parsedDay = parseInt(dayParam ?? "", 10);
+
+  useEffect(() => {
+    if (Number.isNaN(parsedDay) || !validDays.includes(parsedDay)) {
+      router.push("/404");
     }
-    return (
-      <div className="grid grid-cols-4 gap-x-8 gap-y-12 justify-items-center">
-        {problemsToShow.map((problem, i) => (
-          <ProblemCard key={i} problem={problem} completed={false} />
-        ))}
-      </div>
-    );
-  }
+  }, [parsedDay, router]);
+
+  const CurrentDay = parsedDay;
 
   function handleClick(day: number) {
-    setCurrentDay(day);
+    if (!validDays.includes(day)) day = 0;
     router.push(`/problems?day=${day}`);
   }
+
   return (
     <section className="flex flex-col justify-center justify-self-center">
       <div className="flex justify-between w-full container">
@@ -139,7 +146,7 @@ export default function ProblemList() {
           </DropdownBtn>
         </div>
       </div>
-      <div className="problems-grid">{mapProblems()}</div>
+      <div className="problems-grid">{mapProblems(CurrentDay)}</div>
     </section>
   );
 }

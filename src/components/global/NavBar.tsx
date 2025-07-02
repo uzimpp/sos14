@@ -108,7 +108,7 @@ export default function NavBar() {
             </Link>
           </button>
           <button>
-            <Link href="/problems" className="text-0">
+            <Link href="/problems?day=0" className="text-0">
               Problems
             </Link>
           </button>
