@@ -4,7 +4,9 @@ import { useState } from "react";
 import problemsData from "@/constant/problems";
 import Image from "next/image";
 import Link from "next/link";
-import BgBtn from "@/components/ui/BackgroundBtn";
+import DropdownBtn from "@/components/ui/DropdownBtn";
+import slides from "@/constant/slides";
+import { useRouter } from "next/navigation";
 
 interface Problem {
   number: string;
@@ -19,8 +21,38 @@ interface DayData {
   problems: Problem[];
 }
 
+function ProblemCard({
+  problem,
+  completed,
+}: {
+  problem: Problem;
+  completed?: boolean;
+}) {
+  return (
+    <div className="pixel-corners-s bg-[#3a2e3f] w-64 h-96 flex flex-col justify-between p-4 relative">
+      <div className="bg-gray-300 rounded-md w-full h-32 mb-4" />
+      <h6 className="font-semibold text-1 mb-1">
+        {problem.number}. {problem.name}
+      </h6>
+      <p className="text-0 mb-4">{problem.description}</p>
+      <div className="flex flex-row items-center justify-between mt-auto">
+        <button className="bg-black text-white w-32 py-1 rounded pixel-corners-s">
+          View
+        </button>
+        <input
+          type="checkbox"
+          checked={completed}
+          readOnly
+          className="w-5 h-5 accent-green-400 ml-2"
+        />
+      </div>
+    </div>
+  );
+}
+
 export default function ProblemList() {
   const [CurrentDay, setCurrentDay] = useState(0);
+  const router = useRouter();
 
   // push to url (use query params)
   // localStorage (Per browser, Per user) => track progress
@@ -33,58 +65,78 @@ export default function ProblemList() {
       const dayData = problemsData.find((day) => day.days === CurrentDay);
       problemsToShow = dayData?.problems || [];
     }
-    return problemsToShow.map((problem: Problem, i: number) => (
-      <div key={i}>
-        <div className="w-(--space-4xl) h-(--space-4xl) flex relative">
-          <Image src={problem.image} alt={problem.name} fill />
-        </div>
-        <h6 className="font-semibold text-1">
-          {problem.number}. {problem.name}
-        </h6>
-        <p className="text-0">{problem.description}</p>
-        <div className="flex flex-row">
-          <Link
-            target="_blank"
-            href={problem.url}
-            className="bg-light-purple px-(--space-s) py-(--space-2xs) pixel-corners-s"
-          >
-            View
-          </Link>
-          <input type="checkbox" className="w-(--space-s) h-(--space-s)" />
-        </div>
+    return (
+      <div className="grid grid-cols-4 gap-x-8 gap-y-12 justify-items-center">
+        {problemsToShow.map((problem, i) => (
+          <ProblemCard key={i} problem={problem} completed={false} />
+        ))}
       </div>
-    ));
+    );
   }
 
+  function handleClick(day: number) {
+    setCurrentDay(day);
+    router.push(`/problems?day=${day}`);
+  }
   return (
     <section className="flex flex-col justify-center justify-self-center">
       <div className="flex justify-between w-full container">
-        <div className="gap-(--space-m) flex flex-row">
-          <BgBtn
+        <div className="gap-(--space-s) flex flex-row">
+          <button
+            className={`font-medium px-(--space-m) py-(--space-2xs) pixel-corners-s ${
+              CurrentDay === 0 ? "bg-green text-black" : "bg-light-purple"
+            }`}
+            onClick={() => handleClick(0)}
+          >
+            All
+          </button>
+          <button
             className={`font-medium px-(--space-m) py-(--space-2xs) pixel-corners-s ${
               CurrentDay === 1 ? "bg-green text-black" : "bg-light-purple"
             }`}
-            onClick={() => setCurrentDay(1)}
+            onClick={() => handleClick(1)}
           >
             Day 1
-          </BgBtn>
+          </button>
           <button
-            onClick={() => setCurrentDay(2)}
             className={`font-medium px-(--space-m) py-(--space-2xs) pixel-corners-s ${
               CurrentDay === 2 ? "bg-green text-black" : "bg-light-purple"
             }`}
+            onClick={() => handleClick(2)}
           >
             Day 2
           </button>
           <button
-            onClick={() => setCurrentDay(3)}
             className={`font-medium px-(--space-m) py-(--space-2xs) pixel-corners-s ${
               CurrentDay === 3 ? "bg-green text-black" : "bg-light-purple"
             }`}
+            onClick={() => handleClick(3)}
           >
             Day 3
           </button>
-          <button>resources</button>
+          <DropdownBtn label="Resources">
+            <Link
+              href={slides.Day1}
+              target="_blank"
+              className="block px-(--space-m) py-(--space-2xs) m-(--space-3xs) text-nowrap hover:bg-light-purple pixel-corners-s"
+            >
+              Slide day 1
+            </Link>
+            <Link
+              href={slides.Day2}
+              target="_blank"
+              className="block px-(--space-m) py-(--space-2xs) m-(--space-3xs) text-nowrap hover:bg-light-purple pixel-corners-s"
+            >
+              Slide day 2
+            </Link>
+            <Link
+              href={slides.Day3}
+              target="_blank"
+              className="block px-(--space-m) py-(--space-2xs) m-(--space-3xs) text-nowrap hover:bg-light-purple pixel-corners-s"
+            >
+              Slide day 3
+            </Link>
+          </DropdownBtn>
         </div>
       </div>
       <div className="problems-grid">{mapProblems()}</div>

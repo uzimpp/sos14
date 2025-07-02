@@ -67,7 +67,7 @@
   --space-4xs-2xs: clamp(0.125rem, -0.0136rem + 0.5913vw, 0.625rem);
 
   /* === Colors === */
-  --color-black: #1a1a1a;
+  --color-black: #141414;
   --color-dark-purple: #231d24;
   --color-light-purple: #514454;
   --color-pink: #fd68ce;
