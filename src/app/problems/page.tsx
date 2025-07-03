@@ -1,5 +1,4 @@
 import ScrambleText from "@/components/effects/ScrambleText";
-import ProgressBar from "@/components/problems/ProgressBar";
 import ProblemList from "@/components/problems/ProblemList";
 import Link from "next/link";
 
