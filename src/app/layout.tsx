@@ -17,7 +17,7 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "SOS14",
   description:
-    "Welcome to the 14th SOS camp, a preparation camp for SKE23 students. We will take you through Python programming fundamentalsp",
+    "Welcome to the 14th SOS camp, a preparation camp for SKE23 students. We will take you through Python programming fundamentals",
 };
 
 export default function RootLayout({
