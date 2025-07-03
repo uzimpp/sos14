@@ -6,7 +6,7 @@ import DropdownBtn from "@/components/ui/DropdownBtn";
 import slides from "@/constant/slides";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 interface Problem {
   number: string;
@@ -16,15 +16,18 @@ interface Problem {
   url: string;
 }
 
+interface ProblemCardProps {
+  problem: Problem;
+  completed?: boolean;
+  onChange: 
+}
 function ProblemCard({
   problem,
   completed,
-}: {
-  problem: Problem;
-  completed?: boolean;
-}) {
+  onChange,
+}: ) {
   return (
-    <div className="pixel-corners-s bg-[#3a2e3f] w-64 h-96 flex flex-col justify-between p-4 relative">
+    <div className="pixel-corners-s bg-[#3a2e3f] w-full aspect-[3/4] flex flex-col justify-between p-4 relative">
       <div className="bg-gray-300 rounded-md w-full h-32 mb-4" />
       <h6 className="font-semibold text-1 mb-1">
         {problem.number}. {problem.name}
@@ -37,7 +40,7 @@ function ProblemCard({
         <input
           type="checkbox"
           checked={completed}
-          readOnly
+          onChange={}
           className="w-5 h-5 accent-green-400 ml-2"
         />
       </div>
@@ -46,6 +49,24 @@ function ProblemCard({
 }
 
 function mapProblems(CurrentDay: number) {
+  const [completedStatus, setCompletedStatus] = useState(0);
+
+  useEffect(() => {
+    const stored = localStorage.getItem("problemCompletion");
+    if (stored) setCompletedStatus(JSON.parse(stored));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("problemCompletion", JSON.stringify(completedStatus));
+  }, [completedStatus]);
+
+  const handleCheckboxChange = (problemNumber) => {
+    setCompletedStatus((prev) => ({
+      ...prev,
+      [problemNumber]: !prev[problemNumber],
+    }));
+  };
+
   let problemsToShow = [];
   if (CurrentDay === 0) {
     problemsToShow = problemsData.flatMap((day) => day.problems);
@@ -54,9 +75,12 @@ function mapProblems(CurrentDay: number) {
     problemsToShow = dayData?.problems || [];
   }
   return (
-    <div className="grid grid-cols-4 gap-x-8 gap-y-12 justify-items-center">
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-(--space-l) justify-items-center">
       {problemsToShow.map((problem, i) => (
-        <ProblemCard key={i} problem={problem} completed={false} />
+        <ProblemCard   key={i}
+  problem={problem}
+  completed={!!completedStatus[problem.number]}
+  onChange={() => handleCheckboxChange(problem.number)} />
       ))}
     </div>
   );

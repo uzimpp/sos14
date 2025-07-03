@@ -18,12 +18,13 @@ export default function DropdownBtn({
       <button
         type="button"
         onClick={() => setIsOpen((o) => !o)}
-        className="flex gap-x-(--space-xs) pixel-corners-s px-(--space-s) py-(--space-2xs) font-medium items-center"
+        className={`flex gap-x-(--space-xs) pixel-corners-s px-(--space-s) py-(--space-2xs) font-medium items-center transition-all duration-300
+            ${isOpen ? " text-green" : "text-white "}`}
       >
         {label}{" "}
         <div
           className={`transition-all duration-300 h-fit w-fit text--1 font-bold ${
-            isOpen ? "rotate-90 text-green" : "text-white -rotate-90"
+            isOpen ? "rotate-90 " : "-rotate-90"
           }`}
         >
           &gt;
