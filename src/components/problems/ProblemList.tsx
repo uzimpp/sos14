@@ -99,20 +99,30 @@ export default function ProblemList() {
   // localStorage (Per browser, Per user) => track progress [In progress]
   //   try to getitem => pass => display
   //                     failed =>  create one
+  // Should re load when user refresh the page or open this page the first time
+  // Keep track of the progress of the user even if they close the browser or navigate to other page
+  //
   const [completedStatus, setCompletedStatus] = useState<{
     [key: string]: boolean;
   }>({});
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem("problemCompletion");
-    if (stored) {
-      setCompletedStatus(JSON.parse(stored));
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("problemCompletion");
+      setCompletedStatus(stored ? JSON.parse(stored) : {});
+      setIsLoaded(true);
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("problemCompletion", JSON.stringify(completedStatus));
-  }, [completedStatus]);
+    if (isLoaded) {
+      localStorage.setItem(
+        "problemCompletion",
+        JSON.stringify(completedStatus)
+      );
+    }
+  }, [completedStatus, isLoaded]);
 
   const handleCheckboxChange = (problemNumber: string) => {
     setCompletedStatus((prev) => ({
