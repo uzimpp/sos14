@@ -19,13 +19,14 @@ interface Problem {
 interface ProblemCardProps {
   problem: Problem;
   completed?: boolean;
-  onChange: 
+  onChange: () => void;
 }
+
 function ProblemCard({
   problem,
-  completed,
+  completed = false,
   onChange,
-}: ) {
+}: ProblemCardProps) {
   return (
     <div className="pixel-corners-s bg-[#3a2e3f] w-full aspect-[3/4] flex flex-col justify-between p-4 relative">
       <div className="bg-gray-300 rounded-md w-full h-32 mb-4" />
@@ -34,13 +35,17 @@ function ProblemCard({
       </h6>
       <p className="text-0 mb-4">{problem.description}</p>
       <div className="flex flex-row items-center justify-between mt-auto">
-        <button className="bg-black text-white w-32 py-1 rounded pixel-corners-s">
+        <Link
+          target="_blank"
+          href={problem.url}
+          className="bg-black text-white w-32 py-1 rounded pixel-corners-s"
+        >
           View
-        </button>
+        </Link>
         <input
           type="checkbox"
           checked={completed}
-          onChange={}
+          onChange={onChange}
           className="w-5 h-5 accent-green-400 ml-2"
         />
       </div>
@@ -48,26 +53,13 @@ function ProblemCard({
   );
 }
 
-function mapProblems(CurrentDay: number) {
-  const [completedStatus, setCompletedStatus] = useState(0);
-
-  useEffect(() => {
-    const stored = localStorage.getItem("problemCompletion");
-    if (stored) setCompletedStatus(JSON.parse(stored));
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("problemCompletion", JSON.stringify(completedStatus));
-  }, [completedStatus]);
-
-  const handleCheckboxChange = (problemNumber) => {
-    setCompletedStatus((prev) => ({
-      ...prev,
-      [problemNumber]: !prev[problemNumber],
-    }));
-  };
-
-  let problemsToShow = [];
+// Map matched days  [done]
+function mapProblems(
+  CurrentDay: number,
+  completedStatus: { [key: string]: boolean },
+  handleCheckboxChange: (problemNumber: string) => void
+) {
+  let problemsToShow: Problem[] = [];
   if (CurrentDay === 0) {
     problemsToShow = problemsData.flatMap((day) => day.problems);
   } else {
@@ -76,20 +68,20 @@ function mapProblems(CurrentDay: number) {
   }
   return (
     <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-(--space-l) justify-items-center">
-      {problemsToShow.map((problem, i) => (
-        <ProblemCard   key={i}
-  problem={problem}
-  completed={!!completedStatus[problem.number]}
-  onChange={() => handleCheckboxChange(problem.number)} />
+      {problemsToShow.map((problem) => (
+        <ProblemCard
+          key={problem.number}
+          problem={problem}
+          completed={!!completedStatus[problem.number]}
+          onChange={() => handleCheckboxChange(problem.number)}
+        />
       ))}
     </div>
   );
 }
 
 export default function ProblemList() {
-  // push to url (use query params)
-  // localStorage (Per browser, Per user) => track progress
-  // map matched days
+  // get day from router
   const validDays = [0, 1, 2, 3];
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -104,6 +96,32 @@ export default function ProblemList() {
 
   const CurrentDay = parsedDay;
 
+  // localStorage (Per browser, Per user) => track progress [In progress]
+  //   try to getitem => pass => display
+  //                     failed =>  create one
+  const [completedStatus, setCompletedStatus] = useState<{
+    [key: string]: boolean;
+  }>({});
+
+  useEffect(() => {
+    const stored = localStorage.getItem("problemCompletion");
+    if (stored) {
+      setCompletedStatus(JSON.parse(stored));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("problemCompletion", JSON.stringify(completedStatus));
+  }, [completedStatus]);
+
+  const handleCheckboxChange = (problemNumber: string) => {
+    setCompletedStatus((prev) => ({
+      ...prev,
+      [problemNumber]: !prev[problemNumber],
+    }));
+  };
+
+  // push to url (use query params) [done]
   function handleClick(day: number) {
     if (!validDays.includes(day)) day = 0;
     router.push(`/problems?day=${day}`);
@@ -170,7 +188,9 @@ export default function ProblemList() {
           </DropdownBtn>
         </div>
       </div>
-      <div className="problems-grid">{mapProblems(CurrentDay)}</div>
+      <div className="problems-grid">
+        {mapProblems(CurrentDay, completedStatus, handleCheckboxChange)}
+      </div>
     </section>
   );
 }
