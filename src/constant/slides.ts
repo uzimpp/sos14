@@ -4,4 +4,4 @@ const slides = {
   Day3: "https://www.canva.com/design/DAGqzKT8gaM/bFWEdg-sDnkD4DiCRejKTg/view?utm_content=DAGqzKT8gaM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h36e42e49f2",
 };
 
-export default slides
+export default slides;

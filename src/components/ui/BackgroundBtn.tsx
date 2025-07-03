@@ -8,11 +8,7 @@ export default function BgBtn({
   children,
   onClick,
   className = "",
-}: {
-  children: React.ReactNode;
-  onClick?: () => void;
-  className?: string;
-}) {
+}: BgBtnProps) {
   return (
     <button
       onClick={onClick}
