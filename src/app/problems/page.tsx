@@ -1,6 +1,7 @@
 import ScrambleText from "@/components/effects/ScrambleText";
 import ProblemList from "@/components/problems/ProblemList";
 import Link from "next/link";
+import { Suspense } from "react";
 
 export default function Problems() {
   return (
@@ -22,7 +23,9 @@ export default function Problems() {
           </p>
         </div>
       </div>
-      <ProblemList />
+      <Suspense fallback={<div>Loading...</div>}>
+        <ProblemList />
+      </Suspense>
     </div>
   );
 }
