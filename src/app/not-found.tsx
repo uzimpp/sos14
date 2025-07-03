@@ -14,8 +14,8 @@ export default function NotFound() {
         </h1>
 
         <p className="text-gray-600 mb-8 leading-relaxed">
-          Sorry, we couldn&apos;t find the page you&apos;re looking for. It might have
-          been moved, deleted, or you entered the wrong URL.
+          Sorry, we couldn&apos;t find the page you&apos;re looking for. It
+          might have been moved, deleted, or you entered the wrong URL.
         </p>
 
         <div className="space-y-4">

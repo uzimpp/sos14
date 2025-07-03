@@ -40,17 +40,17 @@ export default function Footer() {
               </Link> */}
             </div>
             <div className="flex flex-col gap-(--space-2xs)">
-              <Link href="/problems" className="text--1 font-bold">
+              <Link href="/problems?day=0" className="text--1 font-bold">
                 Problems
               </Link>
               <div className="flex flex-col gap-(--space-4xs)">
-                <Link href="/problems#day1" className="text--1">
+                <Link href="/problems?day=1" className="text--1">
                   Day 1
                 </Link>
-                <Link href="/problems#day2" className="text--1">
+                <Link href="/problems?day=2" className="text--1">
                   Day 2
                 </Link>
-                <Link href="/problems#day3" className="text--1">
+                <Link href="/problems?day=3" className="text--1">
                   Day 3
                 </Link>
               </div>
