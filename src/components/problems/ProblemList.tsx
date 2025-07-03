@@ -96,7 +96,7 @@ export default function ProblemList() {
 
   const CurrentDay = parsedDay;
 
-  // localStorage (Per browser, Per user) => track progress [In progress]
+  // localStorage (Per browser, Per user) => track progress [Done?]
   //   try to getitem => pass => display
   //                     failed =>  create one
   // Should re load when user refresh the page or open this page the first time
@@ -125,10 +125,15 @@ export default function ProblemList() {
   }, [completedStatus, isLoaded]);
 
   const handleCheckboxChange = (problemNumber: string) => {
-    setCompletedStatus((prev) => ({
-      ...prev,
-      [problemNumber]: !prev[problemNumber],
-    }));
+    setCompletedStatus((prev) => {
+      const newStatus = { ...prev };
+      if (newStatus[problemNumber]) {
+        delete newStatus[problemNumber];
+      } else {
+        newStatus[problemNumber] = true;
+      }
+      return newStatus;
+    });
   };
 
   // push to url (use query params) [done]
