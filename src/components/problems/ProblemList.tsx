@@ -1,48 +1,12 @@
 "use client";
 
-import problemsData from "@/constant/problems";
 import Link from "next/link";
 import DropdownBtn from "@/components/ui/DropdownBtn";
 import slides from "@/constant/slides";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import ProblemCard from "./ProblemCard";
-
-interface Problem {
-  number: string;
-  name: string;
-  description: string;
-  image: string;
-  url: string;
-}
-
-// Map matched days  [done]
-function mapProblems(
-  CurrentDay: number,
-  completedStatus: { [key: string]: boolean },
-  handleCheckboxChange: (problemNumber: string) => void
-) {
-  let problemsToShow: Problem[] = [];
-  if (CurrentDay === 0) {
-    problemsToShow = problemsData.flatMap((day) => day.problems);
-  } else {
-    const dayData = problemsData.find((day) => day.days === CurrentDay);
-    problemsToShow = dayData?.problems || [];
-  }
-  return (
-    <div className="xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 md:grid flex flex-col gap-(--space-l) justify-items-center py-(--space-l)">
-      {problemsToShow.map((problem) => (
-        <ProblemCard
-          key={problem.number}
-          problem={problem}
-          completed={!!completedStatus[problem.number]}
-          onChange={() => handleCheckboxChange(problem.number)}
-        />
-      ))}
-    </div>
-  );
-}
+import MapProblems from "@/components/problems/MapProblems";
 
 export default function ProblemList() {
   // get day from router
@@ -166,7 +130,7 @@ export default function ProblemList() {
         </DropdownBtn>
       </div>
       <div className="problems-grid">
-        {mapProblems(CurrentDay, completedStatus, handleCheckboxChange)}
+        {MapProblems(CurrentDay, completedStatus, handleCheckboxChange)}
       </div>
     </section>
   );
