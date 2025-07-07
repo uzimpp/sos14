@@ -72,7 +72,7 @@ export default function ProblemList() {
 
   return (
     <section className="flex flex-col justify-center justify-self-center md:px-(--space-s-l) px-0">
-      <div className="gap-(--space-s) flex flex-row flex-wrap md:justify-start justify-center">
+      <div className="gap-(--space-xs-s) flex flex-row flex-wrap md:justify-start justify-center mb-(--space-m-l)">
         <button
           className={`font-medium px-(--space-m) py-(--space-2xs) pixel-corners-s ${
             CurrentDay === 0 ? "bg-green text-black" : "bg-light-purple/77"
@@ -129,9 +129,7 @@ export default function ProblemList() {
           </Link>
         </DropdownBtn>
       </div>
-      <div className="problems-grid">
         {MapProblems(CurrentDay, completedStatus, handleCheckboxChange)}
-      </div>
     </section>
   );
 }

@@ -30,7 +30,7 @@ export default function MapProblems(
     problemsToShow = dayData?.problems || [];
   }
   return (
-    <div className="xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 md:grid flex flex-col gap-(--space-l) justify-items-center py-(--space-l)">
+    <div className="xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 md:grid flex flex-col gap-(--space-l) justify-items-center">
       {problemsToShow.map((problem) => (
         <ProblemCard
           key={problem.number}
@@ -88,7 +88,7 @@ function ProblemCard({
             {/* Checkbox for Mobile */}
             <fieldset className="md:hidden flex items-center justify-center ">
               <input
-                id={problem.number}
+                id={`m-${problem.number}`}
                 type="checkbox"
                 checked={completed}
                 onChange={onChange}
@@ -111,7 +111,7 @@ function ProblemCard({
         {/* Checkbox for non-mobile */}
         <fieldset className="hidden md:flex items-center justify-center ">
           <input
-            id={problem.number}
+            id={`non-m-${problem.number}`}
             type="checkbox"
             checked={completed}
             onChange={onChange}
