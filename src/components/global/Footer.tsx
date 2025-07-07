@@ -75,14 +75,15 @@ export default function Footer() {
               <p className="text--1 font-bold">Connect</p>
               <div className="flex flex-col gap-(--space-4xs)">
                 <Link
-                  href="https://www.instagram.com/sos14.camp/"
+                  href="https://www.instagram.com/sos_camp14"
                   className="text--1"
                   target="_blank"
                 >
                   Instagram
                 </Link>
+                {/* Should use the 7d link one */}
                 <Link
-                  href="https://discord.gg/CGmp5ahe"
+                  href="https://discord.gg/nZAXbymw64"
                   className="text--1"
                   target="_blank"
                 >
