@@ -4,7 +4,7 @@ import { useState, ReactNode } from "react";
 
 interface DropdownBtnProps {
   label: string;
-  children?: ReactNode; // dropdown content (menu items)
+  children?: ReactNode;
   className?: string;
 }
 
