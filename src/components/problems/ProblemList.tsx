@@ -75,7 +75,7 @@ export default function ProblemList() {
       <div className="gap-(--space-s) flex flex-row flex-wrap md:justify-start justify-center">
         <button
           className={`font-medium px-(--space-m) py-(--space-2xs) pixel-corners-s ${
-            CurrentDay === 0 ? "bg-green text-black" : "bg-light-purple"
+            CurrentDay === 0 ? "bg-green text-black" : "bg-light-purple/77"
           }`}
           onClick={() => handleClick(0)}
         >
@@ -83,7 +83,7 @@ export default function ProblemList() {
         </button>
         <button
           className={`font-medium px-(--space-m) py-(--space-2xs) pixel-corners-s ${
-            CurrentDay === 1 ? "bg-green text-black" : "bg-light-purple"
+            CurrentDay === 1 ? "bg-green text-black" : "bg-light-purple/77"
           }`}
           onClick={() => handleClick(1)}
         >
@@ -91,7 +91,7 @@ export default function ProblemList() {
         </button>
         <button
           className={`font-medium px-(--space-m) py-(--space-2xs) pixel-corners-s ${
-            CurrentDay === 2 ? "bg-green text-black" : "bg-light-purple"
+            CurrentDay === 2 ? "bg-green text-black" : "bg-light-purple/77"
           }`}
           onClick={() => handleClick(2)}
         >
@@ -99,7 +99,7 @@ export default function ProblemList() {
         </button>
         <button
           className={`font-medium px-(--space-m) py-(--space-2xs) pixel-corners-s ${
-            CurrentDay === 3 ? "bg-green text-black" : "bg-light-purple"
+            CurrentDay === 3 ? "bg-green text-black" : "bg-light-purple/77"
           }`}
           onClick={() => handleClick(3)}
         >

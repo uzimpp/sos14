@@ -50,38 +50,54 @@ function ProblemCard({
 }: ProblemCardProps) {
   return (
     <div
-      className={`relative h-full w-full flex flex-col p-(--space-m) bg-light-purple/44 pixel-corners-s ${
+      className={`relative h-full w-full flex flex-col p-(--space-s-m) bg-light-purple/44 pixel-corners-s ${
         completed ? "opacity-33 scale-99" : ""
-      } transition-transform transform hover:-translate-y-1 hover:shadow-2xl`}
+      } transition-transform transform hover:-translate-y-1 hover:shadow-2xl gap-(--space-m)`}
     >
       {completed && (
-        <div className="right-(--space-s) top-(--space-s) absolute z-100 bg-green text--1 text-black px-(--space-2xs) py-(--space-4xs) pixel-corners-xs">
+        <button
+          className="right-(--space-s) top-(--space-s) absolute z-100 bg-green text--1 text-black px-(--space-2xs) py-(--space-4xs) pixel-corners-xs"
+          onClick={onChange}
+        >
           Completed
-        </div>
+        </button>
       )}
-      {/* Image Section */}
-      <div className="flex relative w-full items-center justify-center mb-(--space-m)">
-        <div className="flex flex-shrink-0 relative w-[61.8%] aspect-square items-center justify-center pixel-corners-xs">
-          <Image
-            fill
-            className="object-contain "
-            src={problem.image}
-            alt={problem.name}
-          />
+      <div className="flex md:flex-col flex-row gap-(--space-m)">
+        {/* Image Section */}
+        <div className="flex relative items-center justify-center ">
+          <div className="flex flex-shrink-0 relative md:w-[61.8%] w-(--space-2xl) aspect-square items-center justify-center pixel-corners-xs">
+            <Image
+              fill
+              className="object-contain "
+              src={problem.image}
+              alt={problem.name}
+            />
+          </div>
         </div>
-      </div>
-      {/* Texts */}
-      <div className="flex flex-col mb-(--space-m) gap-(--space-2xs)">
-        <h6>
-          <Link
-            target="_blank"
-            href={problem.url}
-            className="text-0 font-semibold text-white truncate"
-          >
-            {problem.number}. {problem.name}
-          </Link>
-        </h6>
-        <p className="text--1 text-white/61">{problem.description}</p>
+        {/* Texts */}
+        <div className="flex flex-col gap-(--space-2xs) w-full">
+          <h6 className="flex flex-row w-full justify-between">
+            <Link
+              target="_blank"
+              href={problem.url}
+              className="text-0 font-semibold text-white truncate"
+            >
+              {problem.number}. {problem.name}
+            </Link>
+
+            {/* Checkbox for Mobile */}
+            <fieldset className="md:hidden flex items-center justify-center ">
+              <input
+                id={problem.number}
+                type="checkbox"
+                checked={completed}
+                onChange={onChange}
+                className="w-(--space-s) h-(--space-s) bg-green accent-green cursor-pointer"
+              />
+            </fieldset>
+          </h6>
+          <p className="text--1 text-white/61">{problem.description}</p>
+        </div>
       </div>
       {/* Actions */}
       <div className="flex flex-row mt-auto items-center justify-end gap-(--space-xs)">
@@ -92,8 +108,8 @@ function ProblemCard({
         >
           Solve
         </Link>
-        {/* aspect-square pixel-corners-s h-full bg-black */}
-        <fieldset className="flex items-center justify-center ">
+        {/* Checkbox for non-mobile */}
+        <fieldset className="hidden md:flex items-center justify-center ">
           <input
             id={problem.number}
             type="checkbox"
@@ -101,12 +117,6 @@ function ProblemCard({
             onChange={onChange}
             className="w-(--space-s) h-(--space-s) bg-green accent-green cursor-pointer"
           />
-          {/* <label
-            className="text--1 text-white/80 select-none"
-            htmlFor={problem.number}
-            onChange={onChange}
-          >
-          </label> */}
         </fieldset>
       </div>
     </div>
