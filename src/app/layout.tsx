@@ -37,9 +37,9 @@ export const metadata: Metadata = {
     "coding bootcamp for students",
   ],
   openGraph: {
-    title: "SOS14 - SKE23 Python Programming Camp",
+    title: "SOS14",
     description:
-      "Join the 14th SOS camp for SKE23 students and learn Python programming fundamentals.",
+      "SOS14 is a student-led programming camp for SKE23 freshmen at Kasetsart University. Learn Python fundamentals, explore interactive challenges, and grow alongside peers in a fun and supportive environment.",
     url: "https://sos14.vercel.app/",
     siteName: "SOS14",
     images: [
@@ -55,9 +55,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SOS14 - SKE23 Python Programming Camp",
+    title: "SOS14",
     description:
-      "Join the 14th SOS camp for SKE23 students and learn Python programming fundamentals.",
+      "SOS14 is a student-led programming camp for SKE23 freshmen at Kasetsart University. Learn Python fundamentals, explore interactive challenges, and grow alongside peers in a fun and supportive environment.",
     images: ["https://sos14.vercel.app/logo/logo_sos14_full.png"],
   },
   icons: {
