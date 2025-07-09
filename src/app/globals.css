@@ -77,6 +77,7 @@
   --color-white: #f2ecf4;
   --color-grey: #3e3b3b;
   --color-yellow: #e8d462;
+  --color-red: #d63639;
 
   /* === Round === */
   --round-s: 0.25rem;
@@ -429,6 +430,13 @@
     border-radius: 9999px;
     pointer-events: none;
     z-index: -1;
+  }
+
+  .ease-smooth {
+    transition-timing-function: var(--ease-smooth) !important;
+  }
+  .ease-elastic {
+    transition-timing-function: var(--elastic) !important;
   }
 
   @media (min-width: 768px) {

@@ -5,6 +5,7 @@ import Link from "next/link";
 interface Problem {
   number: string;
   name: string;
+  isExtra: boolean;
   description: string;
   image: string;
   url: string;
@@ -50,43 +51,67 @@ function ProblemCard({
 }: ProblemCardProps) {
   return (
     <div
-      className={`relative h-full w-full flex flex-col p-(--space-s-m) bg-light-purple/44 pixel-corners-s ${
+      className={`relative h-full w-full flex flex-col p-(--space-s-m) bg-light-purple/44 pixel-corners-s overflow-x-hidden ${
         completed ? "opacity-33 scale-99" : ""
-      } transition-transform transform hover:-translate-y-1 hover:shadow-2xl gap-(--space-m)`}
+      } transition-transform duration-400 ease-elastic hover:-translate-y-(--space-3xs) hover:shadow-2xl gap-(--space-s-m)`}
     >
-      {completed && (
+      {/* {completed && (
         <button
-          className="right-(--space-s) top-(--space-s) absolute z-100 bg-green text--1 text-black px-(--space-2xs) py-(--space-4xs) pixel-corners-xs"
+          className="right-(--space-s) top-(--space-s) absolute z-100 bg-green text--1 text-black px-(--space-2xs) py-(--space-4xs) pixel-corners-s"
           onClick={onChange}
         >
           Completed
         </button>
+      )} */}
+      {problem.isExtra && (
+        <div className="absolute right-(--space-s-m) top-(--space-s-m) z-50">
+          <div className="relative md:inline-block hidden group">
+            <div className="text--1 bg-red/61 px-[var(--space-xs)] py-[var(--space-4xs)] pixel-corners-s cursor-pointer">
+              extra
+            </div>
+            <div className="absolute z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-white text--1 bg-zinc-800 px-2 py-1 rounded left-1/2 -translate-x-1/2 top-full mt-1 whitespace-nowrap pointer-events-none">
+              You don&apos;t need to complete the extra problems.
+            </div>
+          </div>
+        </div>
       )}
-      <div className="flex md:flex-col flex-row gap-(--space-m)">
+      <div className="flex md:flex-col flex-row gap-(--space-s-m) ">
         {/* Image Section */}
         <div className="flex relative items-center justify-center ">
-          <div className="flex flex-shrink-0 relative md:w-[61.8%] w-(--space-2xl) aspect-square items-center justify-center pixel-corners-xs">
+          <div className="flex flex-shrink-0 relative md:w-[39.8%] md:m-(--space-m) m-(--space-3xs) w-(--space-xl) aspect-square items-center justify-center pixel-corners-xs">
             <Image
               fill
               className="object-contain "
               src={problem.image}
               alt={problem.name}
+              sizes="(max-width: 768px) 100vw, 200px"
             />
           </div>
         </div>
         {/* Texts */}
         <div className="flex flex-col gap-(--space-2xs) w-full">
-          <h6 className="flex flex-row w-full justify-between">
-            <Link
-              target="_blank"
-              href={problem.url}
-              className="text-0 font-semibold text-white truncate"
-            >
-              {problem.number}. {problem.name}
-            </Link>
-
+          <div className="flex flex-row w-full justify-between gap-(--space-2xs)">
+            <div className="flex flex-wrap items-center gap-(--space-2xs)">
+              <div className="text-0 font-semibold text-white flex-wrap">
+                {problem.number}.{" "}
+                <Link target="_blank" href={problem.url} className="">
+                  {problem.name}
+                </Link>
+              </div>
+              {/* IsExtra tag */}
+              {problem.isExtra && (
+                <div className="relative inline-block md:hidden group">
+                  <div className="text--1 bg-red/61 px-[var(--space-xs)] py-[var(--space-4xs)] pixel-corners-s cursor-pointer">
+                    extra
+                  </div>
+                  <div className="absolute z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-white text--1 bg-zinc-800 px-2 py-1 rounded left-1/2 -translate-x-1/2 top-full mt-1 whitespace-nowrap pointer-events-none">
+                    You don&apos;t need to complete the extra problems.
+                  </div>
+                </div>
+              )}
+            </div>
             {/* Checkbox for Mobile */}
-            <fieldset className="md:hidden flex items-center justify-center ">
+            <fieldset className="md:hidden flex items-center justify-center">
               <input
                 id={`m-${problem.number}`}
                 type="checkbox"
@@ -95,7 +120,7 @@ function ProblemCard({
                 className="w-(--space-s) h-(--space-s) bg-green accent-green cursor-pointer"
               />
             </fieldset>
-          </h6>
+          </div>
           <p className="text--1 text-white/61">{problem.description}</p>
         </div>
       </div>
@@ -104,12 +129,13 @@ function ProblemCard({
         <Link
           target="_blank"
           href={problem.url}
-          className="text-center text--1 text-white px-(--space-s) py-(--space-2xs) w-full font-semibold pixel-corners-s bg-black"
+          className={`text-center text--1 px-(--space-s) py-(--space-2xs) w-full font-semibold pixel-corners-s transition-all duration-400 ease-smooth
+            ${completed ? "bg-green text-black" : "bg-black text-white"}`}
         >
-          Solve
+          {completed ? "Completed" : "Solve"}
         </Link>
         {/* Checkbox for non-mobile */}
-        <fieldset className="hidden md:flex items-center justify-center ">
+        <fieldset className="hidden md:flex items-center justify-center transition-all duration-400 ease-smooth">
           <input
             id={`non-m-${problem.number}`}
             type="checkbox"
