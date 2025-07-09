@@ -41,6 +41,7 @@
   --space-2xl: clamp(4rem, 3.7228rem + 1.1826vw, 5rem);
   --space-3xl: clamp(6rem, 5.5843rem + 1.7738vw, 7.5rem);
   --space-4xl: clamp(8rem, 7.4457rem + 2.3651vw, 10rem);
+  --space-5xl: clamp(10rem, 9.3073rem + 2.9563vw, 12.5rem);
 
   /* One-up pairs */
   --space-4xs-3xs: clamp(0.125rem, 0.073rem + 0.2217vw, 0.3125rem);
@@ -67,7 +68,7 @@
   --space-4xs-2xs: clamp(0.125rem, -0.0136rem + 0.5913vw, 0.625rem);
 
   /* === Colors === */
-  --color-black: #1a1a1a;
+  --color-black: #141414;
   --color-dark-purple: #231d24;
   --color-light-purple: #514454;
   --color-pink: #fd68ce;
@@ -244,7 +245,7 @@
 
   .pixel-corners-xs {
     clip-path: polygon(
-      0px calc(100% - var(--space-4xs)),
+      0px calc(100% - calc(2 * var(--space-4xs))),
       var(--space-4xs) calc(100% - calc(2 * var(--space-4xs))),
       var(--space-4xs) calc(100% - var(--space-4xs)),
       calc(2 * var(--space-4xs)) calc(100% - var(--space-4xs)),
@@ -266,6 +267,7 @@
       0px calc(2 * var(--space-4xs))
     );
   }
+
   .pixel-corners-s {
     clip-path: polygon(
       0px calc(100% - 8px),

@@ -12,14 +12,16 @@ const problemsData = [
       {
         number: "2",
         name: "Basic Operations",
-        description: "Explore the use of +, -, *, /, //, and % operations on strings and integers.",
+        description:
+          "Explore the use of +, -, *, /, //, and % operations on strings and integers.",
         image: "/questionicon/day1/N2.png",
         url: "https://smth.com",
       },
       {
         number: "3",
         name: "Assigning",
-        description: "understand how to update the value of an existing variable",
+        description:
+          "understand how to update the value of an existing variable",
         image: "/questionicon/day1/N3.png",
         url: "https://smth.com",
       },
@@ -40,7 +42,8 @@ const problemsData = [
       {
         number: "6",
         name: "Length of String",
-        description: "Sometimes, a computer needs to count—and len() is a handy tool for the job.",
+        description:
+          "Sometimes, a computer needs to count—and len() is a handy tool for the job.",
         image: "/questionicon/day1/N6.png",
         url: "https://smth.com",
       },
@@ -54,7 +57,8 @@ const problemsData = [
       {
         number: "8",
         name: "if-else 1",
-        description: "When it comes to calculating grades, if/else logic is where it all begins.",
+        description:
+          "When it comes to calculating grades, if/else logic is where it all begins.",
         image: "/questionicon/day1/N8.png",
         url: "https://smth.com",
       },
@@ -82,7 +86,8 @@ const problemsData = [
       {
         number: "Extra 2",
         name: "Parking Fee Calculation",
-        description: "Adapt the if/elif/else structure to a different level of the program.",
+        description:
+          "Adapt the if/elif/else structure to a different level of the program.",
         image: "/questionicon/day1/E2.png",
         url: "https://smth.com",
       },
@@ -101,7 +106,8 @@ const problemsData = [
       {
         number: "2",
         name: "List modify",
-        description: "Add an element to a list and manage the updated contents.",
+        description:
+          "Add an element to a list and manage the updated contents.",
         image: "/questionicon/day2/N2.png",
         url: "https://smth.com",
       },
@@ -122,14 +128,16 @@ const problemsData = [
       {
         number: "5",
         name: "Tuple",
-        description: "A tuple is like a list, but you can't change its contents.",
+        description:
+          "A tuple is like a list, but you can't change its contents.",
         image: "/questionicon/day2/N5.png",
         url: "https://smth.com",
       },
       {
         number: "6",
         name: "Set",
-        description: "A set is like the evolutionary step backward from a list—no order, no duplicates, just raw values.",
+        description:
+          "A set is like the evolutionary step backward from a list—no order, no duplicates, just raw values.",
         image: "/questionicon/day2/N6.png",
         url: "https://smth.com",
       },
@@ -164,7 +172,8 @@ const problemsData = [
       {
         number: "11",
         name: "List comprehension",
-        description: "Did you know that a list and a for loop can be written in a single line?",
+        description:
+          "Did you know that a list and a for loop can be written in a single line?",
         image: "/questionicon/day2/N11.png",
         url: "https://smth.com",
       },
@@ -183,7 +192,8 @@ const problemsData = [
       {
         number: "2",
         name: "Mathematics module",
-        description: "Combine the math module with a subroutine to perform calculations.",
+        description:
+          "Combine the math module with a subroutine to perform calculations.",
         image: "/questionicon/day3/N2.png",
         url: "https://smth.com",
       },
