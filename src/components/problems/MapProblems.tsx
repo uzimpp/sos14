@@ -32,12 +32,13 @@ export default function MapProblems(
   }
   return (
     <div className="xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 md:grid flex flex-col gap-(--space-l) justify-items-center">
-      {problemsToShow.map((problem) => (
+      {problemsToShow.map((problem, index) => (
         <ProblemCard
           key={problem.number}
           problem={problem}
           completed={!!completedStatus[problem.number]}
           onChange={() => handleCheckboxChange(problem.number)}
+          index={index}
         />
       ))}
     </div>
@@ -48,7 +49,8 @@ function ProblemCard({
   problem,
   completed = false,
   onChange,
-}: ProblemCardProps) {
+  index = 0,
+}: ProblemCardProps & { index?: number }) {
   return (
     <div
       className={`relative h-full w-full flex flex-col p-(--space-s-m) bg-light-purple/44 pixel-corners-s overflow-x-hidden ${
@@ -75,16 +77,17 @@ function ProblemCard({
           </div>
         </div>
       )}
-      <div className="flex md:flex-col flex-row gap-(--space-s-m) ">
+      <div className="flex md:flex-col flex-row gap-(--space-s-m)">
         {/* Image Section */}
-        <div className="flex relative items-center justify-center ">
+        <div className="flex relative items-center justify-center">
           <div className="flex flex-shrink-0 relative md:w-[39.8%] md:m-(--space-m) m-(--space-3xs) w-(--space-xl) aspect-square items-center justify-center pixel-corners-xs">
             <Image
               fill
-              className="object-contain "
+              className="object-contain"
               src={problem.image}
               alt={problem.name}
-              sizes="(max-width: 768px) 100vw, 200px"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 200px"
+              loading={index < 8 ? "eager" : "lazy"}
             />
           </div>
         </div>
