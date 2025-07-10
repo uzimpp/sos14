@@ -129,7 +129,7 @@ export default function ProblemList() {
           </Link>
         </DropdownBtn>
       </div>
-        {MapProblems(CurrentDay, completedStatus, handleCheckboxChange)}
+      {MapProblems(CurrentDay, completedStatus, handleCheckboxChange)}
     </section>
   );
 }
