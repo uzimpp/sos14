@@ -64,13 +64,13 @@ function ProblemCard({
         </button>
       )} */}
       {problem.isExtra && (
-        <div className="absolute right-(--space-s-m) top-(--space-s-m) z-50">
+        <div className="absolute right-(--space-s) top-(--space-s) z-50">
           <div className="relative md:inline-block hidden group">
             <div className="text--1 bg-red/61 px-[var(--space-xs)] py-[var(--space-4xs)] pixel-corners-s cursor-pointer">
               extra
             </div>
-            <div className="absolute z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-white text--1 bg-zinc-800 px-2 py-1 rounded left-1/2 -translate-x-1/2 top-full mt-1 whitespace-nowrap pointer-events-none">
-              You don&apos;t need to complete the extra problems.
+            <div className="absolute z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-white text--1 bg-zinc-800 px-2 py-1 rounded right-0 top-full mt-1 whitespace-nowrap pointer-events-none">
+              Optional problem
             </div>
           </div>
         </div>
@@ -105,7 +105,7 @@ function ProblemCard({
                     extra
                   </div>
                   <div className="absolute z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-white text--1 bg-zinc-800 px-2 py-1 rounded left-1/2 -translate-x-1/2 top-full mt-1 whitespace-nowrap pointer-events-none">
-                    You don&apos;t need to complete the extra problems.
+                    Optional problem
                   </div>
                 </div>
               )}
