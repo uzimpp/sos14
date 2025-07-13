@@ -1,4 +1,4 @@
-import problemsData from "@/constant/problems";
+import problemsData from "@/constants/Problems";
 import Image from "next/image";
 import Link from "next/link";
 

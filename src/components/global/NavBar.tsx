@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import MagneticBtn from "@/components/effects/MagneticBtn";
+import { springPresets } from "@/constants/Animation";
 interface MenuProps {
   isMobile: boolean;
   isOpen: boolean;
@@ -30,7 +31,7 @@ function Menu({ isMobile, isOpen, onClose }: MenuProps) {
           aria-label="Toggle menu"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          transition={{ type: "spring", stiffness: 400, damping: 17 }}
+          transition={springPresets.stiff}
         >
           <motion.svg
             className={`w-(--space-s-m) h-1 ${
@@ -45,7 +46,7 @@ function Menu({ isMobile, isOpen, onClose }: MenuProps) {
               rotate: isOpen ? 45 : 0,
               y: isOpen ? 6 : 0,
             }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            transition={springPresets.medium}
           >
             <line x1="2" y1="2" x2="22" y2="2" />
           </motion.svg>
@@ -62,7 +63,7 @@ function Menu({ isMobile, isOpen, onClose }: MenuProps) {
               opacity: isOpen ? 0 : 1,
               scale: isOpen ? 0.8 : 1,
             }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            transition={springPresets.medium}
           >
             <line x1="2" y1="2" x2="22" y2="2" />
           </motion.svg>
@@ -79,7 +80,7 @@ function Menu({ isMobile, isOpen, onClose }: MenuProps) {
               rotate: isOpen ? -45 : 0,
               y: isOpen ? -6 : 0,
             }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            transition={springPresets.medium}
           >
             <line x1="2" y1="2" x2="22" y2="2" />
           </motion.svg>
@@ -99,7 +100,7 @@ function Menu({ isMobile, isOpen, onClose }: MenuProps) {
             initial={{ opacity: 0, scale: 0.95, y: -10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -10 }}
-            transition={{ type: "spring", stiffness: 300, damping: 25 }}
+            transition={springPresets.medium}
           >
             <div
               className={`flex flex-col m-(--space-3xs) gap-y-(--space-3xs)
@@ -114,16 +115,11 @@ function Menu({ isMobile, isOpen, onClose }: MenuProps) {
                   key={i}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{
-                    delay: i * 0.1,
-                    type: "spring",
-                    stiffness: 300,
-                    damping: 20,
-                  }}
+                  transition={{ ...springPresets.medium, delay: i * 0.1 }}
                 >
                   <Link
                     href={link.path}
-                    className="flex px-(--space-s) pr-(--space-2xl) py-(--space-2xs) text-0 pixel-corners-s hover:bg-green/40 transition-colors text-white/90"
+                    className="flex px-(--space-s) pr-(--space-2xl) py-(--space-2xs) text-0 pixel-corners-s hover:bg-green/40 transition-colors text-white/90 hover:text-white"
                     onClick={onClose}
                   >
                     {link.label}
@@ -188,7 +184,7 @@ export default function NavBar() {
   };
 
   return (
-    <>
+    <header>
       {/* Background Overlay */}
       <AnimatePresence>
         {isMenuOpen && (
@@ -234,12 +230,7 @@ export default function NavBar() {
                 key={`desktop-${scrolled}`}
                 initial={{ opacity: 0, y: -20, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 200,
-                  damping: 20,
-                  duration: 0.3,
-                }}
+                transition={{ ...springPresets.soft, duration: 0.3 }}
               >
                 {menuLinks.map((link, i) => (
                   <Link
@@ -262,12 +253,7 @@ export default function NavBar() {
                 initial={{ opacity: 0, scale: 0.8, y: -10 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.8, y: -10 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 25,
-                  duration: 0.2,
-                }}
+                transition={{ ...springPresets.soft, duration: 0.2 }}
               >
                 <Menu
                   isMobile={isMobile}
@@ -280,6 +266,6 @@ export default function NavBar() {
         </div>
       </nav>
       <div ref={navRef} className="h-0" />
-    </>
+    </header>
   );
 }

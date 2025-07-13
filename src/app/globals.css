@@ -155,6 +155,10 @@
     min-height: calc(100dvh - var(--navbar-height));
   }
 
+  section {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+  }
   button {
     cursor: pointer;
   }

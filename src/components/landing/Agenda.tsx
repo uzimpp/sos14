@@ -1,4 +1,4 @@
-import agenda from "@/constant/agenda";
+import agenda from "@/constants/Agenda";
 import ScrambleText from "@/components/effects/ScrambleText";
 
 interface AgendaItemProps {

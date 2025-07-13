@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import DropdownBtn from "@/components/ui/DropdownBtn";
-import slides from "@/constant/slides";
+import slides from "@/constants/Slides";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -105,10 +105,7 @@ export default function ProblemList() {
         >
           Day 3
         </button>
-        <DropdownBtn
-          label="Resources"
-          
-        >
+        <DropdownBtn label="Resources">
           <Link
             href={slides.Day1}
             target="_blank"

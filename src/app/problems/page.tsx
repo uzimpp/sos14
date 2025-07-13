@@ -6,7 +6,7 @@ import { Suspense } from "react";
 export default function Problems() {
   return (
     <div className="!pb-(--space-4xl) px-(--space-m) py-(--space-s) max-w-[1728px] w-full flex flex-col justify-self-center justify-center">
-      <div className="flex flex-col mt-(--space-l-xl) mb-(--space-xl) gap-(--space-s) items-center">
+      <div className="flex flex-col mt-(--space-l-xl) gap-(--space-s) items-center">
         <h3>
           <ScrambleText className="text-white no_line_height font-medium text-center flex mx-auto glow glow-pink">
             PROBLEMS
