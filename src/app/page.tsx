@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import ScrambleText from "@/components/effects/ScrambleText";
 import Agenda from "@/components/landing/Agenda";
 import Benefits from "@/components/landing/Benefits";
@@ -14,12 +17,13 @@ export default function Home() {
               <span className="glow glow-green-lg">SOS14</span>
             </ScrambleText>
           </div>
-          <div className="flex items-center">
+          <motion.div  className="flex items-center"
+          >
             <p className="text-1 md:text-left text-center text-white/60">
               Welcome to the 14th SOS camp, a preparation camp for SKE23
               students. We will take you through Python programming fundamentals
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 

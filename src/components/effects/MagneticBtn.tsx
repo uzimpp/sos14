@@ -7,15 +7,15 @@ interface MagneticBtnProps {
   className?: string;
   onClick?: () => void;
 }
-export default function Framer({
+export default function MagneticBtn({
   children,
   className = "",
   onClick,
 }: MagneticBtnProps) {
-  const ref = useRef<HTMLButtonElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
-  const handleMouse = (e: MouseEvent<HTMLButtonElement>) => {
+  const handleMouse = (e: MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
     const { clientX, clientY } = e;
     const { width, height, left, top } = ref.current.getBoundingClientRect();
@@ -27,8 +27,7 @@ export default function Framer({
   const reset = () => setPosition({ x: 0, y: 0 });
 
   return (
-    <motion.button
-      type="button"
+    <motion.div
       ref={ref}
       className={className}
       onClick={onClick}
@@ -44,6 +43,6 @@ export default function Framer({
       style={{ position: "relative" }}
     >
       {children}
-    </motion.button>
+    </motion.div>
   );
 }

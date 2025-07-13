@@ -45,7 +45,7 @@ export default function Agenda() {
               <h6 className="text-green/40 font-medium">{item.date}</h6>
             </div>
             {/* Events */}
-            <div className="mb-(--space-xl) w-fit bg-[#18141c] text-white/80 pixel-corners-s p-(--space-m) text-lg shadow-lg col-start-2 row-start-2 md:col-start-3 md:row-start-1">
+            <div className="mb-(--space-xl) w-fit bg-[#18141c] text-white/80 pixel-corners-s p-(--space-m) text-lg shadow-lg col-start-2 row-start-2 md:col-start-3 md:row-start-1 font-ta8bit">
               {item.events.map((event: EventProps, eventIndex) => (
                 <div key={eventIndex}>
                   <span className="font-medium">{event.time}</span> {event.name}

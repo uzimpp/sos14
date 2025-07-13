@@ -33,7 +33,7 @@ export default function DropdownBtn({
         </div>
       </button>
       {isOpen && (
-        <div className="absolute left-0 mt-2 min-w-full z-10 pixel-corners-s bg-black">
+        <div className="absolute left-0 mt-2 min-w-full z-10 pixel-corners-s bg-black p-(--space-3xs) gap-y-(--space-3xs)">
           {children}
         </div>
       )}

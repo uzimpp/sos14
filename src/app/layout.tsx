@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit, Pixelify_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import NavBar from "@/components/global/NavBar";
 import Footer from "@/components/global/Footer";
 import "./globals.css";
@@ -12,6 +13,22 @@ const pixel = Pixelify_Sans({
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
+});
+
+const ta8bit = localFont({
+  src: [
+    {
+      path: "../../public/font/TA 8 bit.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/font/TA 8 bit.otf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-ta8bit",
 });
 
 export const metadata: Metadata = {
@@ -85,7 +102,9 @@ export default function RootLayout({
   );
   return (
     <html lang="en">
-      <body className={`${pixel.variable} ${outfit.variable} antialiased`}>
+      <body
+        className={`${pixel.variable} ${outfit.variable} ${ta8bit.variable} antialiased`}
+      >
         <NavBar />
         {/* className="!pb-(--space-4xl) px-(--space-m) py-(--space-s)
         max-w-[1728px] w-full flex justify-self-center justify-center" */}

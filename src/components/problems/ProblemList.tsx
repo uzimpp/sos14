@@ -105,25 +105,28 @@ export default function ProblemList() {
         >
           Day 3
         </button>
-        <DropdownBtn label="Resources">
+        <DropdownBtn
+          label="Resources"
+          
+        >
           <Link
             href={slides.Day1}
             target="_blank"
-            className="block px-(--space-m) py-(--space-2xs) m-(--space-3xs) text-nowrap hover:bg-light-purple/50 pixel-corners-s"
+            className="block px-(--space-m) py-(--space-2xs) text-nowrap hover:bg-light-purple/50 pixel-corners-s"
           >
             Slide day 1
           </Link>
           <Link
             href={slides.Day2}
             target="_blank"
-            className="block px-(--space-m) py-(--space-2xs) m-(--space-3xs) text-nowrap hover:bg-light-purple/50 pixel-corners-s"
+            className="block px-(--space-m) py-(--space-2xs) text-nowrap hover:bg-light-purple/50 pixel-corners-s"
           >
             Slide day 2
           </Link>
           <Link
             href={slides.Day3}
             target="_blank"
-            className="block px-(--space-m) py-(--space-2xs) m-(--space-3xs) text-nowrap hover:bg-light-purple/50 pixel-corners-s"
+            className="block px-(--space-m) py-(--space-2xs) text-nowrap hover:bg-light-purple/50 pixel-corners-s"
           >
             Slide day 3
           </Link>

@@ -315,6 +315,10 @@
   .bold {
   }
 
+  .font-ta8bit {
+    font-family: var(--font-ta8bit);
+  }
+
   /* Coin insertion animation */
   @keyframes coin-insert-above {
     0% {
