@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, ReactNode } from "react";
-
+import { motion, AnimatePresence } from "framer-motion";
+import { springPresets } from "@/constants/Animation";
 interface DropdownBtnProps {
   label: string;
   children?: ReactNode;
@@ -16,27 +17,35 @@ export default function DropdownBtn({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={`relative inline-block ${className}`}>
-      <button
-        type="button"
-        onClick={() => setIsOpen((o) => !o)}
-        className={`flex gap-x-(--space-xs) pixel-corners-s px-(--space-s) py-(--space-2xs) font-medium items-center transition-all duration-300
+    <AnimatePresence>
+      <div className={`relative inline-block ${className}`}>
+        <button
+          type="button"
+          onClick={() => setIsOpen((o) => !o)}
+          className={`flex gap-x-(--space-xs) pixel-corners-s px-(--space-s) py-(--space-2xs) font-medium items-center transition-all duration-300
             ${isOpen ? " text-green" : "text-white "}`}
-      >
-        {label}{" "}
-        <div
-          className={`transition-all duration-300 h-fit w-fit text--1 font-bold ${
-            isOpen ? "rotate-90 " : "-rotate-90"
-          }`}
         >
-          &gt;
-        </div>
-      </button>
-      {isOpen && (
-        <div className="absolute left-0 mt-2 min-w-full z-10 pixel-corners-s bg-black p-(--space-3xs) gap-y-(--space-3xs)">
-          {children}
-        </div>
-      )}
-    </div>
+          {label}{" "}
+          <div
+            className={`transition-all duration-300 h-fit w-fit text--1 font-bold ${
+              isOpen ? "rotate-90 " : "-rotate-90"
+            }`}
+          >
+            &gt;
+          </div>
+        </button>
+        {isOpen && (
+          <motion.div
+            className="pixel-corners-s bg-black p-(--space-3xs) gap-y-(--space-3xs)"
+            initial={{ opacity: 0, scale: 0.95, y: -10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: -10 }}
+            transition={springPresets.medium}
+          >
+            {children}
+          </motion.div>
+        )}
+      </div>
+    </AnimatePresence>
   );
 }

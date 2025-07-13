@@ -5,18 +5,12 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import MagneticBtn from "@/components/effects/MagneticBtn";
 import { springPresets } from "@/constants/Animation";
+import menuLinks from "@/constants/Menu";
 interface MenuProps {
   isMobile: boolean;
   isOpen: boolean;
   onClose: () => void;
 }
-
-const menuLinks = [
-  { path: "/", label: "Home" },
-  { path: "/#agenda", label: "Agenda" },
-  { path: "/problems?day=0", label: "Problems" },
-  { path: "/faqs", label: "FAQs" },
-];
 
 function Menu({ isMobile, isOpen, onClose }: MenuProps) {
   return (

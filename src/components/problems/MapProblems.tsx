@@ -1,6 +1,6 @@
-import problemsData from "@/constants/Problems";
 import Image from "next/image";
 import Link from "next/link";
+import problemsData from "@/constants/Problems";
 
 interface Problem {
   number: string;

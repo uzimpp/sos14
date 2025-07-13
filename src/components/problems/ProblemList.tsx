@@ -1,12 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import DropdownBtn from "@/components/ui/DropdownBtn";
-import slides from "@/constants/Slides";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import DropdownBtn from "@/components/ui/DropdownBtn";
 import MapProblems from "@/components/problems/MapProblems";
+import { springPresets } from "@/constants/Animation";
+import slides from "@/constants/Slides";
+import days from "@/constants/ProblemsDays";
 
 export default function ProblemList() {
   // get day from router
@@ -73,60 +76,36 @@ export default function ProblemList() {
   return (
     <section className="flex flex-col justify-center justify-self-center md:px-(--space-s-l) px-0">
       <div className="gap-(--space-xs-s) flex flex-row flex-wrap md:justify-start justify-center mb-(--space-m-l)">
-        <button
-          className={`font-medium px-(--space-m) py-(--space-2xs) pixel-corners-s ${
-            CurrentDay === 0 ? "bg-green text-black" : "bg-light-purple/77"
-          }`}
-          onClick={() => handleClick(0)}
-        >
-          All
-        </button>
-        <button
-          className={`font-medium px-(--space-m) py-(--space-2xs) pixel-corners-s ${
-            CurrentDay === 1 ? "bg-green text-black" : "bg-light-purple/77"
-          }`}
-          onClick={() => handleClick(1)}
-        >
-          Day 1
-        </button>
-        <button
-          className={`font-medium px-(--space-m) py-(--space-2xs) pixel-corners-s ${
-            CurrentDay === 2 ? "bg-green text-black" : "bg-light-purple/77"
-          }`}
-          onClick={() => handleClick(2)}
-        >
-          Day 2
-        </button>
-        <button
-          className={`font-medium px-(--space-m) py-(--space-2xs) pixel-corners-s ${
-            CurrentDay === 3 ? "bg-green text-black" : "bg-light-purple/77"
-          }`}
-          onClick={() => handleClick(3)}
-        >
-          Day 3
-        </button>
+        {days.map((day) => (
+          <button
+            key={day.id}
+            className={`font-medium px-(--space-m) py-(--space-2xs) pixel-corners-s ${
+              CurrentDay === day.id
+                ? "bg-green text-black"
+                : "bg-light-purple/77"
+            }`}
+            onClick={() => handleClick(day.id)}
+          >
+            {day.label}
+          </button>
+        ))}
         <DropdownBtn label="Resources">
-          <Link
-            href={slides.Day1}
-            target="_blank"
-            className="block px-(--space-m) py-(--space-2xs) text-nowrap hover:bg-light-purple/50 pixel-corners-s"
-          >
-            Slide day 1
-          </Link>
-          <Link
-            href={slides.Day2}
-            target="_blank"
-            className="block px-(--space-m) py-(--space-2xs) text-nowrap hover:bg-light-purple/50 pixel-corners-s"
-          >
-            Slide day 2
-          </Link>
-          <Link
-            href={slides.Day3}
-            target="_blank"
-            className="block px-(--space-m) py-(--space-2xs) text-nowrap hover:bg-light-purple/50 pixel-corners-s"
-          >
-            Slide day 3
-          </Link>
+          {slides.map((slide, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ ...springPresets.medium, delay: i * 0.1 }}
+            >
+              <Link
+                href={slide.link}
+                target="_blank"
+                className="block px-(--space-m) py-(--space-2xs) text-nowrap hover:bg-light-purple/50 pixel-corners-s"
+              >
+                {slide.label}
+              </Link>
+            </motion.div>
+          ))}
         </DropdownBtn>
       </div>
       {MapProblems(CurrentDay, completedStatus, handleCheckboxChange)}
