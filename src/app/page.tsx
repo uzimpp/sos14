@@ -9,7 +9,7 @@ import Qoute from "@/components/landing/Qoute";
 
 export default function Home() {
   return (
-    <div className="!pb-(--space-4xl) px-(--space-m) py-(--space-s) max-w-[1728px] w-full flex justify-self-center flex-col justify-center items-center gap-y-(--space-4xl)">
+    <div className="!pb-(--space-4xl) px-(--space-m) py-(--space-s) gap-y-(--space-xl) max-w-[1728px] w-full flex justify-self-center flex-col justify-center items-center ">
       <div className="flex-col-reverse">
         <div className="flex flex-col md:flex-row gap-(--space-l) justify-between mt-(--space-m)">
           <div className="inline-block md:justify-start mx-auto text-center">
@@ -17,8 +17,7 @@ export default function Home() {
               <span className="glow glow-green-lg">SOS14</span>
             </ScrambleText>
           </div>
-          <motion.div  className="flex items-center"
-          >
+          <motion.div className="flex items-center">
             <p className="text-1 md:text-left text-center text-white/60">
               Welcome to the 14th SOS camp, a preparation camp for SKE23
               students. We will take you through Python programming fundamentals

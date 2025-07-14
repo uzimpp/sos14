@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { memo } from "react";
 import problemsData from "@/constants/Problems";
 
 interface Problem {
@@ -15,6 +16,7 @@ interface ProblemCardProps {
   problem: Problem;
   completed?: boolean;
   onChange: () => void;
+  index?: number;
 }
 
 // Map matched days  [done]
@@ -45,12 +47,12 @@ export default function MapProblems(
   );
 }
 
-function ProblemCard({
+const ProblemCard = memo(function ProblemCard({
   problem,
   completed = false,
   onChange,
   index = 0,
-}: ProblemCardProps & { index?: number }) {
+}: ProblemCardProps) {
   return (
     <div
       className={`relative h-full w-full flex flex-col p-(--space-s-m) bg-light-purple/44 pixel-corners-s overflow-x-hidden ${
@@ -87,7 +89,8 @@ function ProblemCard({
               src={problem.image}
               alt={problem.name}
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 200px"
-              loading={index < 8 ? "eager" : "lazy"}
+              loading={index < 4 ? "eager" : "lazy"}
+              priority={index < 2}
             />
           </div>
         </div>
@@ -150,4 +153,4 @@ function ProblemCard({
       </div>
     </div>
   );
-}
+});

@@ -159,11 +159,14 @@
     padding-top: var(--space-xl);
     padding-bottom: var(--space-xl);
   }
+
   button {
+    min-height: 24px;
     cursor: pointer;
   }
 
   a {
+    min-height: 24px;
     cursor: pointer;
   }
 
@@ -208,6 +211,12 @@
     letter-spacing: calc(var(--text-8) * 0.01) !important;
     word-spacing: calc(var(--text-8) * 0.01) !important;
     line-height: 1 !important;
+  }
+
+  .my_shadow {
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
   }
 
   .mytext_shadow {

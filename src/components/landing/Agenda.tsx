@@ -42,10 +42,10 @@ export default function Agenda() {
               <h1 className="mb-(--space-2xs) text-green font-bold no_line_height">
                 Day {i + 1}
               </h1>
-              <h6 className="text-green/40 font-medium">{item.date}</h6>
+              <p className="text-green/75 font-medium">{item.date}</p>
             </div>
             {/* Events */}
-            <div className="mb-(--space-xl) w-fit bg-[#18141c] text-white/80 pixel-corners-s p-(--space-m) text-lg shadow-lg col-start-2 row-start-2 md:col-start-3 md:row-start-1 font-ta8bit">
+            <div className="mb-(--space-xl) w-fit bg-[#18141c] text-white/90 pixel-corners-s p-(--space-m) text-lg shadow-lg col-start-2 row-start-2 md:col-start-3 md:row-start-1 font-ta8bit">
               {item.events.map((event: EventProps, eventIndex) => (
                 <div key={eventIndex}>
                   <span className="font-medium">{event.time}</span> {event.name}

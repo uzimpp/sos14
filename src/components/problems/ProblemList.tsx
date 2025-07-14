@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import DropdownBtn from "@/components/ui/DropdownBtn";
 import MapProblems from "@/components/problems/MapProblems";
@@ -12,8 +12,9 @@ import slides from "@/constants/Slides";
 import days from "@/constants/ProblemsDays";
 
 export default function ProblemList() {
-  // get day from router
-  const validDays = [0, 1, 2, 3];
+  // Memoize validDays to prevent unnecessary re-renders
+  const validDays = useMemo(() => [0, 1, 2, 3], []);
+
   const router = useRouter();
   const searchParams = useSearchParams();
   const dayParam = searchParams.get("day");
@@ -23,7 +24,7 @@ export default function ProblemList() {
     if (Number.isNaN(parsedDay) || !validDays.includes(parsedDay)) {
       router.push("/404");
     }
-  }, [parsedDay, router]);
+  }, [parsedDay, router, validDays]);
 
   const CurrentDay = parsedDay;
 
