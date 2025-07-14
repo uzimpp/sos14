@@ -1,6 +1,8 @@
+"use client";
+
 import agenda from "@/constants/Agenda";
 import ScrambleText from "@/components/effects/ScrambleText";
-
+import { motion } from "framer-motion";
 interface AgendaItemProps {
   date: string;
   events: EventProps[];
@@ -10,7 +12,6 @@ interface EventProps {
   name: string;
   time: string;
 }
-
 
 export default function Agenda() {
   return (
