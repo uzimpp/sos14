@@ -4,7 +4,6 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Suspense } from "react";
 
-// Dynamic imports for heavy components
 const ScrambleText = dynamic(
   () => import("@/components/effects/ScrambleText"),
   {
