@@ -107,7 +107,7 @@ export default function RootLayout({
       >
         <NavBar />
         {/* className="!pb-(--space-4xl) px-(--space-m) py-(--space-s)
-        max-w-[1728px] w-full flex justify-self-center justify-center" */}
+        max-w-[1728px] mx-auto w-full flex justify-self-center justify-center" */}
         <main className="min-h-screen bg-dark-purple">{children}</main>
         <Footer />
       </body>

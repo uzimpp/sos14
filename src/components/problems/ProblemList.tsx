@@ -76,7 +76,7 @@ export default function ProblemList() {
 
   return (
     <section className="flex flex-col justify-center justify-self-center md:px-(--space-s-l) px-0">
-      <div className="gap-(--space-xs-s) flex flex-row flex-wrap md:justify-start justify-center mb-(--space-m-l)">
+      <div className="gap-(--space-2xs-xs) flex flex-row flex-wrap md:justify-start justify-center mb-(--space-m-l)">
         {days.map((day) => (
           <button
             key={day.id}
@@ -101,7 +101,7 @@ export default function ProblemList() {
               <Link
                 href={slide.link}
                 target="_blank"
-                className="block px-(--space-m) py-(--space-2xs) text-nowrap hover:bg-light-purple/50 pixel-corners-s"
+                className="block px-(--space-m) py-(--space-2xs) text-nowrap hover:bg-green/10 pixel-corners-s"
               >
                 {slide.label}
               </Link>

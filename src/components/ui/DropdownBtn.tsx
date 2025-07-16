@@ -34,15 +34,18 @@ export default function DropdownBtn({
             &gt;
           </div>
         </button>
+
         {isOpen && (
           <motion.div
-            className="absolute z-50 pixel-corners-s bg-black p-(--space-3xs) gap-y-(--space-3xs)"
+            className="absolute z-50 rounded-2xl my_shadow "
             initial={{ opacity: 0, scale: 0.95, y: -10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -10 }}
             transition={springPresets.medium}
           >
-            {children}
+            <div className="pixel-corners-s bg-black p-(--space-3xs) gap-y-(--space-3xs)">
+              {children}
+            </div>
           </motion.div>
         )}
       </div>

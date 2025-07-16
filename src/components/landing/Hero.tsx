@@ -32,7 +32,7 @@ export default function Hero() {
       </div>
       {/* Bento grid part */}
       <div>
-        <div className="grid grid-cols-[1fr_1fr_1fr_1fr_1fr_auto] grid-rows-3 gap-(--space-xs-m)">
+        <div className="grid grid-cols-[1fr_1fr_1fr_1fr_1fr_auto] grid-rows-3 gap-(--space-2xs-xs)">
           {/* Problem */}
           <div className="col-span-2 row-span-2  pixel-corners-s relative bg-[#33638C30] flex flex-col items-center justify-center p-(--space-m)">
             <div className="absolute w-[25%] bottom-[-10%] right-[-2%] -rotate-10">

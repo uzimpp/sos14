@@ -4,7 +4,7 @@ import Game from "./Game";
 
 export default function Footer() {
   return (
-    <footer className="max-w-[1728px] w-full justify-self-center flex flex-col gap-(--space-m) px-(--space-m) py-(--space-s)">
+    <footer className="max-w-[1728px] mx-auto w-full justify-self-center flex flex-col gap-(--space-m) px-(--space-m) py-(--space-s)">
       <div className="flex md:flex-col flex-col-reverse gap-(--space-m) mt-(--space-s) ">
         {/* section 1 */}
         <div className="">

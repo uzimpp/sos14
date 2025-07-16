@@ -30,7 +30,7 @@ export default function Home() {
 
   return (
     <motion.div
-      className="!pb-(--space-4xl) px-(--space-m) py-(--space-s) gap-y-(--space-xl) max-w-[1728px] w-full flex justify-self-center flex-col justify-center items-center"
+      className="!pb-(--space-4xl) px-(--space-m) py-(--space-s) gap-y-(--space-xl) max-w-[1728px] mx-auto w-full flex justify-self-center flex-col justify-center items-center"
       variants={containerVariants}
       initial="hidden"
       animate="visible"

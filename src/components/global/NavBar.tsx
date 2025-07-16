@@ -85,8 +85,8 @@ function Menu({ isMobile, isOpen, onClose }: MenuProps) {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className={`z-99 fixed top-0 right-0 flex my_shadow rounded-2xl
-              ${isMobile ? "w-full h-fit" : "w-fit h-fit"}`}
+            className={`z-99 fixed top-0 right-0 flex my_shadow rounded-2xl h-auto
+              ${isMobile ? "w-full" : "w-fit"}`}
             initial={{ opacity: 0, scale: 0.95, y: -10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -10 }}
@@ -112,7 +112,7 @@ function Menu({ isMobile, isOpen, onClose }: MenuProps) {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}
                     transition={{ ...springPresets.medium, delay: i * 0.1 }}
-                    className="flex hover:bg-green/8 hover:text-white pixel-corners-s transition-colors pl-(--space-s) pr-(--space-2xl)"
+                    className="flex hover:bg-green/10 hover:text-white pixel-corners-s transition-colors pl-(--space-s) pr-(--space-2xl)"
                   >
                     <Link
                       href={link.path}
@@ -198,8 +198,7 @@ export default function NavBar() {
       </AnimatePresence>
 
       <nav
-        className={`max-w-[1728px] w-full justify-self-center flex flex-row items-center justify-between px-(--space-m) py-(--space-s) z-100
-          ${isMobile ? "" : ""} `}
+        className={`max-w-[1728px] mx-auto w-full justify-self-center flex flex-row items-center justify-between px-(--space-m) py-(--space-s) z-100`}
       >
         {/* logo part */}
         <div

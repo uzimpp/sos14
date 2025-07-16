@@ -32,7 +32,7 @@ const ProblemList = dynamic(() => import("@/components/problems/ProblemList"), {
 
 export default function Problems() {
   return (
-    <div className="!pb-(--space-4xl) px-(--space-m) py-(--space-s) max-w-[1728px] w-full flex flex-col justify-self-center justify-center">
+    <div className="!pb-(--space-4xl) px-(--space-m) py-(--space-s) max-w-[1728px] mx-auto w-full flex flex-col justify-self-center justify-center">
       <div className="flex flex-col mt-(--space-l-xl) gap-(--space-s) items-center">
         <h3>
           <Suspense
