@@ -8,7 +8,7 @@ const problemsData = [
         isExtra: false,
         description: "Understand basic of python varible types",
         image: "/questionicon/day1/N1.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/aeau1ks1lw/",
       },
       {
         number: "2",
@@ -17,7 +17,7 @@ const problemsData = [
         description:
           "Explore the use of +, -, *, /, //, and % operations on strings and integers.",
         image: "/questionicon/day1/N2.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/hnmhw2q62h/",
       },
       {
         number: "3",
@@ -26,7 +26,7 @@ const problemsData = [
         description:
           "understand how to update the value of an existing variable",
         image: "/questionicon/day1/N3.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/cquix5w0lj/",
       },
       {
         number: "4",
@@ -34,7 +34,7 @@ const problemsData = [
         isExtra: false,
         description: "Understand how to compare variables in Python.",
         image: "/questionicon/day1/N4.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/0884d1pwo0/",
       },
       {
         number: "5",
@@ -42,7 +42,7 @@ const problemsData = [
         isExtra: false,
         description: "'Hello', Yessssss, I can hear now :)",
         image: "/questionicon/day1/N5.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/nwwu2pcy4y/",
       },
       {
         number: "6",
@@ -51,7 +51,7 @@ const problemsData = [
         description:
           "Sometimes, a computer needs to count—and len() is a handy tool for the job.",
         image: "/questionicon/day1/N6.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/6859tdg1jb/",
       },
       {
         number: "7",
@@ -59,7 +59,7 @@ const problemsData = [
         isExtra: false,
         description: "Learn how to format strings to make them look better.",
         image: "/questionicon/day1/N7.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/epft0xwsy6/",
       },
       {
         number: "8",
@@ -68,7 +68,7 @@ const problemsData = [
         description:
           "When it comes to calculating grades, if/else logic is where it all begins.",
         image: "/questionicon/day1/N8.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/xnphftowt0/",
       },
       {
         number: "9",
@@ -76,7 +76,7 @@ const problemsData = [
         isExtra: false,
         description: "Is it triangle?",
         image: "/questionicon/day1/N9.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/zfasyb3f2k/",
       },
       {
         number: "10",
@@ -84,7 +84,7 @@ const problemsData = [
         isExtra: false,
         description: "UPPER? lower? will it be useful somehow?",
         image: "/questionicon/day1/N10.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/pvstc9gpb5/",
       },
       {
         number: "11",
@@ -92,7 +92,7 @@ const problemsData = [
         isExtra: true,
         description: "I wonder why I can't sleep. Maybe modulus is the key.",
         image: "/questionicon/day1/E1.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/vowjinmdf7/",
       },
       {
         number: "12",
@@ -101,7 +101,7 @@ const problemsData = [
         description:
           "Adapt the if/elif/else structure to a different level of the program.",
         image: "/questionicon/day1/E2.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/oh6vsf17l7/",
       },
     ],
   },
@@ -114,7 +114,7 @@ const problemsData = [
         isExtra: false,
         description: "Accessing list elements using an index.",
         image: "/questionicon/day2/N1.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/4hey6pe2hc/",
       },
       {
         number: "14",
@@ -123,7 +123,7 @@ const problemsData = [
         description:
           "Add an element to a list and manage the updated contents.",
         image: "/questionicon/day2/N2.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/uznhjxp6m0/",
       },
       {
         number: "15",
@@ -131,7 +131,7 @@ const problemsData = [
         isExtra: false,
         description: "Time to Slicing (Banana). Got it? :P",
         image: "/questionicon/day2/N3.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/o3etoiula3/",
       },
       {
         number: "16",
@@ -139,7 +139,7 @@ const problemsData = [
         isExtra: false,
         description: "'Together' is easy, but 'To Get Her' is impossible.",
         image: "/questionicon/day2/N4.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/wz36x1qa8p/",
       },
       {
         number: "17",
@@ -148,7 +148,7 @@ const problemsData = [
         description:
           "A tuple is like a list, but you can't change its contents.",
         image: "/questionicon/day2/N5.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/fh8ofrsdkf/",
       },
       {
         number: "18",
@@ -157,7 +157,7 @@ const problemsData = [
         description:
           "A set is like the evolutionary step backward from a list—no order, no duplicates, just raw values.",
         image: "/questionicon/day2/N6.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/m0ia6kmdge/",
       },
       {
         number: "19",
@@ -165,7 +165,7 @@ const problemsData = [
         isExtra: false,
         description: "Fix the value in a dictionary by referencing its key.",
         image: "/questionicon/day2/N7.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/bmlbltmrr7/",
       },
       {
         number: "20",
@@ -173,7 +173,7 @@ const problemsData = [
         isExtra: false,
         description: "Something's missing—perhaps using .keys() could help.",
         image: "/questionicon/day2/N8.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/tua3kyyr6h/",
       },
       {
         number: "21",
@@ -181,7 +181,7 @@ const problemsData = [
         isExtra: false,
         description: "Basic For loop (range)",
         image: "/questionicon/day2/N9.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/tf9j593o6e/",
       },
       {
         number: "22",
@@ -189,7 +189,7 @@ const problemsData = [
         isExtra: false,
         description: "Basic For loop with list.",
         image: "/questionicon/day2/N10.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/ss79muww7w/",
       },
       {
         number: "23",
@@ -198,7 +198,7 @@ const problemsData = [
         description:
           "Did you know that a list and a for loop can be written in a single line?",
         image: "/questionicon/day2/N11.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/u06tjp23ld/",
       },
     ],
   },
@@ -211,7 +211,7 @@ const problemsData = [
         isExtra: false,
         description: "Basic use of function",
         image: "/questionicon/day3/N1.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/4lzd1plsq4/",
       },
       {
         number: "25",
@@ -220,7 +220,7 @@ const problemsData = [
         description:
           "Combine the math module with a subroutine to perform calculations.",
         image: "/questionicon/day3/N2.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/7bg3b3m3jp/",
       },
       {
         number: "26",
@@ -228,7 +228,7 @@ const problemsData = [
         isExtra: false,
         description: "Learning Random module with dice",
         image: "/questionicon/day3/N3.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/c3padohz3d/",
       },
       {
         number: "27",
@@ -236,7 +236,7 @@ const problemsData = [
         isExtra: false,
         description: "Learning Random module with with realife(?) example",
         image: "/questionicon/day3/N4.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/19zv7oypc1/",
       },
       {
         number: "28",
@@ -244,7 +244,7 @@ const problemsData = [
         isExtra: true,
         description: "Everything is Banana. MuHaHaHaHaHaHa.",
         image: "/questionicon/day3/E1.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/7uhjdqe9kn/",
       },
       {
         number: "29",
@@ -252,7 +252,7 @@ const problemsData = [
         isExtra: true,
         description: "An ancient digital artifact",
         image: "/questionicon/day3/E2.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/zd8na0eyb6/",
       },
       {
         number: "30",
@@ -260,7 +260,7 @@ const problemsData = [
         isExtra: true,
         description: "I wanna login~ Please let me in!",
         image: "/questionicon/day3/E3.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/hq4r58bsk5/",
       },
       {
         number: "31",
@@ -268,7 +268,7 @@ const problemsData = [
         isExtra: true,
         description: "Learning to do sequence.",
         image: "/questionicon/day3/E4.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/eermr57smp/",
       },
       {
         number: "32",
@@ -276,7 +276,7 @@ const problemsData = [
         isExtra: true,
         description: "Feed a Mystical Chicken (Quack)",
         image: "/questionicon/day3/E5.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/qvzbj1gea2/",
       },
       {
         number: "33",
@@ -284,7 +284,7 @@ const problemsData = [
         isExtra: true,
         description: "Nooo, not the if/else. It's important. TvT",
         image: "/questionicon/day3/E6.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/ysu5knqz7v/",
       },
       {
         number: "34",
@@ -292,11 +292,11 @@ const problemsData = [
         isExtra: true,
         description: "Python + Algo + Linear = WHAT DA HELLLLLLLL!",
         image: "/questionicon/day3/E7.png",
-        url: "https://smth.com",
+        url: "https://elabsheet.org/elab/taskpads/show/c0p68fufn8/",
       },
       {
         number: "35",
-        name: "iykyk",
+        name: "The Fear of Coding",
         isExtra: true,
         description: "Impossibly impossible Challenge",
         image: "/questionicon/day3/E8.png",
