@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef, Fragment } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import MagneticBtn from "@/components/effects/MagneticBtn";
-import { springPresets } from "@/constants/Animation";
+import { springPresets} from "@/constants/Animation";
 import menuLinks from "@/constants/Menu";
 interface MenuProps {
   isMobile: boolean;

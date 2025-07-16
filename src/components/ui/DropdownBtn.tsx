@@ -17,24 +17,23 @@ export default function DropdownBtn({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <AnimatePresence>
-      <div className={`relative inline-block ${className}`}>
+    <div className={`relative inline-block ${className}`}>
         <button
           type="button"
           onClick={() => setIsOpen((o) => !o)}
-          className={`flex gap-x-(--space-xs) pixel-corners-s px-(--space-s) py-(--space-2xs) font-medium items-center transition-all duration-300
+          className={`group flex gap-x-(--space-xs) pixel-corners-s px-(--space-s) py-(--space-2xs) font-medium items-center transition-all duration-300
             ${isOpen ? " text-green" : "text-white "}`}
         >
           {label}{" "}
           <div
-            className={`transition-all duration-300 h-fit w-fit text--1 font-bold ${
+            className={`transition-all h-fit w-fit text--1 font-bold ${
               isOpen ? "rotate-90 " : "-rotate-90"
             }`}
           >
             &gt;
           </div>
         </button>
-
+      <AnimatePresence mode="wait">
         {isOpen && (
           <motion.div
             className="absolute z-50 rounded-2xl my_shadow "
@@ -48,7 +47,7 @@ export default function DropdownBtn({
             </div>
           </motion.div>
         )}
-      </div>
-    </AnimatePresence>
+      </AnimatePresence>
+    </div>
   );
 }

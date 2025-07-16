@@ -77,6 +77,7 @@
   --color-light-purple: #514454;
   --color-pink: #fd68ce;
   --color-green: #b7e862;
+  --color-cyan: #33638C;
   --color-blue: #547eff;
   --color-white: #f2ecf4;
   --color-grey: #3e3b3b;
@@ -337,6 +338,12 @@
     font-family: var(--font-ta8bit);
   }
 
+  .font-ian {
+    font-family: var(--font-ian);
+    line-height: 1;
+    word-spacing: 0rem;
+  }
+
   /* Coin insertion animation */
   @keyframes coin-insert-above {
     0% {
@@ -460,38 +467,5 @@
   }
   .ease-elastic {
     transition-timing-function: var(--elastic) !important;
-  }
-
-  @media (min-width: 768px) {
-    .agenda-grid {
-      display: grid;
-      grid-template-columns: 1fr 32px 2fr;
-      grid-template-areas: "left dot right";
-    }
-    .agenda-left {
-      grid-area: left;
-    }
-    .agenda-dot {
-      grid-area: dot;
-    }
-    .agenda-right {
-      grid-area: right;
-    }
-  }
-  @media (max-width: 767px) {
-    .agenda-grid {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      grid-template-areas: "left right";
-    }
-    .agenda-left {
-      grid-area: left;
-    }
-    .agenda-dot {
-      display: none;
-    }
-    .agenda-right {
-      grid-area: right;
-    }
   }
 }

@@ -31,6 +31,17 @@ const ta8bit = localFont({
   variable: "--font-ta8bit",
 });
 
+const ian = localFont({
+  src: [
+    {
+      path: "../../public/font/2005_iannnnnAMD.ttf",
+      weight: "400",
+      style: "normal",
+    }
+  ],
+  variable: "--font-ian",
+});
+
 export const metadata: Metadata = {
   title: "SOS14",
   description:
@@ -103,7 +114,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${pixel.variable} ${outfit.variable} ${ta8bit.variable} antialiased`}
+        className={`${pixel.variable} ${ian.variable} antialiased`}
       >
         <NavBar />
         {/* className="!pb-(--space-4xl) px-(--space-m) py-(--space-s)
