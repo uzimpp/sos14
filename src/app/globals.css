@@ -27,6 +27,9 @@
   --text-9: clamp(7.4506rem, 6.9343rem + 2.2027vw, 9.3132rem);
   --text-10: clamp(9.3132rem, 8.6679rem + 2.7534vw, 11.6415rem);
   --text-11: clamp(11.6415rem, 10.8349rem + 3.4417vw, 14.5519rem);
+  --text-12: clamp(14.5519rem, 13.5436rem + 4.298vw, 18.1899rem);
+  --text-13: clamp(18.1899rem, 16.9262rem + 5.3725vw, 22.7374rem);
+  --text-14: clamp(22.7374rem, 21.158rem + 6.7156vw, 28.4217rem);
 
   /* === Spacing === */
   /* @link https://utopia.fyi/space/calculator?c=375,16,1.333,1728,20,1.333,6,1,&s=0.75|0.5|0.25|0.125,1.5|2|3|4|6|8,s-l&g=s,l,xl,12 */
@@ -199,7 +202,9 @@
   }
 
   .landing-title {
-    font-size: var(--text-11) !important;
+    letter-spacing: calc(var(--text-12) * -0.01) !important;
+    word-spacing: calc(var(--text-12) * 0.01) !important;
+    line-height: 1 !important;
   }
 
   .no_line_height {
@@ -208,7 +213,7 @@
 
   .large-title {
     font-size: var(--text-8) !important;
-    letter-spacing: calc(var(--text-8) * 0.01) !important;
+    letter-spacing: calc(var(--text-8) * -0.01) !important;
     word-spacing: calc(var(--text-8) * 0.01) !important;
     line-height: 1 !important;
   }
@@ -407,7 +412,7 @@
     position: absolute;
     inset: var(--space-xs);
     background: var(--color-green);
-    opacity: 0.15;
+    opacity: 0.1;
     filter: blur(var(--space-xl));
     border-radius: 9999px;
     pointer-events: none;

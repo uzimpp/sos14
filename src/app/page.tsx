@@ -39,13 +39,13 @@ export default function Home() {
         <Hero />
       </motion.div>
 
-      <motion.section
+      {/* <motion.section
         variants={sectionVariants}
         className="flex flex-col items-center"
       >
         <h3>What is SOS camp?</h3>
         <div></div>
-      </motion.section>
+      </motion.section> */}
 
       <motion.div variants={sectionVariants}>
         <Benefits />
