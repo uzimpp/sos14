@@ -24,7 +24,7 @@ export default function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
         >
-          <p className="text-1 md:text-left text-center text-white/60 text-balance">
+          <p className="hidden sm:flex text--1 md:text-0 xl:text-1 md:text-left text-center text-white/60 text-balance">
             Welcome to the 14th SOS camp, a preparation camp for SKE23 students.
             We will take you through Python programming fundamentals
           </p>
@@ -32,9 +32,9 @@ export default function Hero() {
       </div>
       {/* Bento grid part */}
       <div>
-        <div className="grid grid-cols-[1fr_1fr_1fr_1fr_1fr_auto] grid-rows-3 gap-(--space-2xs-xs)">
+        <div className="grid grid-cols-2 grid-rows-4 md:grid-cols-4 md:grid-rows-4 lg:grid-cols-[1fr_1fr_1fr_1fr_1fr_auto] lg:grid-rows-3 gap-(--space-2xs-xs)">
           {/* Problem */}
-          <div className="col-span-2 row-span-2  pixel-corners-s relative bg-[#33638C30] flex flex-col items-center justify-center p-(--space-m)">
+          <div className="col-span-2 row-span-2 pixel-corners-s relative bg-[#33638C30] flex flex-col items-center justify-center p-(--space-m)">
             <div className="absolute w-[25%] bottom-[-10%] right-[-2%] -rotate-10">
               <Image
                 src="/assets/landing/python.svg"
@@ -57,7 +57,6 @@ export default function Hero() {
             </div>
             <div className="relative pb-4">
               <h5 className="text-center font-semibold pb-1">Problems</h5>
-
               <p className="text-balance text--1 flex justify-center text-center text-white/60">
                 A Python exercise introducing core programming concepts and
                 syntax.
@@ -85,7 +84,7 @@ export default function Hero() {
             </div>
           </div>
           {/* diamond */}
-          <div className="col-span-2 col-start-1 row-start-3 pixel-corners-s bg-[#ACC1FF25] relative">
+          <div className="hidden lg:block col-span-2 col-start-1 row-start-3 pixel-corners-s bg-[#ACC1FF25] relative">
             <div className="absolute w-[20%] bottom-[-15%] left-[-2%] rotate-5 opacity-75">
               <Image
                 src="/assets/slot/diamond.svg"
@@ -130,7 +129,7 @@ export default function Hero() {
           {/* Agenda */}
           <Link
             href="/#agenda"
-            className="col-span-2 col-start-3 row-start-1 pixel-corners-s bg-[#432125] relative overflow-hidden flex justify-center items-center"
+            className="col-span-2 row-start-3 row-end-4 md:col-start-3 md:row-start-1 md:row-end-2 pixel-corners-s bg-[#432125] relative overflow-hidden flex justify-center items-center"
           >
             <div className="absolute w-[25%] top-[-10%] left-[2%] rotate-23">
               <Image
@@ -155,7 +154,7 @@ export default function Hero() {
             <h5 className="font-semibold">Agenda</h5>
           </Link>
           {/* coins */}
-          <div className="col-span-2 col-start-3 row-start-2 pixel-corners-s bg-[#D18D3925] relative">
+          <div className="hidden md:block col-span-2 col-start-1 row-start-4 lg:col-start-3 lg:row-start-2 pixel-corners-s bg-[#D18D3925] relative">
             <div className="absolute w-[22%] bottom-[-10%] left-[4%] -rotate-15 opacity-75">
               <Image
                 src="/assets/slot/coin.svg"
@@ -198,7 +197,7 @@ export default function Hero() {
             </div>
           </div>
           {/* contact */}
-          <div className="col-start-3 row-start-3 pixel-corners-s bg-light-purple/70 flex flex-col justify-center items-center p-(--space-m)">
+          <div className="row-start-4 md:col-start-1 lg:col-start-3 md:row-start-3 pixel-corners-s bg-light-purple/70 flex flex-col justify-center items-center p-(--space-m)">
             <h6 className="flex justify-center text-left font-semibold pb-1">
               Contact
             </h6>
@@ -228,7 +227,7 @@ export default function Hero() {
           {/* faqs */}
           <Link
             href="/faqs"
-            className="col-start-4 row-start-3 pixel-corners-s bg-[#FD68CE30] flex justify-center items-center p-(--space-m)"
+            className="col-start-1 row-start-4 md:col-start-2 lg:col-start-4 md:row-start-3 pixel-corners-s bg-[#FD68CE30] flex justify-center items-center p-(--space-m)"
           >
             <div className="flex justify-center text-left no_line_height">
               Frequently
@@ -239,12 +238,12 @@ export default function Hero() {
             </div>
           </Link>
           {/* arcade */}
-          <div className="col-span-2 row-span-3 col-start-5 row-start-1 pixel-corners-s bg-[#353435] flex items-center justify-center p-(--space-s)">
+          <div className="hidden md:block md:row-span-3 md:col-start-3 md:row-start-2 col-span-2 lg:col-start-5 lg:row-start-1 pixel-corners-s bg-[#353435] items-center justify-center p-(--space-s)">
             <Image
               src="/assets/landing/arcade.svg"
               alt="arcade"
-              width={304}
-              height={552}
+              width={38 * 100} // 38
+              height={69 * 100} // 69
               className={`w-auto aspect-auto`}
               priority
             />

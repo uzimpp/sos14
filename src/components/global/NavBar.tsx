@@ -7,16 +7,21 @@ import MagneticBtn from "@/components/effects/MagneticBtn";
 import { springPresets} from "@/constants/Animation";
 import menuLinks from "@/constants/Menu";
 interface MenuProps {
+  scrolled: boolean;
   isMobile: boolean;
   isOpen: boolean;
   onClose: () => void;
 }
 
-function Menu({ isMobile, isOpen, onClose }: MenuProps) {
+function Menu({ scrolled, isMobile, isOpen, onClose }: MenuProps) {
   return (
     <Fragment>
       {/* Hamburger Button */}
-      <MagneticBtn className="z-100 absolute my_shadow rounded-2xl">
+      <MagneticBtn
+        className={`z-100 absolute  rounded-2xl transition-shadow duration-700 ease-in-out
+        ${scrolled ? "my_shadow" : "shadow-none md:my_shadow"}
+        `}
+      >
         <motion.button
           onClick={onClose}
           className={`flex flex-col items-center justify-center w-(--space-xl) aspect-square gap-y-[2px] pixel-corners-s ${
@@ -246,13 +251,14 @@ export default function NavBar() {
       <AnimatePresence>
         {useMenu && (
           <motion.div
-            className="fixed right-(--space-m) top-(--space-s) z-50"
+            className="fixed right-(--space-m) top-(--space-2xs) md:top-(--space-s) z-50"
             initial={{ opacity: 0, scale: 0.8, y: -10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: -10 }}
             transition={{ ...springPresets.soft, duration: 0.2 }}
           >
             <Menu
+              scrolled={scrolled}
               isMobile={isMobile}
               isOpen={isMenuOpen}
               onClose={handleMenuToggle}

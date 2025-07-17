@@ -223,6 +223,7 @@
     box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
     -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
     -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.7s ease;
   }
 
   .mytext_shadow {
