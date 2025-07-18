@@ -2,7 +2,6 @@
 
 import agenda from "@/constants/Agenda";
 import ScrambleText from "@/components/effects/ScrambleText";
-import { motion } from "framer-motion";
 import { Fragment } from "react";
 interface AgendaItemProps {
   date: string;

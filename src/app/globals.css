@@ -77,7 +77,7 @@
   --color-light-purple: #514454;
   --color-pink: #fd68ce;
   --color-green: #b7e862;
-  --color-cyan: #33638C;
+  --color-cyan: #33638c;
   --color-blue: #547eff;
   --color-white: #f2ecf4;
   --color-grey: #3e3b3b;
@@ -323,7 +323,7 @@
     );
   }
 
-  .regular {
+  /* .regular {
   }
 
   .medium {
@@ -333,7 +333,7 @@
   }
 
   .bold {
-  }
+  } */
 
   .font-ta8bit {
     font-family: var(--font-ta8bit);

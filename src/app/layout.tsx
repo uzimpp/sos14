@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, Pixelify_Sans } from "next/font/google";
+import { Pixelify_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import NavBar from "@/components/global/NavBar";
 import Footer from "@/components/global/Footer";
@@ -10,26 +10,26 @@ const pixel = Pixelify_Sans({
   subsets: ["latin"],
 });
 
-const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
-});
+// const outfit = Outfit({
+//   variable: "--font-outfit",
+//   subsets: ["latin"],
+// });
 
-const ta8bit = localFont({
-  src: [
-    {
-      path: "../../public/font/TA 8 bit.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/font/TA 8 bit.otf",
-      weight: "400",
-      style: "normal",
-    },
-  ],
-  variable: "--font-ta8bit",
-});
+// const ta8bit = localFont({
+//   src: [
+//     {
+//       path: "../../public/font/TA 8 bit.ttf",
+//       weight: "400",
+//       style: "normal",
+//     },
+//     {
+//       path: "../../public/font/TA 8 bit.otf",
+//       weight: "400",
+//       style: "normal",
+//     },
+//   ],
+//   variable: "--font-ta8bit",
+// });
 
 const ian = localFont({
   src: [
@@ -37,7 +37,7 @@ const ian = localFont({
       path: "../../public/font/2005_iannnnnAMD.ttf",
       weight: "400",
       style: "normal",
-    }
+    },
   ],
   variable: "--font-ian",
 });
@@ -91,6 +91,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  verification: {
+    google: "UPouZGa2POOr06szZTgCAEwyZW7zm_k0q4d8-FnwHVg",
+  },
 };
 
 export default function RootLayout({
@@ -113,9 +116,7 @@ export default function RootLayout({
   );
   return (
     <html lang="en">
-      <body
-        className={`${pixel.variable} ${ian.variable} antialiased`}
-      >
+      <body className={`${pixel.variable} ${ian.variable} antialiased`}>
         <NavBar />
         {/* className="!pb-(--space-4xl) px-(--space-m) py-(--space-s)
         max-w-[1728px] mx-auto w-full flex justify-self-center justify-center" */}
