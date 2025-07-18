@@ -25,16 +25,17 @@ export default function Footer() {
                 Home
               </Link>
               <div className="flex flex-col gap-(--space-4xs)">
-                <Link href="/#agenda" className="text--1">
-                  Agenda
+                <Link href="/#schedule" className="text--1">
+                  Schedule
                 </Link>
                 <Link href="/ske888" className="text--1">
                   SKE888
                 </Link>
               </div>
-              {/* <Link href="/#agenda" className="text--1 font-bold">
-                Agenda
-              </Link>
+              {/*
+                <Link href="/#schedule" className="text--1">
+                  Schedule
+                </Link>
               <Link href="/problems" className="text--1 font-bold">
                 Problems
               </Link> */}

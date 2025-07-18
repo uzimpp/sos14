@@ -172,12 +172,12 @@ export default function Hero() {
             />
           </div>
         </motion.div>
-        {/* Agenda */}
+        {/* Schedule */}
         <MotionLink
           whileHover={{ scale: 1.01 }}
           whileTap={{ scale: 0.97 }}
           transition={springPresets.medium}
-          href="/#agenda"
+          href="/#schedule"
           className="col-span-2 row-start-3 row-end-4 md:col-start-3 md:row-start-1 md:row-end-2 pixel-corners-s overflow-hidden bg-[#432125] relative flex justify-center items-center group"
         >
           <div
@@ -207,7 +207,7 @@ export default function Hero() {
             />
           </div>
           <h6 className="font-medium group-hover:scale-105 transition-all duration-300 elastic">
-            Agenda
+            Schedule
           </h6>
         </MotionLink>
         {/* coins */}
