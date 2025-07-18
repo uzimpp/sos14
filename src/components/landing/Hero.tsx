@@ -56,7 +56,7 @@ export default function Hero() {
               />
             </div>
             <div className="relative pb-4">
-              <h5 className="text-center font-semibold pb-1">Problems</h5>
+              <h5 className="text-center font-medium pb-1">Problems</h5>
               <p className="text-balance text--1 flex justify-center text-center text-white/60">
                 A Python exercise introducing core programming concepts and
                 syntax.
@@ -131,7 +131,7 @@ export default function Hero() {
             href="/#agenda"
             className="col-span-2 row-start-3 row-end-4 md:col-start-3 md:row-start-1 md:row-end-2 pixel-corners-s bg-[#432125] relative overflow-hidden flex justify-center items-center"
           >
-            <div className="absolute w-[25%] top-[-10%] left-[2%] rotate-23">
+            <div className="absolute w-[25%] top-[-10%] left-[2%] rotate-22">
               <Image
                 src="/assets/slot/cherry.svg"
                 alt="cherry"
@@ -141,7 +141,7 @@ export default function Hero() {
                 priority
               />
             </div>
-            <div className="absolute w-[25%] top-[10%] right-[5%] -rotate-27">
+            <div className="absolute w-[25%] bottom-[-15%] right-[5%] -rotate-23">
               <Image
                 src="/assets/slot/cherry.svg"
                 alt="cherry"
@@ -151,11 +151,11 @@ export default function Hero() {
                 priority
               />
             </div>
-            <h5 className="font-semibold">Agenda</h5>
+            <h5 className="font-medium">Agenda</h5>
           </Link>
           {/* coins */}
           <div className="hidden md:block col-span-2 col-start-1 row-start-4 lg:col-start-3 lg:row-start-2 pixel-corners-s bg-[#D18D3925] relative">
-            <div className="absolute w-[22%] bottom-[-10%] left-[4%] -rotate-15 opacity-75">
+            <div className="absolute w-[21%] bottom-[-10%] left-[7%] -rotate-15 opacity-75">
               <Image
                 src="/assets/slot/coin.svg"
                 alt="coin"
@@ -165,7 +165,7 @@ export default function Hero() {
                 priority
               />
             </div>
-            <div className="absolute w-[23%] bottom-[-10%] left-[27%] rotate-5 opacity-75">
+            <div className="absolute w-[21%] bottom-[-10%] left-[30%] rotate-5 opacity-75">
               <Image
                 src="/assets/slot/coin.svg"
                 alt="coin"
@@ -175,7 +175,7 @@ export default function Hero() {
                 priority
               />
             </div>
-            <div className="absolute w-[23%] bottom-[-10%] right-[25%] -rotate-10 opacity-75">
+            <div className="absolute w-[20%] bottom-[-10%] right-[26%] -rotate-6 opacity-75">
               <Image
                 src="/assets/slot/coin.svg"
                 alt="coin"
@@ -198,10 +198,10 @@ export default function Hero() {
           </div>
           {/* contact */}
           <div className="row-start-4 md:col-start-1 lg:col-start-3 md:row-start-3 pixel-corners-s bg-light-purple/70 flex flex-col justify-center items-center p-(--space-m)">
-            <h6 className="flex justify-center text-left font-semibold pb-1">
+            <h6 className="flex justify-center text-left font-medium pb-1">
               Contact
             </h6>
-            <div className="flex flex-row gap-(--space-xs)">
+            <div className="flex flex-row gap-(--space-xs-s)">
               <Link href="https://www.instagram.com/sos_camp14" target="_blank">
                 <Image
                   src="/assets/landing/instagram.svg"
@@ -229,7 +229,7 @@ export default function Hero() {
             href="/faqs"
             className="col-start-1 row-start-4 md:col-start-2 lg:col-start-4 md:row-start-3 pixel-corners-s bg-[#FD68CE30] flex justify-center items-center p-(--space-m)"
           >
-            <div className="flex justify-center text-left no_line_height">
+            <div className="flex justify-center text-left no_line_height font-medium">
               Frequently
               <br />
               Asked
@@ -238,7 +238,7 @@ export default function Hero() {
             </div>
           </Link>
           {/* arcade */}
-          <div className="hidden md:block md:row-span-3 md:col-start-3 md:row-start-2 col-span-2 lg:col-start-5 lg:row-start-1 pixel-corners-s bg-[#353435] items-center justify-center p-(--space-s)">
+          <div className="hidden md:flex md:row-span-3 md:col-start-3 md:row-start-2 col-span-2 lg:col-start-5 lg:row-start-1 pixel-corners-s bg-[#353435] items-center justify-center p-(--space-s)">
             <Image
               src="/assets/landing/arcade.svg"
               alt="arcade"

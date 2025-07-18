@@ -3,6 +3,7 @@ import Agenda from "@/components/landing/Agenda";
 import Benefits from "@/components/landing/Benefits";
 // import Location from "@/components/landing/Location";
 import Qoute from "@/components/landing/Qoute";
+import Sponsors from "@/components/landing/Sponsors";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Benefits />
       <Agenda />
       {/* The location is not decided yet */}
+      <Sponsors />
       {/* <Location /> */}
       <Qoute />
     </div>
