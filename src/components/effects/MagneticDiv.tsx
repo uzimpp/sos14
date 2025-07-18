@@ -2,16 +2,16 @@
 import { ReactNode, useRef, useState, MouseEvent } from "react";
 import { motion } from "framer-motion";
 
-interface MagneticBtnProps {
+interface MagneticDivProps {
   children: ReactNode;
   className?: string;
   onClick?: () => void;
 }
-export default function MagneticBtn({
+export default function MagneticDiv({
   children,
   className = "",
   onClick,
-}: MagneticBtnProps) {
+}: MagneticDivProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 

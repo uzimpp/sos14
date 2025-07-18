@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { useState, useEffect, useRef, Fragment } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import MagneticBtn from "@/components/effects/MagneticBtn";
-import { springPresets} from "@/constants/Animation";
+import MagneticDiv from "@/components/effects/MagneticDiv";
+import { springPresets } from "@/constants/Animation";
 import menuLinks from "@/constants/Menu";
 interface MenuProps {
   scrolled: boolean;
@@ -17,7 +17,7 @@ function Menu({ scrolled, isMobile, isOpen, onClose }: MenuProps) {
   return (
     <Fragment>
       {/* Hamburger Button */}
-      <MagneticBtn
+      <MagneticDiv
         className={`z-100 absolute  rounded-2xl transition-shadow duration-700 ease-in-out
         ${scrolled ? "my_shadow" : "shadow-none md:my_shadow"}
         `}
@@ -84,55 +84,57 @@ function Menu({ scrolled, isMobile, isOpen, onClose }: MenuProps) {
             <line x1="2" y1="2" x2="22" y2="2" />
           </motion.svg>
         </motion.button>
-      </MagneticBtn>
+      </MagneticDiv>
 
       {/* Mobile Menu Dropdown */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            className={`z-99 fixed top-0 right-0 flex my_shadow rounded-2xl h-auto
+      <div className="z-99 fixed top-0 right-0">
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              className={`z-99 fixed top-0 right-0 flex my_shadow rounded-2xl h-auto
               ${isMobile ? "w-full" : "w-fit"}`}
-            initial={{ opacity: 0, scale: 0.95, y: -10 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: -10 }}
-            transition={springPresets.medium}
-          >
-            <div className="w-full h-full bg-black pixel-corners-s pb-(--space-3xs)">
-              <div className="flex items-center h-(--space-xl) mx-(--space-m) my-(--space-s)">
-                <div
-                  className={` text-0 font-bold text-green glow glow-green-lg 
+              initial={{ opacity: 0, scale: 0.95, y: -10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: -10 }}
+              transition={{ ...springPresets.medium, delay: 0.1}}
+            >
+              <div className="w-full h-full bg-black pixel-corners-s pb-(--space-3xs)">
+                <div className="flex items-center h-(--space-xl) mx-(--space-m) my-(--space-s)">
+                  <div
+                    className={` text-0 font-bold text-green glow glow-green-lg 
                     ${isMobile ? "" : "!hidden"}`}
+                  >
+                    SOS14
+                  </div>
+                </div>
+                <div
+                  className={`flex flex-col gap-y-(--space-3xs) p-(--space-xs) pt-0
+                ${isMobile ? "text-0" : "text-2"}`}
                 >
-                  SOS14
+                  {menuLinks.map((link, i) => (
+                    <motion.div
+                      key={link.label}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
+                      transition={{ ...springPresets.medium, delay: i * 0.1 }}
+                      className="flex hover:bg-green/10 hover:text-white pixel-corners-s transition-colors pl-(--space-s) pr-(--space-2xl)"
+                    >
+                      <Link
+                        href={link.path}
+                        className="flex text-right px-(--space-s) pr-(--space-2xl) py-(--space-2xs) text-white/90"
+                        onClick={onClose}
+                      >
+                        {link.label}
+                      </Link>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
-              <div
-                className={`flex flex-col gap-y-(--space-3xs) p-(--space-xs) pt-0
-                ${isMobile ? "text-0" : "text-2"}`}
-              >
-                {menuLinks.map((link, i) => (
-                  <motion.div
-                    key={link.label}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ ...springPresets.medium, delay: i * 0.1 }}
-                    className="flex hover:bg-green/10 hover:text-white pixel-corners-s transition-colors pl-(--space-s) pr-(--space-2xl)"
-                  >
-                    <Link
-                      href={link.path}
-                      className="flex text-right px-(--space-s) pr-(--space-2xl) py-(--space-2xs) text-white/90"
-                      onClick={onClose}
-                    >
-                      {link.label}
-                    </Link>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </Fragment>
   );
 }

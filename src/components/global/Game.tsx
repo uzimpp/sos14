@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import MagneticBtn from "@/components/effects/MagneticBtn";
+import MagneticDiv from "@/components/effects/MagneticDiv";
 import GameBtn from "@/components/ui/GameBtn";
 
 export function AB() {
@@ -87,14 +87,14 @@ export function Joystick() {
               className="object-contain"
             />
           </div>
-          <MagneticBtn className="w-(--space-l-2xl) h-(--space-l-2xl) z-10">
+          <MagneticDiv className="w-(--space-l-2xl) h-(--space-l-2xl) z-10">
             <Image
               src="/assets/game/joystick/joystick.svg"
               alt="joystick"
               fill
               className="object-contain"
             />
-          </MagneticBtn>
+          </MagneticDiv>
         </div>
         <div className="relative w-(--space-m-xl) aspect-[2/1]">
           <Image
