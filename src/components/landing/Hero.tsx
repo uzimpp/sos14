@@ -43,8 +43,8 @@ export default function Hero() {
             className="col-span-2 row-span-2 pixel-corners-s relative bg-[#33638C30] flex flex-col items-center justify-center p-(--space-m) group"
           >
             <div
-              className="absolute w-[25%] top-[-2%] left-[-3%] rotate-8
-            group-hover:w-[26%] group-hover:top-[1%] group-hover:left-[-1%] group-hover:rotate-14 transition-all duration-300 elastic"
+              className="absolute w-[25%] top-[-3%] left-[-3%] rotate-8
+            group-hover:w-[26%] group-hover:top-[-5%] group-hover:left-[-7%] group-hover:rotate-6 transition-all duration-300 elastic"
             >
               <Image
                 src="/assets/landing/python.svg"
@@ -57,7 +57,7 @@ export default function Hero() {
             </div>
             <div
               className="absolute w-[25%] bottom-[-10%] right-[-2%] -rotate-10
-            group-hover:w-[26%] group-hover:bottom-[-4%] group-hover:right-[0%] group-hover:-rotate-14 transition-all duration-300 elastic"
+            group-hover:w-[26%] group-hover:bottom-[-13%] group-hover:right-[-5%] group-hover:-rotate-8 transition-all duration-300 elastic"
             >
               <Image
                 src="/assets/landing/python.svg"
@@ -68,32 +68,34 @@ export default function Hero() {
                 priority
               />
             </div>
-            <div className="relative pb-4 group-hover:scale-105 transition-all duration-300 elastic">
-              <h5 className="text-center font-medium pb-1">Problems</h5>
-              <p className="text-balance text--1 flex justify-center text-center text-white/60">
-                A Python exercise introducing core programming concepts and
-                syntax.
-              </p>
-            </div>
-            <div className="flex flex-row gap-(--space-xs)">
-              <Link
-                href="/problems?day=1"
-                className="text--1 px-(--space-m) py-(--space-2xs) bg-black/80 pixel-corners-xs"
-              >
-                Day 1
-              </Link>
-              <Link
-                href="/problems?day=2"
-                className="text--1 px-(--space-m) py-(--space-2xs) bg-black/80 pixel-corners-xs"
-              >
-                Day 2
-              </Link>
-              <Link
-                href="/problems?day=3"
-                className="text--1 px-(--space-m) py-(--space-2xs) bg-black/80 pixel-corners-xs"
-              >
-                Day 3
-              </Link>
+            <div className="group-hover:scale-105 transition-all duration-300 elastic flex flex-col items-center gap-4">
+              <div className="">
+                <h5 className="text-center font-medium pb-1">Problems</h5>
+                <p className="text-balance text--1 flex justify-center text-center text-white/60">
+                  A Python exercise introducing core programming concepts and
+                  syntax.
+                </p>
+              </div>
+              <div className="flex flex-row gap-(--space-xs)">
+                <Link
+                  href="/problems?day=1"
+                  className="text--1 px-(--space-m) py-(--space-2xs) bg-black/80 pixel-corners-xs"
+                >
+                  Day 1
+                </Link>
+                <Link
+                  href="/problems?day=2"
+                  className="text--1 px-(--space-m) py-(--space-2xs) bg-black/80 pixel-corners-xs"
+                >
+                  Day 2
+                </Link>
+                <Link
+                  href="/problems?day=3"
+                  className="text--1 px-(--space-m) py-(--space-2xs) bg-black/80 pixel-corners-xs"
+                >
+                  Day 3
+                </Link>
+              </div>
             </div>
           </motion.div>
           {/* diamond */}
@@ -150,9 +152,12 @@ export default function Hero() {
             whileTap={{ scale: 0.97 }}
             transition={springPresets.medium}
             href="/#agenda"
-            className="col-span-2 row-start-3 row-end-4 md:col-start-3 md:row-start-1 md:row-end-2 pixel-corners-s bg-[#432125] relative overflow-hidden flex justify-center items-center"
+            className="col-span-2 row-start-3 row-end-4 md:col-start-3 md:row-start-1 md:row-end-2 pixel-corners-s bg-[#432125] relative overflow-hidden flex justify-center items-center group"
           >
-            <div className="absolute w-[25%] top-[-10%] left-[2%] rotate-22">
+            <div
+              className="absolute w-[25%] top-[-10%] left-[2%] rotate-22
+            group-hover:w-[26%] group-hover:top-[-11%] group-hover:left-[5%] group-hover:rotate-16 transition-all duration-300 elastic"
+            >
               <Image
                 src="/assets/slot/cherry.svg"
                 alt="cherry"
@@ -162,7 +167,10 @@ export default function Hero() {
                 priority
               />
             </div>
-            <div className="absolute w-[25%] bottom-[-15%] right-[5%] -rotate-23">
+            <div
+              className="absolute w-[25%] bottom-[-15%] right-[5%] -rotate-23
+             group-hover:w-[26%] group-hover:bottom-[-6%] group-hover:right-[7%] group-hover:-rotate-16 transition-all duration-300 elastic"
+            >
               <Image
                 src="/assets/slot/cherry.svg"
                 alt="cherry"
@@ -172,7 +180,9 @@ export default function Hero() {
                 priority
               />
             </div>
-            <h5 className="font-medium">Agenda</h5>
+            <h5 className="font-medium group-hover:scale-105 transition-all duration-300 elastic">
+              Agenda
+            </h5>
           </MotionLink>
           {/* coins */}
           <motion.div
@@ -196,7 +206,7 @@ export default function Hero() {
             </div>
             <div
               className="absolute w-[21%] bottom-[-10%] left-[28%] rotate-5 opacity-75
-            group-hover:w-[24%] group-hover:bottom-[11%] group-hover:left-[25%] group-hover:rotate-5 group-hover:opacity-100 transition-all duration-300 elastic"
+            group-hover:w-[24%] group-hover:bottom-[8%] group-hover:left-[25%] group-hover:-rotate-2 group-hover:opacity-100 transition-all duration-300 elastic"
             >
               <Image
                 src="/assets/slot/coin.svg"
