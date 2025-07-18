@@ -1,10 +1,12 @@
 "use client";
+import { springPresets } from "@/constants/Animation";
 import ScrambleText from "../effects/ScrambleText";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Hero() {
+  const MotionLink = motion(Link);
   return (
     <div className="flex-col-reverse">
       <div className="flex flex-col md:flex-row gap-x-(--space-l) justify-between mb-(--space-s) items-center">
@@ -34,8 +36,16 @@ export default function Hero() {
       <div>
         <div className="grid grid-cols-2 grid-rows-4 md:grid-cols-4 md:grid-rows-4 lg:grid-cols-[1fr_1fr_1fr_1fr_1fr_auto] lg:grid-rows-3 gap-(--space-2xs-xs)">
           {/* Problem */}
-          <div className="col-span-2 row-span-2 pixel-corners-s relative bg-[#33638C30] flex flex-col items-center justify-center p-(--space-m)">
-            <div className="absolute w-[25%] bottom-[-10%] right-[-2%] -rotate-10">
+          <motion.div
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.97 }}
+            transition={springPresets.medium}
+            className="col-span-2 row-span-2 pixel-corners-s relative bg-[#33638C30] flex flex-col items-center justify-center p-(--space-m) group"
+          >
+            <div
+              className="absolute w-[25%] top-[-2%] left-[-3%] rotate-8
+            group-hover:w-[26%] group-hover:top-[1%] group-hover:left-[-1%] group-hover:rotate-14 transition-all duration-300 elastic"
+            >
               <Image
                 src="/assets/landing/python.svg"
                 alt="python"
@@ -45,7 +55,10 @@ export default function Hero() {
                 priority
               />
             </div>
-            <div className="absolute w-[25%] top-[-3%] left-[-3%] rotate-8">
+            <div
+              className="absolute w-[25%] bottom-[-10%] right-[-2%] -rotate-10
+            group-hover:w-[26%] group-hover:bottom-[-4%] group-hover:right-[0%] group-hover:-rotate-14 transition-all duration-300 elastic"
+            >
               <Image
                 src="/assets/landing/python.svg"
                 alt="python"
@@ -55,7 +68,7 @@ export default function Hero() {
                 priority
               />
             </div>
-            <div className="relative pb-4">
+            <div className="relative pb-4 group-hover:scale-105 transition-all duration-300 elastic">
               <h5 className="text-center font-medium pb-1">Problems</h5>
               <p className="text-balance text--1 flex justify-center text-center text-white/60">
                 A Python exercise introducing core programming concepts and
@@ -82,9 +95,14 @@ export default function Hero() {
                 Day 3
               </Link>
             </div>
-          </div>
+          </motion.div>
           {/* diamond */}
-          <div className="hidden lg:block col-span-2 col-start-1 row-start-3 pixel-corners-s bg-[#ACC1FF25] relative">
+          <motion.div
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.97 }}
+            transition={springPresets.medium}
+            className="hidden lg:block col-span-2 col-start-1 row-start-3 pixel-corners-s bg-[#ACC1FF25] relative"
+          >
             <div className="absolute w-[20%] bottom-[-15%] left-[-2%] rotate-5 opacity-75">
               <Image
                 src="/assets/slot/diamond.svg"
@@ -125,9 +143,12 @@ export default function Hero() {
                 priority
               />
             </div>
-          </div>
+          </motion.div>
           {/* Agenda */}
-          <Link
+          <MotionLink
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.97 }}
+            transition={springPresets.medium}
             href="/#agenda"
             className="col-span-2 row-start-3 row-end-4 md:col-start-3 md:row-start-1 md:row-end-2 pixel-corners-s bg-[#432125] relative overflow-hidden flex justify-center items-center"
           >
@@ -152,10 +173,18 @@ export default function Hero() {
               />
             </div>
             <h5 className="font-medium">Agenda</h5>
-          </Link>
+          </MotionLink>
           {/* coins */}
-          <div className="hidden md:block col-span-2 col-start-1 row-start-4 lg:col-start-3 lg:row-start-2 pixel-corners-s bg-[#D18D3925] relative">
-            <div className="absolute w-[21%] bottom-[-10%] left-[7%] -rotate-15 opacity-75">
+          <motion.div
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.97 }}
+            transition={springPresets.medium}
+            className="hidden md:block col-span-2 col-start-1 row-start-4 lg:col-start-3 lg:row-start-2 pixel-corners-s bg-[#D18D3925] relative group"
+          >
+            <div
+              className="absolute w-[21%] bottom-[-10%] left-[5%] -rotate-15 opacity-75
+            group-hover:w-[22%] group-hover:bottom-[2%] group-hover:left-[2%] group-hover:-rotate-18 group-hover:opacity-80 transition-all duration-300 elastic"
+            >
               <Image
                 src="/assets/slot/coin.svg"
                 alt="coin"
@@ -165,7 +194,10 @@ export default function Hero() {
                 priority
               />
             </div>
-            <div className="absolute w-[21%] bottom-[-10%] left-[30%] rotate-5 opacity-75">
+            <div
+              className="absolute w-[21%] bottom-[-10%] left-[28%] rotate-5 opacity-75
+            group-hover:w-[24%] group-hover:bottom-[11%] group-hover:left-[25%] group-hover:rotate-5 group-hover:opacity-100 transition-all duration-300 elastic"
+            >
               <Image
                 src="/assets/slot/coin.svg"
                 alt="coin"
@@ -175,7 +207,10 @@ export default function Hero() {
                 priority
               />
             </div>
-            <div className="absolute w-[20%] bottom-[-10%] right-[26%] -rotate-6 opacity-75">
+            <div
+              className="absolute w-[20%] bottom-[-10%] right-[28%] -rotate-6 opacity-75
+            group-hover:w-[21%] group-hover:bottom-[2%] group-hover:right-[25%] group-hover:-rotate-1 group-hover:opacity-80 transition-all duration-300 elastic"
+            >
               <Image
                 src="/assets/slot/coin.svg"
                 alt="coin"
@@ -185,7 +220,10 @@ export default function Hero() {
                 priority
               />
             </div>
-            <div className="absolute w-[22%] bottom-[-10%] right-[2%] rotate-20 opacity-75">
+            <div
+              className="absolute w-[22%] bottom-[-10%] right-[4%] rotate-18 opacity-75
+            group-hover:w-[23%] group-hover:bottom-[5%] group-hover:right-[0%] group-hover:rotate-23 group-hover:opacity-85 transition-all duration-300 elastic"
+            >
               <Image
                 src="/assets/slot/coin.svg"
                 alt="coin"
@@ -195,9 +233,14 @@ export default function Hero() {
                 priority
               />
             </div>
-          </div>
+          </motion.div>
           {/* contact */}
-          <div className="row-start-4 md:col-start-1 lg:col-start-3 md:row-start-3 pixel-corners-s bg-light-purple/70 flex flex-col justify-center items-center p-(--space-m)">
+          <motion.div
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.97 }}
+            transition={springPresets.medium}
+            className="row-start-4 md:col-start-1 lg:col-start-3 md:row-start-3 pixel-corners-s bg-light-purple/70 flex flex-col justify-center items-center p-(--space-m)"
+          >
             <h6 className="flex justify-center text-left font-medium pb-1">
               Contact
             </h6>
@@ -223,9 +266,12 @@ export default function Hero() {
                 />
               </Link>
             </div>
-          </div>
+          </motion.div>
           {/* faqs */}
-          <Link
+          <MotionLink
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.97 }}
+            transition={springPresets.medium}
             href="/faqs"
             className="col-start-1 row-start-4 md:col-start-2 lg:col-start-4 md:row-start-3 pixel-corners-s bg-[#FD68CE30] flex justify-center items-center p-(--space-m)"
           >
@@ -236,9 +282,14 @@ export default function Hero() {
               <br />
               Questions
             </div>
-          </Link>
+          </MotionLink>
           {/* arcade */}
-          <div className="hidden md:flex md:row-span-3 md:col-start-3 md:row-start-2 col-span-2 lg:col-start-5 lg:row-start-1 pixel-corners-s bg-[#353435] items-center justify-center p-(--space-s)">
+          <motion.div
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.97 }}
+            transition={springPresets.medium}
+            className="hidden md:flex md:row-span-3 md:col-start-3 md:row-start-2 col-span-2 lg:col-start-5 lg:row-start-1 pixel-corners-s bg-[#353435] items-center justify-center p-(--space-s)"
+          >
             <Image
               src="/assets/landing/arcade.svg"
               alt="arcade"
@@ -247,7 +298,7 @@ export default function Hero() {
               className={`w-auto aspect-auto`}
               priority
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
