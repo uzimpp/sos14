@@ -1,16 +1,51 @@
-import ScrambleText from "@/components/effects/ScrambleText";
-import ProblemList from "@/components/problems/ProblemList";
+"use client"
+
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Suspense } from "react";
 
+const ScrambleText = dynamic(
+  () => import("@/components/effects/ScrambleText"),
+  {
+    ssr: false,
+    loading: () => (
+      <span className="text-white no_line_height font-medium text-center flex mx-auto glow glow-pink">
+        PROBLEMS
+      </span>
+    ),
+  }
+);
+
+const ProblemList = dynamic(() => import("@/components/problems/ProblemList"), {
+  ssr: false,
+  loading: () => (
+    <div className="flex flex-col gap-4 p-4">
+      {[...Array(8)].map((_, i) => (
+        <div
+          key={i}
+          className="h-32 bg-light-purple/20 rounded-lg animate-pulse"
+        />
+      ))}
+    </div>
+  ),
+});
+
 export default function Problems() {
   return (
-    <div className="!pb-(--space-4xl) px-(--space-m) py-(--space-s) max-w-[1728px] w-full flex flex-col justify-self-center justify-center">
-      <div className="flex flex-col mt-(--space-l-xl) mb-(--space-xl) gap-(--space-s) items-center">
+    <div className="!pb-(--space-4xl) px-(--space-m) py-(--space-s) max-w-[1728px] mx-auto w-full flex flex-col justify-self-center justify-center">
+      <div className="flex flex-col mt-(--space-l-xl) gap-(--space-s) items-center">
         <h3>
-          <ScrambleText className="text-white no_line_height font-medium text-center flex mx-auto glow glow-pink">
-            PROBLEMS
-          </ScrambleText>
+          <Suspense
+            fallback={
+              <span className="text-white no_line_height font-medium text-center flex mx-auto glow glow-pink">
+                PROBLEMS
+              </span>
+            }
+          >
+            <ScrambleText className="text-white no_line_height font-medium text-center flex mx-auto glow glow-pink">
+              PROBLEMS
+            </ScrambleText>
+          </Suspense>
         </h3>
         <div className="max-w-[calc(5.5*var(--space-4xl))] flex justify-center">
           <p className="text-0 text-center opacity-60">
@@ -23,7 +58,18 @@ export default function Problems() {
           </p>
         </div>
       </div>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense
+        fallback={
+          <div className="flex flex-col gap-4 p-4">
+            {[...Array(8)].map((_, i) => (
+              <div
+                key={i}
+                className="h-32 bg-light-purple/20 rounded-lg animate-pulse"
+              />
+            ))}
+          </div>
+        }
+      >
         <ProblemList />
       </Suspense>
     </div>

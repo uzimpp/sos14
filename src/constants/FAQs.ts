@@ -18,7 +18,7 @@ const faqSections = {
     {
       question: "Is a computer required? What about specifications?",
       answer:
-        "A computer is required though it is REALLY recommended to have a laptop. Portable computers will make your life easier and should always be taken to university. For Windows, you should pick a laptop with medium specs such as Core i5 or Ryzen 5 CPU, 8GB RAM, 512 HDD. Make sure to get the latest generation of CPU to have faster performance. For Mac, it is recommended to get at least M1 CPU.",
+        "A computer is required, and it is HIGHLY recommended to have a laptop for portability and convenience during university. For Windows laptops, we recommend at least an Intel Core i5 (12th gen or newer) or AMD Ryzen 5 (5000 series or newer) processor, 8GB RAM (16GB preferred), and 256GB SSD storage. For Mac, we recommend at least an M1 chip or newer (M2/M3 preferred) for optimal performance. A laptop with these specifications will handle Python programming and development tools smoothly.",
     },
     {
       question: "What career opportunities are available after SKE?",
@@ -30,7 +30,7 @@ const faqSections = {
     {
       question: "What is SOS Camp?",
       answer:
-        "SOS Camp is a preparation camp for freshmen to gain knowledge about the programming. It is also a camp to help you prepare for the first semester. The camp will be held on 18th-21st July.",
+        "SOS Camp is a preparation camp for freshmen to gain knowledge about the programming. It is also a camp to help you prepare for the first semester. The camp will be held on 20th-23st July.",
     },
     {
       question: "How can I join SOS?",
@@ -68,7 +68,7 @@ const faqSections = {
     {
       question: "What software do I need to install on my laptop?",
       answer:
-        "You will need to install Python 3.9.6 and PyCharm Community Edition 2021.1.3.",
+        "You will need to install the latest stable version of Python 3 and the latest PyCharm Community Edition.",
     },
     {
       question: "What programming languages should I learn?",

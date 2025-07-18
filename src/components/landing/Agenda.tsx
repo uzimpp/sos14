@@ -1,6 +1,8 @@
-import agenda from "@/constant/agenda";
-import ScrambleText from "@/components/effects/ScrambleText";
+"use client";
 
+import agenda from "@/constants/Agenda";
+import ScrambleText from "@/components/effects/ScrambleText";
+import { Fragment } from "react";
 interface AgendaItemProps {
   date: string;
   events: EventProps[];
@@ -27,29 +29,30 @@ export default function Agenda() {
         {agenda.map((item: AgendaItemProps, i) => (
           <div
             key={i}
-            className="grid grid-cols-[var(--space-2xs)_1fr] grid-rows-[auto_auto] gap-x-(--space-l)
-            md:grid-cols-[1fr_var(--space-2xs)_1fr] md:grid-rows-1 md:gap-x-(--space-l-2xl)"
+            className="grid grid-cols-[var(--space-2xs)_1fr] grid-rows-[auto_auto] gap-x-(--space-m-l)
+            lg:grid-cols-[1fr_var(--space-2xs)_1fr] lg:grid-rows-1 lg:gap-x-(--space-l-2xl)"
           >
             {/* Dot/Line */}
             <div
-              className={`mt-(--space-m) bg-green/20 flex flex-col items-center row-span-2 col-start-1 md:col-start-2 md:row-start-1 md:row-end-2 md:row-span-1 md:items-center
+              className={`mt-(--space-m) bg-green/20 flex flex-col items-center row-span-2 col-start-1 lg:col-start-2 lg:row-start-1 lg:row-end-2 lg:row-span-1 lg:items-center
                 ${i === agenda.length - 1 ? "h-fit" : "h-full"}`}
             >
               <div className="w-(--space-m) h-(--space-m) bg-green pixel-corners-s" />
             </div>
             {/* Day/Date */}
-            <div className="mb-(--space-m) flex flex-col items-start col-start-2 row-start-1 md:col-start-1 md:items-end">
+            <div className="mb-(--space-m) flex flex-col items-start col-start-2 row-start-1 lg:col-start-1 lg:items-end">
               <h1 className="mb-(--space-2xs) text-green font-bold no_line_height">
                 Day {i + 1}
               </h1>
-              <h6 className="text-green/40 font-medium">{item.date}</h6>
+              <p className="text-green/75 font-medium">{item.date}</p>
             </div>
             {/* Events */}
-            <div className="mb-(--space-xl) w-fit bg-[#18141c] text-white/80 pixel-corners-s p-(--space-m) text-lg shadow-lg col-start-2 row-start-2 md:col-start-3 md:row-start-1">
-              {item.events.map((event: EventProps, eventIndex) => (
-                <div key={eventIndex}>
-                  <span className="font-medium">{event.time}</span> {event.name}
-                </div>
+            <div className=" grid grid-cols-[auto_auto] gap-x-(--space-2xs) gap-y-(--space-2xs) mb-(--space-xl) w-fit bg-[#18141c] text-white/90 pixel-corners-s p-(--space-m) text-lg shadow-lg col-start-2 row-start-2 lg:col-start-3 lg:row-start-1">
+              {item.events.map((event: EventProps) => (
+                <Fragment key={event.time}>
+                  <p className="font-ian text-3 no_line_height ">{event.time}</p>
+                  <p className="font-ian text-3 no_line_height">{event.name}</p>
+                </Fragment>
               ))}
             </div>
           </div>

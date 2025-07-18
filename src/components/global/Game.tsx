@@ -10,14 +10,14 @@ export function AB() {
     <div className="flex flex-col gap-y-(--space-xs-m)">
       <GameBtn
         className="relative w-(--space-l-2xl) aspect-[96/107] justify-end"
-        nonclicked="/game/AB/A.svg"
-        clicked="/game/AB/clicked-A.svg"
+        nonclicked="/assets/game/AB/A.svg"
+        clicked="/assets/game/AB/clicked-A.svg"
         alt="A"
       />
       <GameBtn
         className="relative w-(--space-l-2xl) aspect-[96/107] justify-end"
-        nonclicked="/game/AB/B.svg"
-        clicked="/game/AB/clicked-B.svg"
+        nonclicked="/assets/game/AB/B.svg"
+        clicked="/assets/game/AB/clicked-B.svg"
         alt="B"
       />
     </div>
@@ -29,28 +29,28 @@ export function Skill() {
     <div className="flex flex-row items-center">
       <GameBtn
         className="relative w-(--space-l-2xl) aspect-[96/107] justify-end"
-        nonclicked="/game/skill/skill.svg"
-        clicked="/game/skill/clicked-skill.svg"
+        nonclicked="/assets/game/skill/skill.svg"
+        clicked="/assets/game/skill/clicked-skill.svg"
         alt="skill"
       />
       <div className="flex flex-col gap-y-(--space-xs-m)">
         <GameBtn
           className="relative w-(--space-l-2xl) aspect-[96/107] justify-end"
-          nonclicked="/game/skill/skill.svg"
-          clicked="/game/skill/clicked-skill.svg"
+          nonclicked="/assets/game/skill/skill.svg"
+          clicked="/assets/game/skill/clicked-skill.svg"
           alt="skill"
         />
         <GameBtn
           className="relative w-(--space-l-2xl) aspect-[96/107] justify-end"
-          nonclicked="/game/skill/skill.svg"
-          clicked="/game/skill/clicked-skill.svg"
+          nonclicked="/assets/game/skill/skill.svg"
+          clicked="/assets/game/skill/clicked-skill.svg"
           alt="skill"
         />
       </div>
       <GameBtn
         className="relative w-(--space-l-2xl) aspect-[96/107] justify-end"
-        nonclicked="/game/skill/skill.svg"
-        clicked="/game/skill/clicked-skill.svg"
+        nonclicked="/assets/game/skill/skill.svg"
+        clicked="/assets/game/skill/clicked-skill.svg"
         alt="skill"
       />
     </div>
@@ -62,7 +62,7 @@ export function Joystick() {
     <div className="flex flex-row h-full items-center gap-x-(--space-2xs-s)">
       <div className="relative h-(--space-m-xl) aspect-[1/2]">
         <Image
-          src="/game/joystick/left.svg"
+          src="/assets/game/joystick/left.svg"
           alt="left"
           fill
           className="object-contain"
@@ -71,7 +71,7 @@ export function Joystick() {
       <div className="flex flex-col items-center gap-y-(--space-2xs-s)">
         <div className="relative w-(--space-m-xl) aspect-[2/1]">
           <Image
-            src="/game/joystick/up.svg"
+            src="/assets/game/joystick/up.svg"
             alt="up"
             fill
             className="object-contain"
@@ -81,7 +81,7 @@ export function Joystick() {
         <div className="relative w-(--space-l-2xl) h-(--space-l-2xl)">
           <div className="w-(--space-l-2xl) h-(--space-l-2xl) absolute z-0">
             <Image
-              src="/game/joystick/base.svg"
+              src="/assets/game/joystick/base.svg"
               alt="base"
               fill
               className="object-contain"
@@ -89,7 +89,7 @@ export function Joystick() {
           </div>
           <MagneticBtn className="w-(--space-l-2xl) h-(--space-l-2xl) z-10">
             <Image
-              src="/game/joystick/joystick.svg"
+              src="/assets/game/joystick/joystick.svg"
               alt="joystick"
               fill
               className="object-contain"
@@ -98,7 +98,7 @@ export function Joystick() {
         </div>
         <div className="relative w-(--space-m-xl) aspect-[2/1]">
           <Image
-            src="/game/joystick/down.svg"
+            src="/assets/game/joystick/down.svg"
             alt="down"
             fill
             className="object-contain"
@@ -107,7 +107,7 @@ export function Joystick() {
       </div>
       <div className="relative h-(--space-m-xl) aspect-[1/2]">
         <Image
-          src="/game/joystick/right.svg"
+          src="/assets/game/joystick/right.svg"
           alt="right"
           fill
           className="object-contain"
@@ -150,7 +150,7 @@ export function Inserter() {
       <div className="relative w-[calc(var(--space-l-2xl)*74/96)] h-[calc(var(--space-l-2xl)*192/96)]">
         <div className="absolute w-[calc(var(--space-l-2xl)*74/96)] h-[calc(var(--space-l-2xl)*192/96)] z-0">
           <Image
-            src="/game/inserter/inserter-base.svg"
+            src="/assets/game/inserter/inserter-base.svg"
             alt="insert"
             fill
             className="object-contain"
@@ -161,7 +161,7 @@ export function Inserter() {
           onClick={handleClick}
         >
           <Image
-            src="/game/inserter/inserter-mask.svg"
+            src="/assets/game/inserter/inserter-mask.svg"
             alt="insert"
             fill
             className="object-contain"
@@ -174,7 +174,7 @@ export function Inserter() {
           >
             <div className="relative w-[calc(var(--space-l-2xl)*30/96)] h-[calc(var(--space-l-2xl)*104/96)]">
               <Image
-                src="/game/coin.svg"
+                src="/assets/game/coin.svg"
                 alt="coin"
                 fill
                 className="object-contain"
