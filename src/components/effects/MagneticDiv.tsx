@@ -3,11 +3,18 @@ import { ReactNode, useRef, useState, MouseEvent } from "react";
 import { motion } from "framer-motion";
 
 interface MagneticDivProps {
+  transition?: {};
   children: ReactNode;
   className?: string;
   onClick?: () => void;
 }
 export default function MagneticDiv({
+  transition = {
+    type: "spring",
+    bounce: 0.1,
+    damping: 40,
+    mass: 5,
+  },
   children,
   className = "",
   onClick,
@@ -34,12 +41,7 @@ export default function MagneticDiv({
       onMouseMove={handleMouse}
       onMouseLeave={reset}
       animate={position}
-      transition={{
-        type: "spring",
-        bounce: 0.2,
-        damping: 40,
-        mass: 0.5,
-      }}
+      transition={transition}
       style={{ position: "relative" }}
     >
       {children}
