@@ -7,7 +7,11 @@ import { useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import DropdownBtn from "@/components/ui/DropdownBtn";
 import MapProblems from "@/components/problems/MapProblems";
-import { springPresets } from "@/constants/Animation";
+import {
+  springPresets,
+  slideXVariants,
+  staggerVariants,
+} from "@/constants/Animation";
 import slides from "@/constants/Slides";
 import days from "@/constants/ProblemsDays";
 
@@ -76,9 +80,17 @@ export default function ProblemList() {
 
   return (
     <section className="flex flex-col justify-center justify-self-center md:px-(--space-s-l) px-0">
-      <div className="gap-(--space-2xs-xs) flex flex-row flex-wrap md:justify-start justify-center mb-(--space-m-l)">
+      <motion.div
+        variants={staggerVariants}
+        initial="hidden"
+        animate="visible"
+        className="gap-(--space-2xs-xs) flex flex-row flex-wrap md:justify-start justify-center mb-(--space-m-l)"
+      >
         {days.map((day) => (
-          <button
+          <motion.button
+            variants={slideXVariants}
+            whileHover={{ scale: 1.05 }}
+            transition={{ ...springPresets.soft }}
             key={day.id}
             className={`font-medium px-(--space-m) py-(--space-2xs) pixel-corners-s ${
               CurrentDay === day.id
@@ -88,27 +100,33 @@ export default function ProblemList() {
             onClick={() => handleClick(day.id)}
           >
             {day.label}
-          </button>
+          </motion.button>
         ))}
-        <DropdownBtn label="Resources">
-          {slides.map((slide, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ ...springPresets.medium, delay: i * 0.1 }}
-            >
-              <Link
-                href={slide.link}
-                target="_blank"
-                className="block px-(--space-m) py-(--space-2xs) text-nowrap hover:bg-green/10 pixel-corners-s"
+        <motion.div
+          variants={slideXVariants}
+          transition={{ ...springPresets.soft }}
+          className="z-50"
+        >
+          <DropdownBtn label="Resources">
+            {slides.map((slide, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ ...springPresets.medium, delay: i * 0.1 }}
               >
-                {slide.label}
-              </Link>
-            </motion.div>
-          ))}
-        </DropdownBtn>
-      </div>
+                <Link
+                  href={slide.link}
+                  target="_blank"
+                  className="block px-(--space-m) py-(--space-2xs) text-nowrap hover:bg-green/10 pixel-corners-s"
+                >
+                  {slide.label}
+                </Link>
+              </motion.div>
+            ))}
+          </DropdownBtn>
+        </motion.div>
+      </motion.div>
       {MapProblems(CurrentDay, completedStatus, handleCheckboxChange)}
     </section>
   );

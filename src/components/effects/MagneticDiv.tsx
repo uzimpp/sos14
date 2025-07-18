@@ -1,9 +1,9 @@
 "use client";
 import { ReactNode, useRef, useState, MouseEvent } from "react";
-import { motion } from "framer-motion";
+import { motion, type Transition } from "framer-motion";
 
 interface MagneticDivProps {
-  transition?: {};
+  transition?: Transition;
   children: ReactNode;
   className?: string;
   onClick?: () => void;

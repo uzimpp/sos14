@@ -196,7 +196,7 @@ export default function NavBar() {
           <motion.div
             className="fixed w-screen h-screen top-0 left-0 bg-black z-30"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 0.1 }}
+            animate={{ opacity: 0.2 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={handleMenuToggle}

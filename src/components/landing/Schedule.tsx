@@ -4,11 +4,7 @@ import schedule from "@/constants/Schedule";
 import ScrambleText from "@/components/effects/ScrambleText";
 import { Fragment } from "react";
 import { motion } from "framer-motion";
-import {
-  containerVariants,
-  itemVariants,
-  springPresets,
-} from "@/constants/Animation";
+import { itemVariants, springPresets } from "@/constants/Animation";
 interface ScheduleItemProps {
   date: string;
   events: EventProps[];

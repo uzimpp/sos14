@@ -90,13 +90,13 @@ export default function Footer() {
                 >
                   Discord
                 </Link>
-                <Link
+                {/* <Link
                   href="https://github.com/uzimpp/sos14"
                   className="text--1"
                   target="_blank"
                 >
                   Github
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>

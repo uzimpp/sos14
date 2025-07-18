@@ -1,45 +1,63 @@
 "use client";
 import { springPresets } from "@/constants/Animation";
 import ScrambleText from "../effects/ScrambleText";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import MagneticDiv from "../effects/MagneticDiv";
 
 export default function Hero() {
-  const MotionLink = motion(Link);
+  const MotionLink = motion.create(Link);
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col md:flex-row gap-x-(--space-l) justify-between mb-(--space-s) items-center">
-        <motion.div
-          className="inline-block md:justify-start text-center"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <ScrambleText className="xl:text-12 md:text-[20vw] text-[30vw] font-bold text-green landing-title w-fit">
-            <span className="glow glow-green-lg">SOS14</span>
-          </ScrambleText>
-        </motion.div>
-        <motion.div
-          className="flex"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-        >
-          <p className="hidden sm:flex text--1 md:text-0 xl:text-1 md:text-left text-center text-white/60 text-balance">
-            Welcome to the 14th SOS camp, a preparation camp for SKE23 students.
-            We will take you through Python programming fundamentals
-          </p>
-        </motion.div>
+      <div className="flex flex-col md:flex-row gap-x-(--space-l) justify-between mb-(--space-s) items-center w-full">
+        <AnimatePresence>
+          <motion.div
+            className="inline-block md:justify-start text-center"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
+            <ScrambleText className="xl:text-12 md:text-[20vw] text-[30vw] font-bold text-green landing-title w-fit">
+              <span className="glow glow-green-lg">SOS14</span>
+            </ScrambleText>
+          </motion.div>
+        </AnimatePresence>
+        <div className="flex overflow-hidden">
+          <motion.div
+            className="flex"
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          >
+            <p className="hidden sm:flex text--1 md:text-0 xl:text-1 md:text-left text-center text-white/60 text-balance">
+              Welcome to the 14th SOS camp, a preparation camp for SKE23
+              students. We will take you through Python programming fundamentals
+            </p>
+          </motion.div>
+        </div>
       </div>
       {/* Bento grid part */}
-      <div className="grid grid-cols-2 grid-rows-4 md:grid-cols-4 md:grid-rows-4 lg:grid-cols-[1fr_1fr_1fr_1fr_1fr_auto] lg:grid-rows-3 gap-(--space-2xs-xs)">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeInOut" }}
+        className="grid grid-cols-2 grid-rows-4 md:grid-cols-4 md:grid-rows-4 lg:grid-cols-[1fr_1fr_1fr_1fr_1fr_auto] lg:grid-rows-3 gap-(--space-2xs-xs)"
+      >
         {/* Problem */}
         <motion.div
-          whileHover={{ scale: 1.01 }}
+          initial={{ opacity: 0, scale: 0.97, y: 10 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            transition: { ...springPresets.medium, delay: 0.2 },
+          }}
+          whileHover={{
+            scale: 1.01,
+            transition: { delay: 0, duration: 0.18, ...springPresets.medium },
+          }}
           whileTap={{ scale: 0.97 }}
-          transition={springPresets.medium}
           className="col-span-2 row-span-2 pixel-corners-s overflow-hidden relative bg-[#33638C30] flex flex-col items-center justify-center p-(--space-m) group"
         >
           <div
@@ -101,9 +119,18 @@ export default function Hero() {
         </motion.div>
         {/* diamond */}
         <motion.div
-          whileHover={{ scale: 1.01 }}
+          initial={{ opacity: 0, scale: 0.97, y: 10 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            transition: { ...springPresets.medium, delay: 0.4 },
+          }}
+          whileHover={{
+            scale: 1.01,
+            transition: { delay: 0, duration: 0.18, ...springPresets.medium },
+          }}
           whileTap={{ scale: 0.97 }}
-          transition={springPresets.medium}
           className="hidden lg:block col-span-2 col-start-1 row-start-3 pixel-corners-s overflow-hidden bg-[#ACC1FF25] relative group"
         >
           <div
@@ -174,9 +201,18 @@ export default function Hero() {
         </motion.div>
         {/* Schedule */}
         <MotionLink
-          whileHover={{ scale: 1.01 }}
+          initial={{ opacity: 0, scale: 0.97, y: 10 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            transition: { ...springPresets.medium, delay: 0.3 },
+          }}
+          whileHover={{
+            scale: 1.01,
+            transition: { delay: 0, duration: 0.18, ...springPresets.medium },
+          }}
           whileTap={{ scale: 0.97 }}
-          transition={springPresets.medium}
           href="/#schedule"
           className="col-span-2 row-start-3 row-end-4 md:col-start-3 md:row-start-1 md:row-end-2 pixel-corners-s overflow-hidden bg-[#432125] relative flex justify-center items-center group"
         >
@@ -212,9 +248,18 @@ export default function Hero() {
         </MotionLink>
         {/* coins */}
         <motion.div
-          whileHover={{ scale: 1.01 }}
+          initial={{ opacity: 0, scale: 0.97, y: 10 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            transition: { ...springPresets.medium, delay: 0.3 },
+          }}
+          whileHover={{
+            scale: 1.01,
+            transition: { delay: 0, duration: 0.18, ...springPresets.medium },
+          }}
           whileTap={{ scale: 0.97 }}
-          transition={springPresets.medium}
           className="hidden md:block col-span-2 col-start-1 row-start-4 lg:col-start-3 lg:row-start-2 pixel-corners-s overflow-hidden bg-[#D18D3925] relative group"
         >
           <div
@@ -272,9 +317,18 @@ export default function Hero() {
         </motion.div>
         {/* contact */}
         <motion.div
-          whileHover={{ scale: 1.01 }}
+          initial={{ opacity: 0, scale: 0.97, y: 10 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            transition: { ...springPresets.medium, delay: 0.5 },
+          }}
+          whileHover={{
+            scale: 1.01,
+            transition: { delay: 0, duration: 0.18, ...springPresets.medium },
+          }}
           whileTap={{ scale: 0.97 }}
-          transition={springPresets.medium}
           className="row-start-4 md:col-start-1 lg:col-start-3 md:row-start-3 pixel-corners-s overflow-hidden bg-light-purple/70 flex flex-col justify-center items-center p-(--space-m)"
         >
           <h6 className="text-0 flex no_line_height justify-center text-left font-medium pb-2">
@@ -309,9 +363,18 @@ export default function Hero() {
         </motion.div>
         {/* faqs */}
         <MotionLink
-          whileHover={{ scale: 1.01 }}
+          initial={{ opacity: 0, scale: 0.97, y: 10 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            transition: { ...springPresets.medium, delay: 0.6 },
+          }}
+          whileHover={{
+            scale: 1.01,
+            transition: { delay: 0, duration: 0.18, ...springPresets.medium },
+          }}
           whileTap={{ scale: 0.97 }}
-          transition={springPresets.medium}
           href="/faqs"
           className="col-start-1 row-start-4 md:col-start-2 lg:col-start-4 md:row-start-3 pixel-corners-s overflow-hidden bg-[#FD68CE30] flex justify-center items-center p-(--space-m)"
         >
@@ -325,9 +388,18 @@ export default function Hero() {
         </MotionLink>
         {/* arcade */}
         <motion.div
-          whileHover={{ scale: 1.01 }}
+          initial={{ opacity: 0, scale: 0.97, y: 15 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            transition: { ...springPresets.medium, delay: 0.4 },
+          }}
+          whileHover={{
+            scale: 1.01,
+            transition: { delay: 0, duration: 0.18, ...springPresets.medium },
+          }}
           whileTap={{ scale: 0.97 }}
-          transition={springPresets.medium}
           className="hidden md:flex md:row-span-3 md:col-start-3 md:row-start-2 col-span-2 lg:col-start-5 lg:row-start-1 pixel-corners-s overflow-hidden bg-[#353435] items-center justify-center p-(--space-s)"
         >
           <Image
@@ -339,7 +411,7 @@ export default function Hero() {
             priority
           />
         </motion.div>
-      </div>
+      </motion.div>
     </div>
   );
 }

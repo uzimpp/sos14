@@ -1,5 +1,5 @@
 import Hero from "@/components/landing/Hero";
-import Agenda from "@/components/landing/Agenda";
+import Agenda from "@/components/landing/Schedule";
 import Benefits from "@/components/landing/Benefits";
 // import Location from "@/components/landing/Location";
 import Qoute from "@/components/landing/Qoute";

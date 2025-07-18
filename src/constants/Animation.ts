@@ -1,5 +1,3 @@
-import { scale } from "framer-motion";
-
 // Spring transition presets
 const springPresets = {
   soft: { type: "spring" as const, stiffness: 200, damping: 20 },
@@ -21,6 +19,30 @@ const slideVariants = {
     y: -20,
     scale: 0.95,
     transition: { ...springPresets.soft, duration: 0.3 },
+  },
+};
+
+const slideXVariants = {
+  hidden: { opacity: 1, x: -15 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: { ...springPresets.soft, duration: 0.2 },
+  },
+  exit: {
+    opacity: 1,
+    x: -15,
+    transition: { ...springPresets.soft, duration: 0.2 },
+  },
+};
+
+const staggerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
   },
 };
 
@@ -71,7 +93,7 @@ const itemVariants = {
     transition: {
       ...springPresets.medium,
       duration: 0.5,
-    }
+    },
   },
 };
 
@@ -112,4 +134,6 @@ export {
   springPresets,
   slideVariants,
   fadeVariants,
+  staggerVariants,
+  slideXVariants,
 };
