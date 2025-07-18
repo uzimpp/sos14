@@ -1,4 +1,3 @@
-
 // Spring transition presets
 const springPresets = {
   soft: { type: "spring" as const, stiffness: 200, damping: 20 },
@@ -23,6 +22,30 @@ const slideVariants = {
   },
 };
 
+const slideXVariants = {
+  hidden: { opacity: 1, x: -15 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: { ...springPresets.soft, duration: 0.2 },
+  },
+  exit: {
+    opacity: 1,
+    x: -15,
+    transition: { ...springPresets.soft, duration: 0.2 },
+  },
+};
+
+const staggerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
 const fadeVariants = {
   hidden: { opacity: 0, scale: 0.95, y: -10 },
   visible: {
@@ -39,15 +62,6 @@ const fadeVariants = {
   },
 };
 
-const slideInVariants = {
-  hidden: { opacity: 0, x: -20 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: springPresets.medium,
-  },
-};
-
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
   visible: {
@@ -55,7 +69,7 @@ const sectionVariants = {
     y: 0,
     transition: {
       ...springPresets.medium,
-      duration: 0.6
+      duration: 0.6,
     },
   },
 };
@@ -66,18 +80,18 @@ const containerVariants = {
     opacity: 1,
     transition: {
       staggerChildren: 0.2,
-      delayChildren: 0.1,
+      delayChildren: 0.2,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 10 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      ...springPresets.soft,
+      ...springPresets.medium,
       duration: 0.5,
     },
   },
@@ -120,5 +134,6 @@ export {
   springPresets,
   slideVariants,
   fadeVariants,
-  slideInVariants,
+  staggerVariants,
+  slideXVariants,
 };

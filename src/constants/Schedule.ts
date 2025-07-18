@@ -1,4 +1,4 @@
-const agenda = [
+const schedule = [
   {
     date: "20 July 2025",
     events: [
@@ -45,4 +45,4 @@ const agenda = [
   },
 ];
 
-export default agenda;
+export default schedule;

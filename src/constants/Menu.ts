@@ -1,6 +1,6 @@
 const menuLinks = [
   { path: "/", label: "Home" },
-  { path: "/#agenda", label: "Agenda" },
+  { path: "/#schedule", label: "Schedule" },
   { path: "/problems?day=0", label: "Problems" },
   { path: "/faqs", label: "FAQs" },
 ];

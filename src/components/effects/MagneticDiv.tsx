@@ -1,17 +1,24 @@
 "use client";
 import { ReactNode, useRef, useState, MouseEvent } from "react";
-import { motion } from "framer-motion";
+import { motion, type Transition } from "framer-motion";
 
-interface MagneticBtnProps {
+interface MagneticDivProps {
+  transition?: Transition;
   children: ReactNode;
   className?: string;
   onClick?: () => void;
 }
-export default function MagneticBtn({
+export default function MagneticDiv({
+  transition = {
+    type: "spring",
+    bounce: 0.1,
+    damping: 40,
+    mass: 5,
+  },
   children,
   className = "",
   onClick,
-}: MagneticBtnProps) {
+}: MagneticDivProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -34,12 +41,7 @@ export default function MagneticBtn({
       onMouseMove={handleMouse}
       onMouseLeave={reset}
       animate={position}
-      transition={{
-        type: "spring",
-        bounce: 0.2,
-        damping: 40,
-        mass: 0.5,
-      }}
+      transition={transition}
       style={{ position: "relative" }}
     >
       {children}
