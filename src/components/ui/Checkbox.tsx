@@ -17,7 +17,10 @@ export default function Checkbox({
     <fieldset
       className={`items-center justify-center transition-all duration-400 ease-smooth ${className}`}
     >
-      <label className="inline-flex items-center cursor-pointer ">
+      <label
+        className="inline-flex items-center cursor-pointer"
+        aria-label="Mark as complete"
+      >
         <input
           id={id}
           type="checkbox"

@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 export default function Qoute() {
   return (
     <section>
-      <motion.h3
-        className="font-medium text-center glow glow-pink-md"
+      <motion.div
+        className="font-medium text-center text-4 glow glow-pink-md"
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
@@ -22,7 +22,7 @@ export default function Qoute() {
         <br /> seeing <span className="text-pink font-semibold">
           SKE23
         </span> at <span className="font-semibold text-green">SOS14</span>
-      </motion.h3>
+      </motion.div>
     </section>
   );
 }

@@ -50,7 +50,7 @@ export default function Benefits() {
               />
             </motion.div>
           </div>
-          <h5 className="text-center mt-(--space-m) font-semibold">Fun</h5>
+          <h3 className="text-2 text-center mt-(--space-m) font-semibold">Fun</h3>
           <p className="flex text-center text-white/70  text-balance">
             Enjoy a variety of fun activities and engaging events.
           </p>
@@ -77,7 +77,7 @@ export default function Benefits() {
               priority
             />
           </motion.div>
-          <h5 className="text-center mt-(--space-m) font-semibold">Friends</h5>
+          <h3 className="text-2 text-center mt-(--space-m) font-semibold">Friends</h3>
           <p className="flex text-center text-white/70  text-balance">
             Meet new people and make lasting friendships.
           </p>
@@ -104,7 +104,7 @@ export default function Benefits() {
               priority
             />
           </motion.div>
-          <h5 className="text-center mt-(--space-m) font-semibold">Basics</h5>
+          <h3 className="text-2 text-center mt-(--space-m) font-semibold">Basics</h3>
           <p className="flex text-center text-white/70  text-balance">
             Get hands-on experience with coding fundamentals.
           </p>

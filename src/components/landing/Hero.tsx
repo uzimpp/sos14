@@ -331,18 +331,18 @@ export default function Hero() {
           whileTap={{ scale: 0.97 }}
           className="row-start-4 md:col-start-1 lg:col-start-3 md:row-start-3 pixel-corners-s overflow-hidden bg-light-purple/70 flex flex-col justify-center items-center py-(--space-m) px-(--space-s)"
         >
-          <h6 className="text--1 flex no_line_height justify-center text-left font-medium pb-2">
+          <h6 className="text--1 flex no_line_height justify-center text-left font-medium pb-2.5">
             Contact
           </h6>
-          <div className="flex flex-row gap-(--space-xs-s)">
+          <div className="flex flex-row gap-(--space-s)">
             <MagneticDiv>
               <Link href="https://www.instagram.com/sos_camp14" target="_blank">
                 <Image
                   src="/assets/landing/instagram.svg"
                   alt="ig"
-                  width={100}
-                  height={100}
-                  className={`w-(--space-m)`}
+                  width={50}
+                  height={50}
+                  className={`w-5`}
                   priority
                 />
               </Link>
@@ -352,9 +352,9 @@ export default function Hero() {
                 <Image
                   src="/assets/landing/discord.svg"
                   alt="discord"
-                  width={100}
-                  height={100}
-                  className={`w-(--space-m)`}
+                  width={50}
+                  height={50}
+                  className={`w-5`}
                   priority
                 />
               </Link>

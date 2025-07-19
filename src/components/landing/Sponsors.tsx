@@ -11,8 +11,8 @@ export default function Sponsors() {
       id="sponsors"
       className="flex flex-col items-center w-full gap-y-(--space-l) pt-0"
     >
-      <motion.h3
-        className="font-medium text-center"
+      <motion.div
+        className="font-medium text-4 text-center"
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
@@ -22,7 +22,7 @@ export default function Sponsors() {
         }}
       >
         Sponsored by
-      </motion.h3>
+      </motion.div>
       <motion.div
         animate={{ y: [0, -8] }}
         transition={{

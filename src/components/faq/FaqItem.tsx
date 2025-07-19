@@ -17,13 +17,13 @@ export default function FAQItem({ question, answer }: FAQItemProps) {
         className="flex justify-between items-center cursor-pointer py-4 px-(--space-xs)"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <h6
+        <div
           className={`text-0 font-semibold transition-all duration-300 ${
             isOpen ? "text-green" : "text-white"
           }`}
         >
           {question}
-        </h6>
+        </div>
         <button className="text-0">
           <div
             className={`font-semibold transition-all duration-300 ${

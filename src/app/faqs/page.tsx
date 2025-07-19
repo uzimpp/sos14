@@ -20,8 +20,8 @@ export default function FAQs() {
       <div className="flex flex-col justify-center max-w-[calc(5.5*var(--space-4xl))] w-full mx-auto">
         {Object.entries(faqSections).map(([section, faqs]) => (
           <section key={section} id={section.replace(" ", "")} className="">
-            <small className="opacity-20 font-bold border-b-[1.618px] border-white pb-(--space-2xs) block">
-              {section}
+            <small className="font-semibold border-b-[1.618px] border-white/20 pb-(--space-2xs) block">
+              <span className="text-white/60">{section}</span>
             </small>
             <div className="">
               {faqs.map((faq) => (

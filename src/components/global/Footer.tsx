@@ -112,7 +112,7 @@ export default function Footer() {
           <span className="font-sans">©</span>2025 SOS14. All rights reserved.
         </p>
         {/* morse code part */}
-        <div className="flex flex-row items-center gap-(--space-s) opacity-14">
+        <div className="flex flex-row items-center gap-(--space-s) opacity-27">
           <div className="flex flex-row items-center gap-(--space-xs-s)">
             <div className="flex flex-row items-center gap-(--space-2xs-xs)">
               <div className="w-(--space-s) h-(--space-s) bg-white rounded-full pixel-corners-xs"></div>
@@ -130,7 +130,7 @@ export default function Footer() {
               <div className="w-(--space-s) h-(--space-s) bg-white rounded-full pixel-corners-xs"></div>
             </div>
           </div>
-          <p className="text-3 font-bold">14</p>
+          <div className="text-3 font-bold">14</div>
         </div>
       </div>
     </footer>
