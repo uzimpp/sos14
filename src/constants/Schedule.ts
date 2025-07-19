@@ -16,7 +16,8 @@ const schedule = [
       { time: "11:30 - 12:30", name: "Lunch Break" },
       { time: "12:30 - 14:45", name: "Lab #1" },
       { time: "14:45 - 15:00", name: "Break" },
-      { time: "15:00 - 16:00", name: "คุยกับรุ่นพี่ (SKE22 + F)" },
+      { time: "15:00 - 15:30", name: "คุยกับรุ่นพี่ (SKE21)" },
+      { time: "15:30 - 16:00", name: "คุยกับรุ่นพี่ (SKE22)" },
     ],
   },
   {
@@ -27,7 +28,7 @@ const schedule = [
       { time: "11:30 - 12:30", name: "Lunch Break" },
       { time: "12:30 - 14:45", name: "Lab #2" },
       { time: "14:45 - 15:00", name: "Break" },
-      { time: "15:00 - 16:00", name: "คุยกับรุ่นพี่ (SKE21 + 20)" },
+      { time: "15:00 - 16:00", name: "คุยกับรุ่นพี่ (SKE20)" },
     ],
   },
   {
