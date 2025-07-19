@@ -64,7 +64,7 @@ export default function Schedule() {
             >
               {item.events.map((event: EventProps) => (
                 <Fragment key={event.time}>
-                  <p className="font-ian text-3 no_line_height ">
+                  <p className="font-ian text-3 no_line_height text-nowrap">
                     {event.time}
                   </p>
                   <p className="font-ian text-3 no_line_height">{event.name}</p>

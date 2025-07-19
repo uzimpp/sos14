@@ -9,7 +9,7 @@ import MagneticDiv from "../effects/MagneticDiv";
 export default function Hero() {
   const MotionLink = motion.create(Link);
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-full">
       <div className="flex flex-col md:flex-row gap-x-(--space-l) justify-between mb-(--space-s) items-center w-full">
         <AnimatePresence>
           <motion.div
@@ -42,7 +42,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeInOut" }}
-        className="grid grid-cols-2 grid-rows-4 md:grid-cols-4 md:grid-rows-4 lg:grid-cols-[1fr_1fr_1fr_1fr_1fr_auto] lg:grid-rows-3 gap-(--space-2xs-xs)"
+        className="w-full grid grid-cols-2 grid-rows-4 md:grid-cols-4 md:grid-rows-4 lg:grid-cols-[1fr_1fr_1fr_1fr_1fr_auto] lg:grid-rows-3 gap-(--space-2xs-xs)"
       >
         {/* Problem */}
         <motion.div
