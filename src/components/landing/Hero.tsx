@@ -58,7 +58,7 @@ export default function Hero() {
             transition: { delay: 0, duration: 0.18, ...springPresets.medium },
           }}
           whileTap={{ scale: 0.97 }}
-          className="col-span-2 row-span-2 pixel-corners-s overflow-hidden relative bg-[#33638C30] flex flex-col items-center justify-center p-(--space-m) group"
+          className="col-span-2 row-span-2 pixel-corners-s overflow-hidden relative bg-[#33638C30] flex flex-col items-center justify-center py-(--space-m) px-(--space-s) group"
         >
           <div
             className="absolute w-[25%] top-[-3%] left-[-3%] rotate-8
@@ -329,9 +329,9 @@ export default function Hero() {
             transition: { delay: 0, duration: 0.18, ...springPresets.medium },
           }}
           whileTap={{ scale: 0.97 }}
-          className="row-start-4 md:col-start-1 lg:col-start-3 md:row-start-3 pixel-corners-s overflow-hidden bg-light-purple/70 flex flex-col justify-center items-center p-(--space-m)"
+          className="row-start-4 md:col-start-1 lg:col-start-3 md:row-start-3 pixel-corners-s overflow-hidden bg-light-purple/70 flex flex-col justify-center items-center py-(--space-m) px-(--space-s)"
         >
-          <h6 className="text-0 flex no_line_height justify-center text-left font-medium pb-2">
+          <h6 className="text--1 flex no_line_height justify-center text-left font-medium pb-2">
             Contact
           </h6>
           <div className="flex flex-row gap-(--space-xs-s)">
@@ -376,9 +376,9 @@ export default function Hero() {
           }}
           whileTap={{ scale: 0.97 }}
           href="/faqs"
-          className="col-start-1 row-start-4 md:col-start-2 lg:col-start-4 md:row-start-3 pixel-corners-s overflow-hidden bg-[#FD68CE30] flex justify-center items-center p-(--space-m)"
+          className="col-start-1 row-start-4 md:col-start-2 lg:col-start-4 md:row-start-3 pixel-corners-s overflow-hidden bg-[#FD68CE30] flex justify-center items-center py-(--space-m) px-(--space-s)"
         >
-          <div className="flex justify-center text-left no_line_height font-medium">
+          <div className="text--1 flex justify-center text-left no_line_height font-medium">
             Frequently
             <br />
             Asked
@@ -400,7 +400,7 @@ export default function Hero() {
             transition: { delay: 0, duration: 0.18, ...springPresets.medium },
           }}
           whileTap={{ scale: 0.97 }}
-          className="hidden md:flex md:row-span-3 md:col-start-3 md:row-start-2 col-span-2 lg:col-start-5 lg:row-start-1 pixel-corners-s overflow-hidden bg-[#353435] items-center justify-center p-(--space-s)"
+          className="hidden md:flex md:row-span-3 md:col-start-3 md:row-start-2 col-span-2 lg:col-start-5 lg:row-start-1 pixel-corners-s overflow-hidden bg-[#353435] items-center justify-center py-(--space-m) px-(--space-s)"
         >
           <Image
             src="/assets/landing/arcade.svg"
